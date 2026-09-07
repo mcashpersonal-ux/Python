@@ -84,3 +84,5 @@ nav:
     - "23 — Type Hints": advanced/type-hints.md
     - "24 — Design Patterns": advanced/design-patterns.md
     - "25 — Best Practices": advanced/best-practices.md
+  - "Packages":
+    - "Package Hub": packages/index.md
