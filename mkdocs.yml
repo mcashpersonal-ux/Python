@@ -135,3 +135,17 @@ nav:
       - "68 — Classic ML (scikit-learn)": packages/scikit-learn.md
       - "69 — Deep learning (PyTorch)": packages/torch.md
       - "70 — Columnar data (pyarrow)": packages/pyarrow.md
+    - "CLI, Config & Automation":
+      - "Click": packages/click.md
+      - "Typer": packages/typer.md
+      - "Progress bars (tqdm)": packages/tqdm.md
+      - "Terminal output (Rich)": packages/rich.md
+      - "Structured logging (structlog)": packages/structlog.md
+      - "YAML configuration (PyYAML)": packages/pyyaml.md
+      - "Environment files (python-dotenv)": packages/python-dotenv.md
+      - "Validation (Pydantic)": packages/pydantic.md
+      - "In-process scheduling (schedule)": packages/schedule.md
+      - "Cron expressions (croniter)": packages/croniter.md
+      - "Date handling (dateutil)": packages/dateutil.md
+      - "Date handling (Pendulum)": packages/pendulum.md
+      - "Date handling (Arrow)": packages/arrow.md
