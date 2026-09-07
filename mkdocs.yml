@@ -120,3 +120,18 @@ nav:
       - "54 — Fast HTML/XML (lxml)": packages/lxml.md
       - "55 — WebSockets": packages/websockets.md
       - "56 — GraphQL (gql)": packages/gql.md
+    - "Data Science & Charts":
+      - "57 — Arrays (NumPy)": packages/numpy.md
+      - "58 — DataFrames (pandas)": packages/pandas.md
+      - "59 — Static plots (Matplotlib)": packages/matplotlib.md
+      - "60 — Interactive charts (Plotly)": packages/plotly.md
+      - "61 — Dashboards (Dash)": packages/dash.md
+      - "62 — Quick data apps (Streamlit)": packages/streamlit.md
+      - "63 — Notebooks (JupyterLab)": packages/jupyterlab.md
+      - "64 — Excel read/write (openpyxl)": packages/openpyxl.md
+      - "65 — Fast Excel writing (XlsxWriter)": packages/xlsxwriter.md
+      - "66 — Scientific computing (SciPy)": packages/scipy.md
+      - "67 — Symbolic math (SymPy)": packages/sympy.md
+      - "68 — Classic ML (scikit-learn)": packages/scikit-learn.md
+      - "69 — Deep learning (PyTorch)": packages/torch.md
+      - "70 — Columnar data (pyarrow)": packages/pyarrow.md
