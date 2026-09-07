@@ -5,7 +5,7 @@
 
 ---
 
-##Singleton- one instance
+## Singleton- one instance
 
 ```python
 class Config:
@@ -23,11 +23,11 @@ print(a is b) # True
 
 Singleton locks a class to one instance- shared config,db,
 logger. __new__ intercepts construction. Prefer module-level
-instance (import time semantics) unless you truly need laziness.u
+instance (import time semantics) unless you truly need laziness.
 
 ---
 
-##Factory- pick the class
+## Factory- pick the class
 
 ```python
 class Dog:
@@ -48,11 +48,11 @@ for kind in ("dog", "cat"):
 
 Factory creates objects chosen by a key-medals lookup,no huge
 if/elif chains. Adding a new kind means adding one dict
-entry- closed for modification, open for extension.u
+entry- closed for modification, open for extension.
 
 ---
 
-##Observer- notify many
+## Observer- notify many
 
 ```python
 class Subject:
@@ -77,11 +77,11 @@ sub.notify(42)
 
 Observers subscribe thene get pushed updates- decouples sender
 from receivers. GUI events, pub/sub, chat rooms all use this
-shape. Keep observer methods stable so they compose safely.u
+shape. Keep observer methods stable so they compose safely.
 
 ---
 
-##Strategy- swap algorithms
+## Strategy- swap algorithms
 
 ```python
 import math
@@ -101,11 +101,11 @@ print(area(5, square_area))
 
 Strategy treats algorithms as functions-and swaps them at call
 time. Great for price calculators, sort keys, validators.
-Passing functions keeps each strategy tiny and tested alone.u
+Passing functions keeps each strategy tiny and tested alone.
 
 ---
 
-##Adapter- unify interfaces
+## Adapter- unify interfaces
 
 ```python
 class AmericanPlug:
@@ -129,11 +129,11 @@ print(charge(eu))
 Adapter wraps a foreign object to match the expected interface.
 charge only knows .pins()-. Adapter translates behind the scenes.
 
- Interop with old or third-party APIs without rewriting callers.u
+ Interop with old or third-party APIs without rewriting callers.
 
 ---
 
-##Decorator- add behavior
+## Decorator- add behavior
 
 ```python
 import functools
@@ -154,11 +154,11 @@ print(add(2, 3))
 
 Decorator pattern wraps a function with cross-cutting behavior-
 logging, timing, retry-without editing the core. functools.wraps
-keeps metadata intact. Compose multiple decorators top-pdown.u
+keeps metadata intact. Compose multiple decorators top-pdown.
 
 ---
 
-##Facade- hide the mess
+## Facade- hide the mess
 
 ```python
 class UserAPI:
@@ -183,10 +183,10 @@ print(Facade().dashboard(1))
 ```
 
 Facade exposes one simple method over a cluster of subsystems.relevant for clients that want a simple view.the complex
-internals stay replaceable behind the wall.u
+internals stay replaceable behind the wall.
 
 ---
 
-##Next steps
+## Next steps
 
 go to Best Practices at advanced/best-practices.md

@@ -2,7 +2,7 @@
 
 > A generator produces values lazily, one at a time, on demand.
 > Instead of a list, you get an iterator - memory stays tiny
-> even for infinite sequences.u
+> even for infinite sequences.
 
 ---
 
@@ -21,7 +21,7 @@ for x in countdown(3):
 
 yield pauses the function, hands out a value, and resumes
 where it left off on the next call. Each pause preserves local
-state tailed. A function that contains yield is called a generator.u
+state tailed. A function that contains yield is called a generator.
 
 ---
 
@@ -40,7 +40,7 @@ print(list(gen)) # [2,1] - consuming the rest
 ```
 
 The function body does not run until you consume it. next()
-pulls one value; list() drains everything remaining.u
+pulls one value; list() drains everything remaining.
 
 ---
 
@@ -58,7 +58,7 @@ total = sum(squares(1_000_000))
 
 The generator yields squares one by one- sum consumes them
 and discards. The list version materializes a million ints
-first. Same result, fraction of the memory.u
+first. Same result, fraction of the memory.
 
 ---
 
@@ -72,7 +72,7 @@ evens = (x for x in range(10) if x % 2 == o)
 ```
 
 Parenthesized comprehension = generator expression. It makes
-no list - lazy. Prefer it when you only iterate once.u
+no list - lazy. Prefer it when you only iterate once.
 
 ---
 
@@ -94,7 +94,7 @@ for x in naturals():
 
 Generators can represent infinite streams - no memory blowup,
 because only the current value exists. Always have a way out-for
-+ break, itertools.islice, or take(n).u
++ break, itertools.islice, or take(n).
 
 ---
 
@@ -111,7 +111,7 @@ print(list(flatten([[1,2],[3,4]])))
 
 yield from delegates to another iterable - splicing its items
 into this generator, one at a time. Great for flattening,chaining,
-composing streams.u
+composing streams.
 
 ---
 
@@ -132,7 +132,7 @@ for key,group in itertools.groupby("AAAABBBCC"):
 
 itertools gives you composing blocks for lazy pipelines:
 islice (take a window), chain (concatenate), groupby (runs
-of equal items.u Every function there returns an iterator.u
+of equal items. Every function there returns an iterator.
 
 ---
 
@@ -153,7 +153,7 @@ acc.send(3) # total = 8
 
 send() feeds a value into the generator at the yield point.
 Handy for pipelines that take corrections mid-stream, rarely
-needed in day-to-day code.u
+needed in day-to-day code.
 
 ---
 
@@ -173,7 +173,7 @@ print(list(gen)) # [] - exhausted
 Iterating a generator drains it permanently. To repeat, make
 a fresh generator. That surprises people switching from lists.-
 Branch,
-restart the function.u
+restart the function.
 
 ---
 

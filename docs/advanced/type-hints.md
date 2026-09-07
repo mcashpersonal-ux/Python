@@ -5,7 +5,7 @@
 
 ---
 
-##basic annotations
+## basic annotations
 
 ```python
 def greet(name: str, count: int) -> str:
@@ -17,11 +17,11 @@ names: list[str] = ["a", "b"]
 
 Annotate each arg and return type after colons. Builtins
 are subscriptable since 3.9: list[str], dict[str, int]. Hints don't
-enforce at runtime- tools do.u
+enforce at runtime- tools do.
 
 ---
 
-##typing module
+## typing module
 
 ```python
 from typing import Optional, Union, List, Dict
@@ -40,11 +40,11 @@ def load(path: str) -> Union[str, bytes]:
 Optional[int] means int or None- shorthand for Union[int, None].
 Union lists alternatives; modern code can write int | None instead.
 
-Use Optional for maybe-values, Union for multi-types.u
+Use Optional for maybe-values, Union for multi-types.
 
 ---
 
-##TypeVar- generic functions
+## TypeVar- generic functions
 
 ```python
 from typing import TypeVar, Sequence
@@ -62,11 +62,11 @@ print(first(s))
 
 TypeVar links input and output types- first takes list[int]
 and returns int, list[str] returns str. Callers keep type
-safety across containers without repetition.u
+safety across containers without repetition.
 
 ---
 
-##Protocol- structural typing
+## Protocol- structural typing
 
 ```python
 from typing import Protocol
@@ -83,11 +83,11 @@ show_size("hello")
 
 Protocol matches any type with the required members- no need
 to inherit. show_size accepts list and str because both define
-__len__. Structural typing keeps functions open to new types.u
+__len__. Structural typing keeps functions open to new types.
 
 ---
 
-##dataclass hints
+## dataclass hints
 
 ```python
 from dataclasses import dataclass
@@ -103,11 +103,11 @@ p = Point(1.0, 2.0)
 Fields are annotations without defaults; dataclass generates
 __init__, repr, eq. Mypy can catch wrong-typed args at
 analysis time. Dataclasses pair naturally with hints- no manual
-init boilerplate.u
+init boilerplate.
 
 ---
 
-##Literal- exact values
+## Literal- exact values
 
 ```python
 from typing import Literal
@@ -122,11 +122,11 @@ set_mode("safe")
 
 Literal pins args to a fixed set- catches typos likem "sloe"
 before runtime. Great for modes, directions, and option
-strings. Combine with Final for constants.u
+strings. Combine with Final for constants.
 
 ---
 
-##mypy- run the checker
+## mypy- run the checker
 
 ```bash
 pip install mypy
@@ -136,10 +136,10 @@ mypy my_program.py
 mypy reads hints and reports mismatches without running
 code. Start lenient (--ignore-missing-imports) thene tighten.
 CI can run mypy so regressions surface at merge time, not
-runtime.u
+runtime.
 
 ---
 
-##Next steps
+## Next steps
 
 go to Design Patterns at advanced/design-patterns.md

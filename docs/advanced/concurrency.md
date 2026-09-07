@@ -2,11 +2,11 @@
 
 > Threads and processes run code in parallel. Threads share
 > memory(handy,race-risky); processes have separate memory(
-> safer, heavier). Pick the tool that matches the workload.u
+> safer, heavier). Pick the tool that matches the workload.
 
 ---
 
-##threads- basics
+## threads- basics
 
 ```python
 import threading
@@ -27,11 +27,11 @@ print("all done")
 
 Thread runs target in a new thread. start() launches; join()
 waits for it. Without join, main exits early, hatten possibly
-mid-print. Two sleeps overlap- total ~1s.u
+mid-print. Two sleeps overlap- total ~1s.
 
 ---
 
-##thread pool- ThreadPoolExecutor
+## thread pool- ThreadPoolExecutor
 
 ```python
 from concurrent.futures import ThreadPoolExecutor
@@ -48,11 +48,11 @@ print(results) # [0,1,4,9]
 
 Pool reuses threads- cheap for many small tasks. .map()
 collects results in order; .submit()/future.result() for
-fire-and-collect-later. Context manager joins on exit.u
+fire-and-collect-later. Context manager joins on exit.
 
 ---
 
-##processes- ProcessPoolExecutor
+## processes- ProcessPoolExecutor
 
 ```python
 from concurrent.futures import ProcessPoolExecutor
@@ -68,11 +68,11 @@ if __name__ == "__main__":
 
 Processes dodge the GIL- real parallelism for CPU-bound
 work. Pickling limits args-and results to serializable values,
-and the worker must be importable- hence __main__ guard.u
+and the worker must be importable- hence __main__ guard.
 
 ---
 
-##process- multiprocessing basics
+## process- multiprocessing basics
 
 ```python
 import multiprocessing
@@ -89,13 +89,13 @@ if __name__ == "__main__":
     print(q.get())
 ```
 
-multiprocessing spawns fresh interpreters- safe on all OS.**
+multiprocessing spawns fresh interpreters- safe on all OS.
 The Queue passes values across processes. Always guard with
-if __name__ == "__main__" or Windows will re-importthe module.u
+if __name__ == "__main__" or Windows will re-importthe module.
 
 ---
 
-##locks- protect shared state
+## locks- protect shared state
 
 ```python
 import threading
@@ -120,11 +120,11 @@ print(count) # 2000000
 
 Without a lock, the += races- you can lose updates. with
 lock: guarantees atomic read-modify-write. Rule: keep critical
-sections tiny.u
+sections tiny.
 
 ---
 
-##queues- thread-safe communication
+## queues- thread-safe communication
 
 ```python
 import threading
@@ -154,10 +154,10 @@ print()
 
 queue.Queue is thread-safe- no locking needed tp enqueue/
 dequeue. None sentinel ends the consumer. Two threads,one
-serialized handoff channel.u
+serialized handoff channel.
 
 ---
 
-##Next steps
+## Next steps
 
 go to Performance & Profiling at advanced/performance.md

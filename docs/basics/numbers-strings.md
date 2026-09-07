@@ -103,7 +103,7 @@ text = " Hello,Python! "
 
 text.strip() # 'Hello,Python!' remove outer whitespace
 text.lower() # ' hello,python! '
-text.pper() # ' HELLO,PYTHON! '
+text.upper() # ' HELLO,PYTHON! '
 text.replace("Python","World") # ' Hello,World! '
 text.split(",") # [' Hello',' Python! ']
 ",".join(["a","b"]) # 'a,b' inverse of split

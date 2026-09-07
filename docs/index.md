@@ -68,7 +68,7 @@ The site is organized into three modules that build on each other:
 
 ---
 
-##Suggested next stop
+## Suggested next stop
 
 [Start at 01 — Getting Started →](basics/getting-started.md)
 

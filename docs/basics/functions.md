@@ -17,7 +17,7 @@ print(msg) # Hello,Ada!
 ```
 
 def creates the function. return sends a value back to the caller.
-If you omit return, the function returns None implicitly.u
+If you omit return, the function returns None implicitly.
 
 ---
 
@@ -34,7 +34,7 @@ describe(name="Bob",age=41)
 
 Positional args fill parameters in order. Keyword args
 (name=value) make calls self-documenting and optional. Keep
-required params first, optional (with defaults) after.u
+required params first, optional (with defaults) after.
 
 ---
 
@@ -49,7 +49,7 @@ lo,hi = min_max([3,1,2])
 ```
 
 The comma in return creates a tuple. Unpacking on the left
-side splits it back into separate names.u
+side splits it back into separate names.
 
 ---
 
@@ -66,8 +66,8 @@ print(value) # 99 - global unchanged
 ```
 
 Assignments inside a function create local names. Reading a
-global works, but assigning to it needs the global keyword.u
-Which you should generally avoid - pass values instead.u
+global works, but assigning to it needs the global keyword.
+Which you should generally avoid - pass values instead.
 
 ---
 
@@ -86,7 +86,7 @@ add_item("b" ) # ['b'] - fresh list each time
 
 Mutable defaults ([],{} are evaluated once at def time and
 shared across calls - a classic bug. The standard fix:
-default to None,then create fresh inside.u
+default to None,then create fresh inside.
 
 ---
 
@@ -99,8 +99,8 @@ def total(*args):
 print(total(1,2,3,4)) # 10
 ```
 
-*args collects extra positional args into a tuple.u
-Great for sums, logs, math helpers.u
+*args collects extra positional args into a tuple.
+Great for sums, logs, math helpers.
 
 ---
 
@@ -114,8 +114,8 @@ def print_config(**kwargs):
 print_config(host="localhost",port=8080)
 ```
 
-**kwargs collects extra keyword args into a dict.u
-Handy for configs, wrappers, sending options through.u
+**kwargs collects extra keyword args into a dict.
+Handy for configs, wrappers, sending options through.
 
 ---
 
@@ -133,8 +133,8 @@ help(multiply)
 ```
 
 The first statement in a function can be a string - python stores
-it as __doc__ and help() displays it.u Write these for anything
-you will reuse.u
+it as __doc__ and help() displays it. Write these for anything
+you will reuse.
 
 ---
 
@@ -146,7 +146,7 @@ print(square(5)) # 25
 ```
 
 lambda is a one-expression function with no name. Prefer
-def for anything more than a one-liner.u
+def for anything more than a one-liner.
 
 ---
 
@@ -168,7 +168,7 @@ print(apply(whisper,"HI")) # hi
 
 Functions can be passed around like any value - store them in
 lists, dicts, pass to other functions. That backs callbacks,
-decorators, and higher-order-functionstyle.u
+decorators, and higher-order-functionstyle.
 
 ---
 

@@ -2,7 +2,7 @@
 
 > OOP groups data and the functions that act on it into one
 > object. Python classes are approachable: attributes, methods,
-> and a few special dunders run the show.u
+> and a few special dunders run the show.
 
 ---
 
@@ -23,7 +23,7 @@ print(d.bark())
 
 __init__ runs once when you create an instance. self refers
 to that instance - it carries the data. Methods take self as
-first param so they can touch instance state.u
+first param so they can touch instance state.
 
 ---
 
@@ -45,9 +45,9 @@ print(c.count) # 2
 ```
 
 Instance attributes live per-object-and survive method calls.
-**
+
 They are just keys on the object - set them anywhere, read
-them anywhere.u
+them anywhere.
 
 ---
 
@@ -66,7 +66,7 @@ print(e1.company,e2.company) # Acme Acme
 ```
 
 A class attribute belongs to the class-and is shared by all
-instances. Instance attributes shadow class ones when both exist.u
+instances. Instance attributes shadow class ones when both exist.
 
 ---
 
@@ -91,7 +91,7 @@ print(repr(p)) # Point(3,4)
 
 __str__ controls what str() and print() show; __repr__ what
 repr() and error messages show. Aim for __repr__ to be valid
-Python rebuilding the object.u
+Python rebuilding the object.
 
 ---
 
@@ -119,7 +119,7 @@ t.celsius = 30
 
 @property turns a method into attribute-style access. The
 setter validates on assignment - you can migrate plain
-attributes to checked ones without changing callers.u
+attributes to checked ones without changing callers.
 
 ---
 
@@ -143,7 +143,7 @@ class Cat(Animal):
 
 The subclass inherits everything,then overrides what it
 needs. Nicely, type(self) in describe refers to the actual
-class,so Dog.describe() reports "Dog".u
+class,so Dog.describe() reports "Dog".
 
 ---
 
@@ -160,9 +160,9 @@ class Square(Rectangle):
         super().__init__(side,side)
 ```
 
-super() finds the next method in the MRO - often the parent.**
+super() finds the next method in the MRO - often the parent.
 Use it to extend rather than replace: run the parent's logic,
-then add your own.u
+then add your own.
 
 ---
 
@@ -180,7 +180,7 @@ class User:
 
 Dataclasses auto-generate __init__, __repr__, __eq__, and__hash__
 from annotations. field(default_factory=list) gives each
-instance a fresh list - never use mutable defaults.u
+instance a fresh list - never use mutable defaults.
 
 ---
 
@@ -201,7 +201,7 @@ print(c.value) # 1
 
 Enums give named, fixed choices with identity - Color.RED is
 Color.RED, not accidentally equal to 1. Great for modes,
-states, options.u
+states, options.
 
 ---
 

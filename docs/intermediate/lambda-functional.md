@@ -4,11 +4,11 @@
 > map/filter to transform collections,witch reduce to fold.
 >
 > Modern Python prefers comprehensions for most of this, but
-> these tools appear everywhere in libraries - worth knowing.u
+> these tools appear everywhere in libraries - worth knowing.
 
 ---
 
-##lambda basics
+## lambda basics
 
 ```python
 square = lambda x: x ** 2
@@ -22,11 +22,11 @@ print(add(2,3))
 
 lambda takes args before the colon,and returns the single
 expression after it. No statements, no assignments - just an
-expression. Prefer def when it grows beyo one line.u
+expression. Prefer def when it grows beyo one line.
 
 ---
 
-##map - apply a function to every item
+## map - apply a function to every item
 
 ```python
 nums = [1,2,3,4]
@@ -37,7 +37,7 @@ doubled = list(map(lambda x: x * 2,nums))
 
 map(func, iterable) applies func to each item lazily. list()
 materializes the result. Equivalent comprehension:
-[x * 2 for x in nums].u
+[x * 2 for x in nums].
 
 ---
 
@@ -52,11 +52,11 @@ sums = list(map(lambda x,y: x + y,a,b))
 ```
 
 map pulls one item when rice ach iterable,stops at the
-shortest. Useful for zipping with a function applied.u
+shortest. Useful for zipping with a function applied.
 
 ---
 
-##filter - keep matching items
+## filter - keep matching items
 
 ```python
 nums = [1,2,3,4,5,6]
@@ -67,11 +67,11 @@ evens = list(filter(lambda x: x % 2 == 0,nums))
 
 filter keeps items where the function returns truthy. Equivalent
 comprehension book. Lazily evaluated,u so wrap with list() to
-materialize.u
+materialize.
 
 ---
 
-##filter with None - drop falsy
+## filter with None - drop falsy
 
 ```python
 values = [0,1,"",2,None,3]
@@ -81,11 +81,11 @@ clean = list(filter(None,values))
 ```
 
 filter(None, iterable) keeps truthy items only - dropping 0,
-"", None,and falsy. Handy for scrubbing user input.u
+"", None,and falsy. Handy for scrubbing user input.
 
 ---
 
-##reduce - fold a collection into one value
+## reduce - fold a collection into one value
 
 ```python
 from functools import reduce
@@ -101,7 +101,7 @@ factorial = reduce(lambda acc,x: acc * x,range(1,6))
 reduce takes (func, iterable( and keeps combining: acc starts
 at the first item,and func(acc, next) updates it. Better
 written as math.fsum, sum, or a loop for readability; reduce
-shines for custom folds.u
+shines for custom folds.
 
 ---
 
@@ -120,11 +120,11 @@ by_last = sorted(words,key=lambda w: w[-1])
 
 key= transforms each item before comparing - no need to
 build decorator lists. Works on min, max, sorted,and
-list.sort().u
+list.sort().
 
 ---
 
-##any/all - short-circuit checks
+## any/all - short-circuit checks
 
 ```python
 nums = [1,2,3]
@@ -137,11 +137,11 @@ print(has_even,all_positive)
 ```
 
 any stops at the first truthy; all stops at the first falsy -
-both short-circuit. Generator expressions keep this lazy.u
+both short-circuit. Generator expressions keep this lazy.
 
 ---
 
-##zip - pair up iterables
+## zip - pair up iterables
 
 ```python
 names = ["ada","bob"]
@@ -155,7 +155,7 @@ names2,ages2 = zip(*pairs) # unzip
 
 zip pairs items positionally,stopping at shortest. The star
 operator inverts it - unzipping a list of pairs back into
-tuples. Extremely common in data work.u
+tuples. Extremely common in data work.
 
 ---
 

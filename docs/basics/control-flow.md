@@ -66,7 +66,7 @@ for i,name in enumerate(names):
 ```
 
 for runs the body once per item. enumerate gives you
-the index alongside the value - handy for numbering rows.uä
+the index alongside the value - handy for numbering rows.
 
 ---
 
@@ -85,7 +85,7 @@ for n in range(0,10,2): # evens
 
 range(start, stop, step) makes a lazy numeric sequence.
  baked
-step costs nothing; stop is exclusive.u།
+step costs nothing; stop is exclusive.
 
 ---
 
@@ -118,7 +118,7 @@ for n in range(100):
 ```
 
 break exits the loop immediately, skipping remaining
-iterations. Classic use: search until found, cap a retry count.uai
+iterations. Classic use: search until found, cap a retry count.
 
 ---
 
@@ -126,14 +126,14 @@ iterations. Classic use: search until found, cap a retry count.uai
 
 ```python
 for n in range(6):
-    if n % 2 == o:
+    if n % 2 == 0:
         continue
     print(n)
 # 1,3,5 - skips evens
 ```
 
 continue jumps straight to the next iteration,skipping
-the rest of the body for this round.uapt
+the rest of the body for this round.
 
 ---
 
@@ -153,7 +153,7 @@ match command:
 
 match compares one value against several cases - a readable
 replacement for long if-elif chains on one value. The wildcard
-_ matches anything as the final fallback.uams
+_ matches anything as the final fallback.
 
 ---
 

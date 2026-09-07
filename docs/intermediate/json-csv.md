@@ -2,11 +2,11 @@
 
 > Two workhorse data formats: JSON for nested, typed, structured
 > data; CSV for tabular data that tools like Excel and pandas
-> speak fluently. Python stdlibs make both trivial.u
+> speak fluently. Python stdlibs make both trivial.
 
 ---
 
-##parse JSON - from string
+## parse JSON - from string
 
 ```python
 import json
@@ -19,11 +19,11 @@ print(data["score"]) # 36
 
 json.loads parses a string into plain Python objects: object
 to dict, array to list, true to True. The reverse - dict to
-string - is json.dumps.u
+string - is json.dumps.
 
 ---
 
-##parse JSON - from a file
+## parse JSON - from a file
 
 ```python
 import json
@@ -35,11 +35,11 @@ print(config.get("theme","dark"))
 ```
 
 json.load(f) reads and parses the file in one step. Combine
-with the with statement - and file handles never leak.u
+with the with statement - and file handles never leak.
 
 ---
 
-##write JSON - with formatting
+## write JSON - with formatting
 
 ```python
 import json
@@ -58,7 +58,7 @@ key order for diffs. Compass file gives:
 
 ---
 
-##handle missing keys safely
+## handle missing keys safely
 
 ```python
 import json
@@ -78,7 +78,7 @@ check nesting before diving in, never assume keys exist.
 
 ---
 
-##CSV - reading rows
+## CSV - reading rows
 
 ```python
 import csv
@@ -96,7 +96,7 @@ newline="" to avoid blank-line glitches on some platforms.
 
 ---
 
-##CSV - writing rows
+## CSV - writing rows
 
 ```python
 import csv
@@ -110,11 +110,11 @@ with open("out.csv","w",newline="") as f:
 
 csv.writer handles quoting, escaping,i newlines for you-
 never hand-build CSV strings. writerows takes a list of
-rows in one call.u
+rows in one call.
 
 ---
 
-##CSV - dict reader/writer
+## CSV - dict reader/writer
 
 ```python
 import csv
@@ -127,11 +127,11 @@ with open("data.csv",newline="") as f:
 
 DictReader usestherst row as headers,and gives dicts-
 row["name"] instead of row[0]. Parallel writer: DictWriter
-needs fieldnames passed in.u
+needs fieldnames passed in.
 
 ---
 
-##reading JSON lines (NDJSON)
+## reading JSON lines (NDJSON)
 
 ```python
 import json
@@ -149,11 +149,11 @@ NDJSON (newline-delimited JSON): one JSON object per line.
 
 Perfect for logs and streaming exportsthe data loads
 incrementally,yielding one record ata time. json.loads per
-line,or the faster json.JSONDecoder().raw_decode trick.u
+line,or the faster json.JSONDecoder().raw_decode trick.
 
 ---
 
-##flattening nested JSON into a flat dict
+## flattening nested JSON into a flat dict
 
 ```python
 def flatten(d,prefix="",sep="_"):
@@ -173,10 +173,10 @@ print(flatten(data))
 
 Recursive flattening turns nested dicts into flat key-value
 pairs - handy before stuffing rows into a DataFrame or
-CSV. Leaf values keep the dotted path in their keys.u
+CSV. Leaf values keep the dotted path in their keys.
 
 ---
 
-##Next steps
+## Next steps
 
 go to Regular Expressions at intermediate/regex.md

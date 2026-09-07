@@ -2,7 +2,7 @@
 
 > Context managers (the `with` statementensory guarantee
 > cleanup: files close, locks release, connections end - even
-> if an exception flies mid-block.u
+> if an exception flies mid-block.
 
 ---
 
@@ -16,11 +16,11 @@ with open("data.txt" )as f:
 
 with calls __enter__ onthe right side,and assigns its result to
 `as f`. The block runs,then __exit__ always runs - closing
-the file deterministically. Never call f.close() by hand again.u
+the file deterministically. Never call f.close() by hand again.
 
 ---
 
-##multiple context managers
+## multiple context managers
 
 ```python
 with open("in.txt" )as src,open("out.txt","w")as dst:
@@ -28,7 +28,7 @@ with open("in.txt" )as src,open("out.txt","w")as dst:
 ```
 
 Comma-separated with enters both managers,and exits both in
-reverse order on the way out. Same as nested with but flat.u
+reverse order on the way out. Same as nested with but flat.
 
 ---
 
@@ -42,12 +42,12 @@ with contextlib.suppress(FileNotFoundError):
 ```
 
 suppress swallows named exceptions-and nothing else. Cleaner
-than try/except when you genuinely do not care about the failure.u
-Other exceptions still propagate.u
+than try/except when you genuinely do not care about the failure.
+Other exceptions still propagate.
 
 ---
 
-##redirecting stdout temporarily
+## redirecting stdout temporarily
 
 ```python
 import contextlib
@@ -62,7 +62,7 @@ print(s.strip())
 ```
 
 With everything wrapped, capture print output without touching
-global state permanently. redirect_stderr exists too.u
+global state permanently. redirect_stderr exists too.
 
 ---
 
@@ -87,11 +87,11 @@ print(t.elapsed)
 __enter__ runs at entry, may return the value bound to as.
 __exit__ runs at exit, receives exception info (None when clean).
 Return False (default state, propagate exceptions; True would
-swallow them.u
+swallow them.
 
 ---
 
-##@contextmanager - generator-based
+## @contextmanager - generator-based
 
 ```python
 from contextlib import contextmanager
@@ -109,9 +109,9 @@ def temporary_change(obj,key,value):
 
 The function runs up to yield on entry. If the block raises,
 an exception re-raises at the yield line,and finally restores. 
-**
+
 This is the easiest way to author most context managers - much
-shorter than a class.u
+shorter than a class.
 
 ---
 
@@ -130,7 +130,7 @@ with lock:
 
 Lock objects are context managers natively. The mutex releases
 at block exit, even if the code inside raises-and other threads
-are never left deadlocked.u
+are never left deadlocked.
 
 ---
 
@@ -146,7 +146,7 @@ with open("config.json" )as f:
 
 Context manager handles cleanup; try/except handles data
 errors. The two compose cleanly - cleanup still happens even
-when the inner except catches.u
+when the inner except catches.
 
 ---
 

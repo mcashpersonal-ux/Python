@@ -2,11 +2,11 @@
 
 > Tests catch regressions early and document expected behavior.
 > Write them before fixing bugs- a test that fails first proves
-> the bug existed and that your fix works.u
+> the bug existed and that your fix works.
 
 ---
 
-##pytest- first test
+## pytest- first test
 
 ```python
 # test_math.py
@@ -22,11 +22,11 @@ def test_add_strings():
 
 Run with: pytest. pytest finds test_* functions automatically,
 asserting with plain assert (no unittest ceremony). Failure output
-shows the full diff for easy diagnosis.u
+shows the full diff for easy diagnosis.
 
 ---
 
-##parametrize- one test,many cases
+## parametrize- one test,many cases
 
 ```python
 import pytest
@@ -45,11 +45,11 @@ def test_add(a, b, expected):
 
 Parametrize runs the same body over a table of cases- one
 failure names the failing row. Beware float rounding- pick exact
-expected values or use pytest.approx.u
+expected values or use pytest.approx.
 
 ---
 
-##fixtures- shared setup
+## fixtures- shared setup
 
 ```python
 import pytest
@@ -71,11 +71,11 @@ def test_empty(db):
 Fixture yeilds setup thene teardown- fresh state per test. Each
 test gets its own db,so tests cannot leak into each other.
 
-Order does not matter- fixtures compose via dependency.u
+Order does not matter- fixtures compose via dependency.
 
 ---
 
-##temporary files- tmp_path
+## temporary files- tmp_path
 
 ```python
 import pytest
@@ -88,11 +88,11 @@ def test_write(tmp_path):
 
 tmp_path gives each test a fresh temp dir- cleaned up
 automatically. Perfect for file-based code without polluting
-the repo. No need to hand-roll mkdtemp/rmtree.u
+the repo. No need to hand-roll mkdtemp/rmtree.
 
 ---
 
-##mocking- unittest.mock
+## mocking- unittest.mock
 
 ```python
 from unittest.mock import Mock
@@ -109,11 +109,11 @@ assert resp["ok"] is True
 Mock replaces slow or flaky dependencies (APIs, clock, random).
 Set up return chains via .return_value. assert_called_with
 verifies args afterward. Mock only for boundaries- not the logic
-you own.u
+you own.
 
 ---
 
-##debugging- pdb
+## debugging- pdb
 
 ```python
 def divide(a,b):
@@ -128,11 +128,11 @@ def main():
 
 breakpoint() drops you into pdb at that line- inspect vars,
 step with n, print with p, continue with c. For non-interactive
-use, add temporary print() or logging.debug(u
+use, add temporary print() or logging.debug(
 
 ---
 
-##assertraises- testing errors
+## assertraises- testing errors
 
 ```python
 import pytest
@@ -147,12 +147,12 @@ def test_validates():
         validate(-1)
 ```
 
-pytest.raises asserts the block raises- failing if it does?t.**
+pytest.raises asserts the block raises- failing if it does?t.
 You can repr(e.value) for the message, or match= regex. Test the
-happy path too- errors are not the only contract.u
+happy path too- errors are not the only contract.
 
 ---
 
-##Next steps
+## Next steps
 
 go to Type Hints at advanced/type-hints.md

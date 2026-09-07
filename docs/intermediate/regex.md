@@ -1,13 +1,13 @@
-# 18 - Regular Expressions
+# 17 - Regular Expressions
 
 > Regex finds patterns in text - validation, extraction,
 > replacement, splitting. Python's re module is concise but
 > quirky: raw strings,re.compile, and capture groups cover
-> 90 percent of everyday use.u
+> 90 percent of everyday use.
 
 ---
 
-##the basics - re.search vs re.match
+## the basics - re.search vs re.match
 
 ```python
 import re
@@ -23,7 +23,7 @@ print(bool(anchor)) # True
 
 re.search finds the pattern anywhere; re.match anchors to
 the start. \d means digit,+ means one or more. Always use
-raw strings (r-prefix) so backslashes reach the engine.u
+raw strings (r-prefix) so backslashes reach the engine.
 
 ---
 
@@ -42,7 +42,7 @@ print(hexes) # ['0x1F','0xab']
 ```
 
 \d{3} = exactly three digits; [0-9a-fA-F] = hex
-digit class. findall returnsevery match as a list.u
+digit class. findall returnsevery match as a list.
 
 ---
 
@@ -59,7 +59,7 @@ print(m.groups()) # ('2026','09','07')
 ```
 
 Parentheses capture, and m.group(n) pulls numberd group;
-m.groups() gives all. Name them and read them: (?P<year>\d{4}).u
+m.groups() gives all. Name them and read them: (?P<year>\d{4}).
 
 ---
 
@@ -73,9 +73,9 @@ print(m.group("month")) # 09
 ```
 
 (?P<name>..) names a group - self-documenting patterns.
-**
+
 For long patterns, names beat positions: reorder the pattern
-and named back-references still line up.u
+and named back-references still line up.
 
 ---
 
@@ -91,8 +91,8 @@ parts = re.findall(r"(\d+):(\d+)","10:30,12:45")
 print(parts) # [('10','30'),('12','45')]
 ```
 
-findall returns non-capturing: each match list. With groups,]
-each match becomes a tuple of groups- handy for table data.u
+findall returns each match as a list. With groups,
+each match becomes a tuple of groups- handy for table data.
 
 ---
 
@@ -107,10 +107,10 @@ for m in re.finditer(r"\bcat\b",text):
     print(m.span())
 ```
 
-finditer yields match objects lazily- good for huge texts`
-(no giant list)and for using spans,end positions. \b is
-a word boundary- so "cat" tag matches bot "cat" in "cat",
-neither in "concat".u
+finditer yields match objects lazily - good for huge texts
+(no giant list) and for using spans and end positions. `\b` is
+a word boundary, so `\bcat\b` matches `cat` in `cat`,
+but not the `cat` inside `concat`.
 
 ---
 
@@ -127,7 +127,7 @@ print(redacted) # meet at HH:MM
 ```
 
 sub replaces every non-overlapping match. Use a function
-as replacement for dynamic output: re.sub(pattern, lambda m:m.group(0).upper(), text).u
+as replacement for dynamic output: re.sub(pattern, lambda m:m.group(0).upper(), text).
 
 ---
 
@@ -144,7 +144,7 @@ print(parts) # ['x','y','z']
 ```
 
 re.split cuts on any match- multi-delimiter, run-length
-tolerant. It beats str.split when delimiters vary.u
+tolerant. It beats str.split when delimiters vary.
 
 ---
 
@@ -163,12 +163,12 @@ for text in texts:
 
 Pre-compile patterns used many times: the engine caches,but
 compile makes intent clear and lets you attach flags once.
-**
+
 `re.VERBOSE` lets you lay out patterns with comments - big
-win for complex regex.u
+win for complex regex.
 
 ---
 
-##Next steps
+## Next steps
 
 go to VEnv & Packaging at intermediate/venv-packaging.md

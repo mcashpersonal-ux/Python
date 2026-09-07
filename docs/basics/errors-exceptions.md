@@ -2,7 +2,7 @@
 
 > Errors happen. Exceptions are Python way of handing them
 > to you: signal, propagate, and catch. Handle what you
-> can, let the rest crash loudly.u
+> can, let the rest crash loudly.
 
 ---
 
@@ -25,7 +25,7 @@ ZeroDivisionError: division by zero
 
 Read bottom-up: last line is the exception type and message,
 the line above points to the exact spot. The outer frames show
-what called what.u
+what called what.
 
 ---
 
@@ -39,8 +39,8 @@ except ValueError:
 ```
 
 Code in try runs. If an exception of the named type flies,
-the except block runs instead of crashing.u Catch the narrowest
-type you can - ValueError, not Exception.u
+the except block runs instead of crashing. Catch the narrowest
+type you can - ValueError, not Exception.
 
 ---
 
@@ -54,7 +54,7 @@ except ValueError as e:
 ```
 
 `as e` gives you the exception object,whose str(e) describes
-what went wrong. Log it, show it, or wrap it.u
+what went wrong. Log it, show it, or wrap it.
 
 ---
 
@@ -71,7 +71,7 @@ except ValueError:
 ```
 
 Python checks except clauses top to bottom,and runs the first
-match. Order matters: specific first, generic last.u
+match. Order matters: specific first, generic last.
 
 ---
 
@@ -88,7 +88,7 @@ else:
 
 else runs only if try succeeded-without an exception. It keeps
 success-path code out of the try block,so you do not accidentally
-swallow unrelated errors.u
+swallow unrelated errors.
 
 ---
 
@@ -107,8 +107,8 @@ print("closed")
 
 finally runs no matter what - exception or not. The classic
 use: release resources (files, locks, connections) even when
-the happy path dies.u Prefer with for this (see file-handling.md
-finish). but finally exists for cases with cannot express.u
+the happy path dies. Prefer with for this (see file-handling.md
+finish). But finally exists for cases with cannot express.
 
 ---
 
@@ -116,7 +116,7 @@ finish). but finally exists for cases with cannot express.u
 
 ```python
 def set_age(age):
-    if age < o:
+    if age < 0:
         raise ValueError("age must be positive")
     return age
 
@@ -125,7 +125,7 @@ set_age(-5)
 
 raise throws an exception on purpose-and it stops the function
 immediately. Raise ValueError, TypeError, or a custom one to
-enforce contracts on your functions.u
+enforce contracts on your functions.
 
 ---
 
@@ -144,7 +144,7 @@ def load_config(path):
 
 Subclass Exception to make your own error type. Callers can
 then catch ConfigError specifically-and you can attach extra
-fields to carry context.u
+fields to carry context.
 
 ---
 
@@ -159,7 +159,7 @@ except ValueError as e:
 
 `from e` chains the two exceptions: the outer message explains
 context, the inner (__cause__) preserves the original root
-cause. Exception groups in tracebacks, perfect for debugging.u
+cause. Exception groups in tracebacks, perfect for debugging.
 
 ---
 
@@ -180,7 +180,7 @@ except KeyError:
 ```
 
 Python culture prefers EAFP: just try, catch what fails.
-It avoids race conditions and duplicated lookups.u
+It avoids race conditions and duplicated lookups.
 
 ---
 

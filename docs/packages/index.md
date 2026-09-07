@@ -11,7 +11,7 @@
 
 | Package | PyPI name | What it does |
 |---|---|---|
-| Modbus TCP/RTU | `pymodbus` | Client/server Modbus — reads/writes coils, registers over TCP(e.g. 502)1 RTU, ASCII |
+| Modbus TCP/RTU | `pymodbus` | Client/server Modbus — reads/writes coils and registers over TCP (for example, port 502), RTU, or ASCII |
 | Modbus (simple) | `minimalmodbus` | Tiny serial-only Modbus RTU for instruments, sensors |
 | Modbus toolkit | `modbus-tk` | Generic Modbus fieldbus toolkit — TCP, RTU, easier framing |
 | Modbus TCP | `pyModbusTCP` | Minimal Modbus TCP client, zero or few deps |
@@ -27,7 +27,7 @@
 | CAN bus | `python-can` | CAN networking — read/write frames over USB/PCAN/SocketCAN |
 | Serial ports | `pyserial` | Cross-platform serial port I/O — RS-232/485 for sensors, meters |
 
-> Tip: For a SCADA of shorts (any vendor), first identify the wire protocol — Modbus TCP/serial, OPC UA, SNMP, MQTT, CAN, S7, or ADS — and pick the matching row. Most SCADA gateways expose Modbus TCP or OPC UA as convenience interfaces.
+> Tip: For a SCADA system (any vendor), first identify the wire protocol — Modbus TCP/serial, OPC UA, SNMP, MQTT, CAN, S7, or ADS — and pick the matching row. Most SCADA gateways expose Modbus TCP or OPC UA as convenience interfaces.
 
 ---
 
@@ -41,7 +41,7 @@
 | MySQL | `pymysql` | Pure-Python MySQL client |
 | MongoDB | `pymongo` | Official MongoDB driver — docs, aggregations, gridfs |
 | Redis | `redis` | In-memory key-value store client — caching, queues, pub/sub |
-| InfluxDB | `influxdb-client` | Time-series DB client — perfect fort industrial telemetry logging |
+| InfluxDB | `influxdb-client` | Time-series DB client — well suited for industrial telemetry logging |
 | SQLite async | `aiosqlite` | Async wrapper around sqlite3 for asyncio apps |
 
 ---
@@ -52,7 +52,7 @@
 |---|---|---|
 | HTTP client (simple) | `requests` | The de-facto HTTP client — REST APIs, tokens, files |
 | HTTP client (async) | `httpx` | Async + sync HTTP, HTTP/2, drop-in requests-like |
-| HTTP client (low-level) | `urllib3` | Underlying HTTP engine requests/httpx build on |
+| HTTP client (low-level) | `urllib3` | Low-level HTTP connection pooling; Requests uses it, while HTTPX uses httpcore |
 | Async HTTP | `aiohttp` | Asyncio HTTP client/server — web scraping at scale |
 | HTML parsing | `beautifulsoup4` | Parse messy HTML — find tags, tables, links |
 | Fast HTML/XML | `lxml` | C-speed HTML/XML processing — pairs with bs4 |
@@ -87,7 +87,7 @@
 | Package | PyPI name | What it does |
 |---|---|---|
 | CLI framework | `click` | Compose command-line tools from functions |
-| CLI framework (modern) | `typer` | Type-hint drivenCLI — builds on click |
+| CLI framework (modern) | `typer` | Type-hint driven CLI — builds on click |
 | Progress bars | `tqdm` | Instant progress bars over loops — must-have |
 | Pretty output | `rich` | Colorized tables, logs, syntax-highlighted terminal |
 | Logging | `structlog` | Structured JSON logs for services — greppable at scale |
@@ -138,6 +138,6 @@
 
 ## Next steps
 
-Each table row will bloom intoa dedicated tutorial page under this section.
+Each table row will bloom into a dedicated tutorial page under this section.
 Pick a row you use at work (the SCADA/Modbus/OPC UA rows are prime candidates),
 and we will go deep: install, connect, read/write data, handle errors, real snippet.

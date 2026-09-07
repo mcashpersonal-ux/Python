@@ -2,7 +2,7 @@
 
 > A decorator wraps a function to add behavior before and
 > after it runs - without touching the function's code. It is
-> just a callable that takes a function and returns a function.u
+> just a callable that takes a function and returns a function.
 
 ---
 
@@ -10,8 +10,8 @@
 
 ```python
 def shout(func):
-    def wrapper(self,*args,**kwargs):
-        result = func(*args,**kwargs)
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
         return result.upper()
     return wrapper
 
@@ -26,11 +26,11 @@ print(greet())
 shout receives greet,and returns wrapper. Later calls to greet
 actually run wrapper,which calls the original then post-processes.
  The
-name greet is rebound to wrapper - that is decoration,by hand.u
+name greet is rebound to wrapper - that is decoration,by hand.
 
 ---
 
-##@ syntax - the sugar
+## @ syntax - the sugar
 
 ```python
 def shout(func):
@@ -48,8 +48,8 @@ print(greet())
 ```
 
 `@shout` above the def does exactly what the manual rebinding
-did - cleaner. The decorator runs once at definition time,u
-not per call.u
+did - cleaner. The decorator runs once at definition time,
+not per call.
 
 ---
 
@@ -76,7 +76,7 @@ print(greet.__doc__)
 
 wraps copies __name__, __doc__, and other metadata from the
 original onto the wrapper. Without it, debugging and docs tooling
-see "wrapper" everywhere.u
+see "wrapper" everywhere.
 
 ---
 
@@ -100,7 +100,7 @@ def say_hi():
 ```
 
 To pass args to a decorator, add another layer: repeat(times)returns decorator, which returns wrapper. Call shape:
-@repeat(3)di the definition.u
+@repeat(3)di the definition.
 
 ---
 
@@ -132,7 +132,7 @@ work()
 try/finally guarantees the timing print runs even when the
 function raises. perf_counter is the right clock for short
 intervals. This decorator pattern is copy-paste-ready for
-profiling (see performance.md).u
+profiling (see performance.md).
 
 ---
 
@@ -151,7 +151,7 @@ print(fib(40)) # 102334155 - instant,not minutes
 ```
 
 lru_cache stores results by arguments,and reuses them. The
-recursive fib explodes without it; with it, each n computed once.u
+recursive fib explodes without it; with it, each n computed once.
 
 ---
 
@@ -182,11 +182,11 @@ print(hello())
 ```
 
 Decorators apply bottom-up: italic wraps hello first, then bold
-wraps that. Read @ lines top-to-bottom as outermost last.u
+wraps that. Read @ lines top-to-bottom as outermost last.
 
 ---
 
-##class-based decorator
+## class-based decorator
 
 ```python
 from functools import wraps
@@ -211,7 +211,7 @@ print(CountCalls.__dict__)
 
 A class with __call__ can be a decorator too: creating the
 instance runs __init__(binding the func,and then every call runs
-__call__. Keep state on the instance.u
+__call__. Keep state on the instance.
 
 ---
 

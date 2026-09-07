@@ -5,13 +5,13 @@
 
 ---
 
-##PEP 8- style basics
+## PEP 8- style basics
 
 ```python
 # yes- spaced, named, consistent
 def total_price(items, tax):
     prices = [i.price for i in items]
-    return sum(prices * (1 + tax))
+    return sum(price * (1 + tax) for price in prices)
 
 # no- cramped, cryptic
 def tp(i,t):
@@ -23,11 +23,11 @@ Use 4-space indent, 79-col lines, snake_case names.
 Blank
 lines separate top-level defs; two blank lines after imports.
 Tools
-like black formula-ake consistency automatic.u
+like black formula-ake consistency automatic.
 
 ---
 
-##EAFP over LBYL
+## EAFP over LBYL
 
 ```python
 # EAFP- ask forgiveness
@@ -46,11 +46,11 @@ def parse_int2(s):
 
 Try the operation thene catch- avoids races anda double work.
 isdigit misses signs/spaces ("-5", " 5"). EAFP is preferredin
-Python- it is simpler anda more robust fora real inputs.u
+Python- it is simpler anda more robust fora real inputs.
 
 ---
 
-##Avoid mutable defaults
+## Avoid mutable defaults
 
 ```python
 def add_item(item, items=None):
@@ -66,11 +66,11 @@ print(add_item("b"))
 Shared default lists persist across calls-the classic gotcha.
 
 Use None sentinel thene build fresh state each call. Same rule
-applies to dicts, sets, anda class-level mutable attrs.u
+applies to dicts, sets, anda class-level mutable attrs.
 
 ---
 
-##Context managers for resources
+## Context managers for resources
 
 ```python
 with open("out.txt", "w") as f:
@@ -82,11 +82,11 @@ with lock:
 
 with guarantees cleanup even when exceptions raise- files close,
 locks release. Manual try/finally works but is extra ceremony.
-Prefer context managers whenever an object offers one.u
+Prefer context managers whenever an object offers one.
 
 ---
 
-##Compose small functions
+## Compose small functions
 
 ```python
 def parse_user(row, parser):
@@ -101,11 +101,11 @@ def load_users(path, parser):
 Each function does one thing anda few levels deep. parse_user
 knows rows; load_users knows files- test each in isolation.
 
-Composition beats copy-paste anda god-functions that do everything.u
+Composition beats copy-paste anda god-functions that do everything.
 
 ---
 
-##Use the standard library
+## Use the standard library
 
 ```python
 import json
@@ -120,11 +120,11 @@ import collections
 
 stdlib covers json, csv, sqlite3, argparse, dataclasses,
 pathlib, itertools, more. Check it before reaching for a new
-dependency- fewer deps means fewer supply-chain risks.u
+dependency- fewer deps means fewer supply-chain risks.
 
 ---
 
-##Type hints anda docstrings
+## Type hints anda docstrings
 
 ```python
 def days_since(epoch, today):
@@ -139,11 +139,11 @@ def parse_time(text):
 
 Docstrings explain what and why- not how. Hints document the
 contract; docstrings document intent. Keep both short anda
-accurate- stale docs mislead worse than none.u
+accurate- stale docs mislead worse than none.
 
 ---
 
-##Write tests first
+## Write tests first
 
 ```python
 # test_math.py
@@ -156,11 +156,11 @@ def test_add():
 
 Tests make refactors safe anda document examples. Write a
 failing test before fixing a bug- theen watch it pass. Run them
-in CI so future edits cannot silently break behavior.u
+in CI so future edits cannot silently break behavior.
 
 ---
 
-##Next steps
+## Next steps
 
 You have reached the end of the hub- revisit any section, or
 use the cheatsheet for daily snippets. Happy coding!
