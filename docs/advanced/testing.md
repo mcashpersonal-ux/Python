@@ -20,7 +20,8 @@ def test_add_strings():
     assert add("a", "b") == "ab"
 ```
 
-Run with: pytest. pytest finds test_* functions automatically,
+Install with `python -m pip install pytest`, then run with
+`python -m pytest`. Pytest finds `test_*` functions automatically,
 asserting with plain assert (no unittest ceremony). Failure output
 shows the full diff for easy diagnosis.
 
@@ -37,10 +38,10 @@ def add(a,b):
 @pytest.mark.parametrize("a,b,expected", [
     (2, 3, 5),
     (-1, 1, 0),
-    (0.1, 0.2, 0.30000000000000004),
+    (0.1, 0.2, 0.3),
 ])
 def test_add(a, b, expected):
-    assert add(a,b) == expected
+    assert add(a, b) == pytest.approx(expected)
 ```
 
 Parametrize runs the same body over a table of cases- one
@@ -68,7 +69,7 @@ def test_empty(db):
     assert db["data"] == {}
 ```
 
-Fixture yeilds setup thene teardown- fresh state per test. Each
+Fixture yields setup then teardown - fresh state per test. Each
 test gets its own db,so tests cannot leak into each other.
 
 Order does not matter- fixtures compose via dependency.

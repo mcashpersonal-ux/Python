@@ -68,7 +68,7 @@ first. Same result, fraction of the memory.
 nums = (x * x for x in range(10))
 print(sum(nums)) # 285
 
-evens = (x for x in range(10) if x % 2 == o)
+evens = (x for x in range(10) if x % 2 == 0)
 ```
 
 Parenthesized comprehension = generator expression. It makes
@@ -81,7 +81,7 @@ no list - lazy. Prefer it when you only iterate once.
 ```python
 def naturals():
     n = 1
-    while true:
+    while True:
         yield n
         n += 1
 
@@ -141,7 +141,7 @@ of equal items. Every function there returns an iterator.
 ```python
 def accumulator():
     total = 0
-    while true:
+    while True:
         value = yield total
         total += value
 

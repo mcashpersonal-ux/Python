@@ -169,7 +169,7 @@ then add your own.
 ## dataclasses - less boilerplate
 
 ```python
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 @dataclass
 class User:
@@ -178,9 +178,12 @@ class User:
     tags: list = field(default_factory=list)
 ```
 
-Dataclasses auto-generate __init__, __repr__, __eq__, and__hash__
-from annotations. field(default_factory=list) gives each
-instance a fresh list - never use mutable defaults.
+Dataclasses auto-generate __init__, __repr__, and __eq__ from the
+annotations. A normal mutable dataclass is not hashable by default;
+use `frozen=True` only when immutability is appropriate.
+
+`field(default_factory=list)` gives each instance a fresh list - never
+use a mutable default directly.
 
 ---
 

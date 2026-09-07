@@ -131,6 +131,8 @@ import threading
 import queue
 import time
 
+q = queue.Queue()
+
 def producer(q):
     for i in range(5):
         q.put(i)
@@ -152,7 +154,7 @@ t2.join()
 print()
 ```
 
-queue.Queue is thread-safe- no locking needed tp enqueue/
+queue.Queue is thread-safe - no locking is needed to enqueue/
 dequeue. None sentinel ends the consumer. Two threads,one
 serialized handoff channel.
 

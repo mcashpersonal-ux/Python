@@ -129,7 +129,7 @@ list.sort().
 ```python
 nums = [1,2,3]
 
-has_even = any(x % 2 == o for x in nums)
+has_even = any(x % 2 == 0 for x in nums)
 all_positive = all(x > 0 for x in nums)
 
 # True True
