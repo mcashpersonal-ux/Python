@@ -1,0 +1,18 @@
+# Python/MkDocs
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.venv/
+venv/
+env/
+*.log
+site/
+.cache/
+.mkdocs-cache/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

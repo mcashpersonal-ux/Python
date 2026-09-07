@@ -1,0 +1,86 @@
+site_name: Python Tutorial Hub
+site_description: A personal Python tutorial — basic to advanced — with practical snippets and explanations.
+site_url: ""
+
+theme:
+  name: material
+  language: en
+  font: false
+  icon:
+    logo: material/language-python
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+copyright: Built with MkDocs Material — personal project
+
+extra:
+  generator: false
+
+nav:
+  - Home: index.md
+  - Quick Reference: cheatsheet.md
+  - "Basics":
+    - "01 — Getting Started": basics/getting-started.md
+    - "02 — Variables & Types": basics/variables-types.md
+    - "03 — Numbers & Strings": basics/numbers-strings.md
+    - "04 — Collections": basics/collections.md
+    - "05 — Control Flow": basics/control-flow.md
+    - "06 — Functions": basics/functions.md
+    - "07 — Modules & Packages": basics/modules-packages.md
+    - "08 — File Handling": basics/file-handling.md
+    - "09 — Errors & Exceptions": basics/errors-exceptions.md
+    - "10 — Comprehensions": basics/comprehensions.md
+  - "Intermediate":
+    - "11 — OOP": intermediate/oop.md
+    - "12 — Decorators": intermediate/decorators.md
+    - "13 — Generators": intermediate/generators.md
+    - "14 — Context Managers": intermediate/context-managers.md
+    - "15 — Lambda & Functional": intermediate/lambda-functional.md
+    - "16 — JSON & CSV": intermediate/json-csv.md
+    - "17 — Regular Expressions": intermediate/regex.md
+    - "18 — VEnv & Packaging": intermediate/venv-packaging.md
+  - "Advanced":
+    - "19 — Asyncio": advanced/asyncio.md
+    - "20 — Concurrency": advanced/concurrency.md
+    - "21 — Performance & Profiling": advanced/performance.md
+    - "22 — Testing": advanced/testing.md
+    - "23 — Type Hints": advanced/type-hints.md
+    - "24 — Design Patterns": advanced/design-patterns.md
+    - "25 — Best Practices": advanced/best-practices.md
