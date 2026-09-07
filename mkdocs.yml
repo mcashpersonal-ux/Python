@@ -86,3 +86,19 @@ nav:
     - "25 — Best Practices": advanced/best-practices.md
   - "Packages":
     - "Package Hub": packages/index.md
+    - "SCADA & Industrial":
+      - "26 — Modbus TCP (pymodbus)": packages/modbus-pymodbus.md
+      - "27 — Modbus RTU (minimalmodbus)": packages/minimalmodbus.md
+      - "28 — Modbus toolkit (modbus-tk)": packages/modbus-tk.md
+      - "29 — Modbus TCP minimal (pyModbusTCP)": packages/pymodbustcp.md
+      - "30 — Modbus lightweight (uModbus)": packages/umodbus.md
+      - "31 — OPC UA (asyncua)": packages/asyncua.md
+      - "32 — OPC UA legacy (opcua)": packages/opcua.md
+      - "33 — SNMP (pysnmp)": packages/pysnmp.md
+      - "34 — SNMP maintained fork (pysnmp-lextudio)": packages/pysnmp-lextudio.md
+      - "35 — MQTT (paho-mqtt)": packages/paho-mqtt.md
+      - "36 — MQTT async (aiomqtt)": packages/aiomqtt.md
+      - "37 — Siemens S7 (python-snap7)": packages/python-snap7.md
+      - "38 — Beckhoff TwinCAT (pyads)": packages/pyads.md
+      - "39 — CAN bus (python-can)": packages/python-can.md
+      - "40 — Serial ports (pyserial)": packages/pyserial.md
