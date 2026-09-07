@@ -149,3 +149,13 @@ nav:
       - "Date handling (dateutil)": packages/dateutil.md
       - "Date handling (Pendulum)": packages/pendulum.md
       - "Date handling (Arrow)": packages/arrow.md
+    - "Web Frameworks & APIs":
+      - "FastAPI": packages/fastapi.md
+      - "ASGI server (Uvicorn)": packages/uvicorn.md
+      - "Flask": packages/flask.md
+      - "Django": packages/django.md
+      - "ASGI toolkit (Starlette)": packages/starlette.md
+      - "Templates (Jinja2)": packages/jinja2.md
+      - "ORM (SQLAlchemy)": packages/sqlalchemy.md
+      - "Migrations (Alembic)": packages/alembic.md
+      - "Telemetry (OpenTelemetry)": packages/opentelemetry-api.md
