@@ -44,7 +44,7 @@ conn.commit()
 ```
 
 PyMySQL doesn't autocommit by default — always call `conn.commit()`, or
-pass `autocommit=True` to `pymysql.connect(...)`.
+pass `autocommit=True` to `pymysql.connect(..)`.
 
 ---
 

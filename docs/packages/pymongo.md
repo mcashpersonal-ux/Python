@@ -41,7 +41,7 @@ for doc in readings.find({"value": {"$gt": 20}}):
 one = readings.find_one({"sensor": "line1"})
 ```
 
-`find` returns a lazy cursor — iterate it or call `list(...)` to
+`find` returns a lazy cursor — iterate it or call `list(..)` to
 materialize; don't call it repeatedly expecting cached results.
 
 ---
@@ -76,7 +76,7 @@ from pymongo.errors import DuplicateKeyError, ServerSelectionTimeoutError
 
 try:
     readings.insert_one({"_id": "line1", "value": 23.4})
-    readings.insert_one({"_id": "line1", "value": 25.0})  # duplicate _id
+    readings.insert_one({"_id": "line1", "value": 25.0}) # duplicate _id
 except DuplicateKeyError as e:
     print("duplicate key:", e)
 except ServerSelectionTimeoutError as e:

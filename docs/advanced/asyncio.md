@@ -1,9 +1,9 @@
 # 19 — Asyncio
 
 > asyncio runs async I/O on a single thread- thousands of
-> sockets,, files,,and http calls without threads. The mental
+> sockets, files,and http calls without threads. The mental
 > model: await yields control back to the event loop while
-> an operation completes in the background.u৹
+> an operation completes in the background.u
 
 ---
 
@@ -23,9 +23,7 @@ asyncio.run(main())
 async def defines a coroutine; await suspends it until
 the awaited thing finishes. asyncio.run() bootsthera event
 loop, runs your coroutine, cleans up. - never manage
-the loop by hand.u৹
-
-
+the loop by hand.u
 
 ---
 
@@ -42,16 +40,14 @@ async def main():
     t1 = asyncio.create_task(fetch("a",1))
     t2 = asyncio.create_task(fetch("b",2))
     print(await asyncio.gather(t1,t2))
-    #  ['a done','b done']
+    # ['a done','b done']
 
 asyncio.run(main())
 ```
 
 create_task schedules coroutines to run in the background;
 gather awaits them all and collects results in order. Total
-time ~2s,not 3: the sleeps overlap.u৹
-
-
+time ~2s,not 3: the sleeps overlap.u
 
 ---
 
@@ -75,9 +71,7 @@ asyncio.run(main())
 
 wait_for races coroutine against a timeout. If it loses,
 it cancels the task and raises TimeoutError- clean way to
-bound external calls like db/http.u৹
-
-
+bound external calls like db/http.u
 
 ---
 
@@ -98,9 +92,7 @@ asyncio.run(main())
 
 aiohttp: async http client. async with manages the session
 and response lifetime; await resp.json() reads body without
-blocking the loop. (Snippet needs: pip install aiohttp(u৹
-
-
+blocking the loop. (Snippet needs: pip install aiohttp(u
 
 ---
 
@@ -125,9 +117,7 @@ async def main():
 
 task.cancel() requests cancellation; the coroutine sees
 CancelledError at its next suspension point. Wrap cleanup in
-try/finally if cancel may leave resources open.u৹
-
-
+try/finally if cancel may leave resources open.u
 
 ---
 
@@ -139,7 +129,7 @@ import asyncio
 async def producer(q):
     for i in range(5):
         await q.put(i)
-    await q.put(None)   # sentinel
+    await q.put(None) # sentinel
 
 async def consumer(q):
     while True:
@@ -157,9 +147,7 @@ asyncio.run(main())
 
 Queue passes values between coroutines. None acts as a
 sentinel- the polite way to say " done". gather runs producer
-and consumer interleaved on one loop.u৹
-
-
+and consumer interleaved on one loop.u
 
 ---
 
@@ -175,13 +163,13 @@ def blocking():
 
 async def main():
     r = await asyncio.to_thread(blocking)
-    print(r)    # result -- after ~2s,loop stays free
+    print(r) # result -- after ~2s,loop stays free
 ```
 
 Sync CPU/IO functions would starve the loop- wrap theme in
 asyncio.to_thread to run on a worker thread while awaiting.
 
-(For CPU-bound work prefer run_in_executor with ProcessPool(u৹
+(For CPU-bound work prefer run_in_executor with ProcessPool(u
 
 ---
 

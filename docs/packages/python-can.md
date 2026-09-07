@@ -20,7 +20,7 @@ pip install python-can
 ```python
 import can
 
-bus = can.interface.Bus(channel="can0", interface="socketcan")  # Linux SocketCAN
+bus = can.interface.Bus(channel="can0", interface="socketcan") # Linux SocketCAN
 
 message = can.Message(arbitration_id=0x123, data=[0x01, 0x02, 0x03], is_extended_id=False)
 bus.send(message)
@@ -35,7 +35,7 @@ bus.send(message)
 ## receive frames
 
 ```python
-message = bus.recv(timeout=1.0)  # blocks up to 1s, returns None on timeout
+message = bus.recv(timeout=1.0) # blocks up to 1s, returns None on timeout
 if message is not None:
     print(message)
 ```

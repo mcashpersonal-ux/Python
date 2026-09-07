@@ -72,7 +72,7 @@ import streamlit as st
 def load_data():
     return pd.read_csv("large_file.csv")
 
-df = load_data()  # only re-runs the function when inputs change
+df = load_data() # only re-runs the function when inputs change
 ```
 
 Without caching, a slow load would re-run on every widget interaction —

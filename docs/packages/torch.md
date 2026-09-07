@@ -24,8 +24,8 @@ import torch
 
 x = torch.tensor([1.0, 2.0, 3.0], requires_grad=True)
 y = (x ** 2).sum()
-y.backward()          # compute gradients
-print(x.grad)          # d(y)/d(x) = 2x -> [2., 4., 6.]
+y.backward() # compute gradients
+print(x.grad) # d(y)/d(x) = 2x -> [2., 4., 6.]
 ```
 
 `requires_grad=True` tells PyTorch to track operations on this tensor so

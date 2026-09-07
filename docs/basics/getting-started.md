@@ -44,7 +44,7 @@ print() writes its argument to the terminal - that's the whole hello world.
 
 ---
 
-## The Python REPL</h2>
+## The Python REPL
 
 Types python (or python3) in a terminal and you get an interactive prompt:
 
@@ -60,14 +60,12 @@ Types python (or python3) in a terminal and you get an interactive prompt:
 The REPL evaluates each line immediately - perfect for testing small ideas
 without creating files.
 
-
-
-The underscore holds the last result. help() and dir() give in-line docs..
+The underscore holds the last result. help() and dir() give in-line docs.
 !
 
 ---
 
-## Running Python files</h2>
+## Running Python files
 
 | Command | Does what |
 |----------|----------|
@@ -87,7 +85,7 @@ total = price * qty
 ```
 
 Docstrings are explained in Functions - they document code that survives
-in help()..
+in help().
 
 ---
 

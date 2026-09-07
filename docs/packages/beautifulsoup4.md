@@ -58,7 +58,7 @@ for p in prices:
 ```python
 table = soup.find("table", class_="data")
 rows = []
-for tr in table.find_all("tr")[1:]:  # skip header row
+for tr in table.find_all("tr")[1:]: # skip header row
     cells = [td.text.strip() for td in tr.find_all("td")]
     rows.append(cells)
 print(rows)
@@ -70,7 +70,7 @@ print(rows)
 
 ```python
 node = soup.find("span", class_="value")
-print(node.parent.name)         # containing tag
+print(node.parent.name) # containing tag
 print(node.find_next_sibling()) # next element at the same level
 ```
 

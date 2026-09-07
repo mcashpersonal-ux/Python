@@ -19,39 +19,33 @@ elif score >= 60:
 else:
     grade = "F"
 
-print(grade)   # B
+print(grade) # B
 ```
 
 Python evaluates the conditions top to bottom and runs
 the first block whose condition is trueth. Useful for grading,
 routing, validating input.
 
-
-
 ---
 
-## Truthiness - what counts as false</h2>
+## Truthiness - what counts as false
 
 ```python
-if []:      # empty list is false
+if []: # empty list is false
     print("won't run")
 
-if 0:     # zero is false
+if 0: # zero is false
     print("won't run either")
 
-if "":      # empty string is false
+if "": # empty string is false
     print("nope")
 
-if None:    # None is false
+if None: # None is false
     print("no")
 ```
 
 Falsey values: None, False,zero(0,0.0),empty containers("",[],[),{}). Everything else
 is truthy. Use if collection: to guard against empty data.
-
-
-
-
 
 ---
 
@@ -74,17 +68,15 @@ for i,name in enumerate(names):
 for runs the body once per item. enumerate gives you
 the index alongside the value - handy for numbering rows.uä
 
-
-
 ---
 
 ## range - numeric loops
 
 ```python
-for n in range(5):       # 0,1,2,3,4
+for n in range(5): # 0,1,2,3,4
     print(n)
 
-for n in range(2,6):   # 2,3,4,5
+for n in range(2,6): # 2,3,4,5
     print(n)
 
 for n in range(0,10,2): # evens
@@ -95,8 +87,6 @@ range(start, stop, step) makes a lazy numeric sequence.
  baked
 step costs nothing; stop is exclusive.u།
 
-
-
 ---
 
 ## while - loop until condition changes
@@ -105,7 +95,7 @@ step costs nothing; stop is exclusive.u།
 n = 0
 while n < 3:
     print(n)
-    n +=  1
+    n += 1
 # prints 0,1,2
 ```
 
@@ -114,8 +104,6 @@ make progress toward making the condition false - or you
 infinite-loop. Use for: polling, retry logic, countdowns.
 
 ϩ
-
-
 
 ---
 
@@ -132,8 +120,6 @@ for n in range(100):
 break exits the loop immediately, skipping remaining
 iterations. Classic use: search until found, cap a retry count.uai
 
-
-
 ---
 
 ## continue - skip one iteration
@@ -148,8 +134,6 @@ for n in range(6):
 
 continue jumps straight to the next iteration,skipping
 the rest of the body for this round.uapt
-
-
 
 ---
 
@@ -173,7 +157,7 @@ _ matches anything as the final fallback.uams
 
 ---
 
-## Choosing a loop</h2>
+## Choosing a loop
 
 | Loop | Use when |
 |------|-----------|

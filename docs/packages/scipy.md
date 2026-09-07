@@ -76,7 +76,7 @@ x = np.array([0, 1, 2, 3])
 y = np.array([10, 20, 15, 25])
 
 f = interp1d(x, y, kind="linear")
-print(f(1.5))  # interpolated value between known points
+print(f(1.5)) # interpolated value between known points
 ```
 
 ---
@@ -97,7 +97,7 @@ except RuntimeError as e:
 ```
 
 `curve_fit` raising `RuntimeError` usually means bad initial guesses —
-pass `p0=[...]` with reasonable starting values for the parameters.
+pass `p0=[..]` with reasonable starting values for the parameters.
 
 ---
 

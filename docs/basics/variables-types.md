@@ -13,12 +13,12 @@ height = 1.68
 is_student = False
 ```
 
-- A variable is created the moment you assign it; no declaration needed..
-- `=` is assignment — put the value on the right into the name on the left..
+- A variable is created the moment you assign it; no declaration needed.
+- `=` is assignment — put the value on the right into the name on the left.
 - Naming rules: letters,digits,`_`;; can't start witha digit;; case-sensitive (`Age` ≠ `age`).
 
 !!! warning "Avoid these names"
-Python keywords are reserved: `if`,`for`,`while`,`def`,`class`,etc. Check with `keyword.kwlist`. Also avoid shadowing built-ins like `list`,`str`,`dict` — it breaks code that expects them..
+Python keywords are reserved: `if`,`for`,`while`,`def`,`class`,etc. Check with `keyword.kwlist`. Also avoid shadowing built-ins like `list`,`str`,`dict` — it breaks code that expects them.
 !!!
 
 ---
@@ -26,24 +26,24 @@ Python keywords are reserved: `if`,`for`,`while`,`def`,`class`,etc. Check with `
 ## Dynamic typing
 
 ```python
-x = 42          # x is an int
-x = "hello"      # now a str — no error!
+x = 42 # x is an int
+x = "hello" # now a str — no error!
 ```
 
-Because types go on values (not names),reassignment changes the type freely. This is convenient,but meangyou should keep names meaningful so bugs surface quickly..
+Because types go on values (not names),reassignment changes the type freely. This is convenient,but meangyou should keep names meaningful so bugs surface quickly.
 
 Use `type()` to inspect:
 
 ```python
-type(42)        # <class 'int'>
-type(3.14)     # <class 'float'>
-type("hi")        # <class 'str'>
-type([1,2])   # <class 'list'>
+type(42) # <class 'int'>
+type(3.14) # <class 'float'>
+type("hi") # <class 'str'>
+type([1,2]) # <class 'list'>
 ```
 
 ---
 
-## The core built-in types</h2>
+## The core built-in types
 
 | Type | Example | Mutable? | Use for |
 |-------|---------|-----------|---------|
@@ -64,12 +64,12 @@ def nothing():
     pass
 
 result = nothing()
-print(result)    # None
+print(result) # None
 ```
 
 ---
 
-## Type conversion</h2>
+## Type conversion
 
 | Call | Converts |
 |-------|----------|
@@ -81,22 +81,22 @@ print(result)    # None
 
 ```python
 age_str = "36"
-age = int(age_str)           # 36
-message = "I'm " + str(age)   # "I'm 36"
+age = int(age_str) # 36
+message = "I'm " + str(age) # "I'm 36"
 ```
 
 !!! tip "Truthiness"
-`bool(x)` is the same as `if x:`. Falsy values: `0`,`0.0`,`""`,`[]`,`()`,`{}`,`set()`,`None`. Everything else is truthy..
+`bool(x)` is the same as `if x:`. Falsy values: `0`,`0.0`,`""`,`[]`,`()`,`{}`,`set()`,`None`. Everything else is truthy.
 !!!
 
 ---
 
-## Multiple assignment & swapping</h2>
+## Multiple assignment & swapping
 
 ```python
-a,b = 1,2          # parallel assignment
-a,b = b,a          # swap — no temp needed!
-x = y = z = 0             # chain: all three are 0
+a,b = 1,2 # parallel assignment
+a,b = b,a # swap — no temp needed!
+x = y = z = 0 # chain: all three are 0
 ```
 
 ---
@@ -108,10 +108,10 @@ PI = 3.14159
 MAX_RETRIES = 5
 ```
 
-Python has no true constants — these are just variables titled in `ALL_CAPS` to signal "don't reassign". It's a strong convention;follow it..
+Python has no true constants — these are just variables titled in `ALL_CAPS` to signal "don't reassign". It's a strong convention;follow it.
 
 ---
 
-## Next steps</h2>
+## Next steps
 
 → [03 — Numbers & Strings](numbers-strings.md)

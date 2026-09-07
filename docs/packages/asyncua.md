@@ -66,7 +66,7 @@ async def subscribe():
     async with Client(url="opc.tcp://192.168.1.50:4840/freeopcua/server/") as client:
         node = client.get_node("ns=2;i=2")
         handler = Handler()
-        sub = await client.create_subscription(500, handler)  # ms interval
+        sub = await client.create_subscription(500, handler) # ms interval
         await sub.subscribe_data_change(node)
         await asyncio.sleep(60)
 ```

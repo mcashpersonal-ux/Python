@@ -69,7 +69,7 @@ changes — no manual event wiring needed.
 ```python
 from dash import dcc, Output, Input
 
-app.layout.children.append(dcc.Interval(id="tick", interval=5000))  # ms
+app.layout.children.append(dcc.Interval(id="tick", interval=5000)) # ms
 
 @app.callback(Output("chart", "figure"), Input("tick", "n_intervals"))
 def refresh(n):

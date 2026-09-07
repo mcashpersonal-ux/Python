@@ -23,7 +23,7 @@ import urllib3
 http = urllib3.PoolManager()
 resp = http.request("GET", "https://api.example.com/status", timeout=5.0)
 print(resp.status)
-print(resp.json())  # urllib3 2.x has a convenience .json() helper
+print(resp.json()) # urllib3 2.x has a convenience .json() helper
 ```
 
 `PoolManager` maintains a pool of connections per host — create one and

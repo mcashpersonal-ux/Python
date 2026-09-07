@@ -30,7 +30,7 @@ conn.close()
 ```
 
 Placeholders are `%s` regardless of the underlying column type — psycopg2
-adapts Python types (str, int, datetime, ...) to SQL automatically.
+adapts Python types (str, int, datetime, ..) to SQL automatically.
 
 ---
 

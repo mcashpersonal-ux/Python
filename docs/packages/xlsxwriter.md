@@ -92,7 +92,7 @@ except Exception as e:
 
 `XlsxWriter` mostly surfaces filesystem errors at `close()` time since
 writing is buffered until then — wrap the whole block, not just
-`Workbook(...)`.
+`Workbook(..)`.
 
 ---
 

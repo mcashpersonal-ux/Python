@@ -114,4 +114,4 @@ client.close()
 | Fast ephemeral cache | `redis` |
 
 Next door: feed points from a `pymodbus` polling loop straight into
-`write_api.write(...)`.
+`write_api.write(..)`.

@@ -25,9 +25,9 @@ is needed.
 import snap7
 
 plc = snap7.client.Client()
-plc.connect("192.168.1.50", 0, 1)  # ip, rack, slot
+plc.connect("192.168.1.50", 0, 1) # ip, rack, slot
 
-data = plc.db_read(db_number=1, start=0, size=4)  # raw bytes
+data = plc.db_read(db_number=1, start=0, size=4) # raw bytes
 print(data)
 ```
 
@@ -44,7 +44,7 @@ Raw DB reads return bytes; use the `util` helpers to decode/encode:
 from snap7 import util
 
 data = plc.db_read(db_number=1, start=0, size=4)
-value = util.get_real(data, 0)      # 32-bit float at byte offset 0
+value = util.get_real(data, 0) # 32-bit float at byte offset 0
 print(value)
 
 util.set_real(data, 0, 42.5)
@@ -59,8 +59,8 @@ Other helpers: `get_int`/`set_int` (16-bit), `get_dint`/`set_dint`
 ## read a single bit (e.g. a merker/flag)
 
 ```python
-data = plc.mb_read(start=0, size=1)  # merker byte 0
-flag = util.get_bool(data, 0, 0)     # byte 0, bit 0
+data = plc.mb_read(start=0, size=1) # merker byte 0
+flag = util.get_bool(data, 0, 0) # byte 0, bit 0
 ```
 
 ---
@@ -92,7 +92,7 @@ text names the failure (e.g. address out of range, CPU not reachable).
 ```python
 # check CPU state before touching data
 state = plc.get_cpu_state()
-print(state)  # e.g. 'S7CpuStatusRun'
+print(state) # e.g. 'S7CpuStatusRun'
 ```
 
 ```python

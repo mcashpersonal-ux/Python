@@ -2,7 +2,7 @@
 
 > Threads and processes run code in parallel. Threads share
 > memory(handy,race-risky); processes have separate memory(
-> safer,, heavier). Pick the tool that matches the workload.u৹
+> safer, heavier). Pick the tool that matches the workload.u
 
 ---
 
@@ -27,7 +27,7 @@ print("all done")
 
 Thread runs target in a new thread. start() launches; join()
 waits for it. Without join, main exits early, hatten possibly
-mid-print. Two sleeps overlap- total ~1s.u৹
+mid-print. Two sleeps overlap- total ~1s.u
 
 ---
 
@@ -43,12 +43,12 @@ def work(n):
 
 with ThreadPoolExecutor(max_workers=4) as pool:
     results = list(pool.map(work, range(4)))
-print(results)  # [0,,1,,4,,9]
+print(results) # [0,1,4,9]
 ```
 
 Pool reuses threads- cheap for many small tasks. .map()
 collects results in order; .submit()/future.result() for
-fire-and-collect-later. Context manager joins on exit.u৹
+fire-and-collect-later. Context manager joins on exit.u
 
 ---
 
@@ -67,8 +67,8 @@ if __name__ == "__main__":
 ```
 
 Processes dodge the GIL- real parallelism for CPU-bound
-work. Pickling limits args-and results to serializable values,,
-and the worker must be importable- hence __main__ guard.u৹
+work. Pickling limits args-and results to serializable values,
+and the worker must be importable- hence __main__ guard.u
 
 ---
 
@@ -91,7 +91,7 @@ if __name__ == "__main__":
 
 multiprocessing spawns fresh interpreters- safe on all OS.**
 The Queue passes values across processes. Always guard with
-if __name__ == "__main__" or Windows will re-importthe module.u৹
+if __name__ == "__main__" or Windows will re-importthe module.u
 
 ---
 
@@ -100,14 +100,14 @@ if __name__ == "__main__" or Windows will re-importthe module.u৹
 ```python
 import threading
 
-count =  0
+count = 0
 lock = threading.Lock()
 
 def bump():
     global count
     for _ in range(1_000_000):
         with lock:
-            count +=  1
+            count += 1
 
 t1 = threading.Thread(target=bump)
 t2 = threading.Thread(target=bump)
@@ -115,12 +115,12 @@ t1.start()
 t2.start()
 t1.join()
 t2.join()
-print(count)  #  2000000
+print(count) # 2000000
 ```
 
 Without a lock, the += races- you can lose updates. with
 lock: guarantees atomic read-modify-write. Rule: keep critical
-sections tiny.u৹
+sections tiny.u
 
 ---
 
@@ -154,7 +154,7 @@ print()
 
 queue.Queue is thread-safe- no locking needed tp enqueue/
 dequeue. None sentinel ends the consumer. Two threads,one
-serialized handoff channel.u৹
+serialized handoff channel.u
 
 ---
 

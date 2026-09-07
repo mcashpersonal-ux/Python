@@ -25,7 +25,7 @@ master = modbus_tcp.TcpMaster(host="192.168.1.50", port=502)
 master.set_timeout(5.0)
 
 values = master.execute(1, cst.READ_HOLDING_REGISTERS, 0, 4)
-print(values)  # tuple of ints
+print(values) # tuple of ints
 ```
 
 The `execute` signature is `(slave_id, function_code, starting_address,

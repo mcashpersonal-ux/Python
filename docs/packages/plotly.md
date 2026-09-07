@@ -38,7 +38,7 @@ import plotly.express as px
 
 df = pd.DataFrame({"hour": [0, 1, 2, 3], "value": [18.2, 23.4, 31.1, 19.8], "sensor": ["a", "a", "b", "b"]})
 fig = px.line(df, x="hour", y="value", color="sensor")
-fig.show()  # opens in browser/Jupyter
+fig.show() # opens in browser/Jupyter
 ```
 
 ---

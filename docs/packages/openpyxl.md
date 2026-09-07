@@ -40,7 +40,7 @@ from openpyxl import load_workbook
 wb = load_workbook("readings.xlsx")
 ws = wb.active
 
-for row in ws.iter_rows(min_row=2, values_only=True):  # skip header
+for row in ws.iter_rows(min_row=2, values_only=True): # skip header
     print(row)
 ```
 

@@ -23,7 +23,7 @@ import serial
 ser = serial.Serial(port="/dev/ttyUSB0", baudrate=9600, timeout=1)
 
 ser.write(b"MEASURE?\r\n")
-response = ser.readline()  # reads until \n or timeout
+response = ser.readline() # reads until \n or timeout
 print(response)
 
 ser.close()

@@ -20,7 +20,6 @@ pip install pymodbus
 PLCs expose registers as 16-bit words. Holding registers (read/write) hold
 the values you usually want. Input registers (read-only) come from sensors.
 
-
 ```python
 from pymodbus.client import ModbusTcpClient
 
@@ -28,14 +27,12 @@ with ModbusTcpClient("localhost", port=5020) as client:
     rr = client.read_holding_registers(address=100, count=4, device_id=1)
     if rr.isError():
         raise RuntimeError(rr)
-    print(rr.registers)             # e.g. [10,  ..................
+    print(rr.registers) # e.g. [10, ..................
 ```
 
 `device_id` is the Modbus unit/slave ID, default is 1. `address` is zero-
 based: most devices document register addresses as 1-based, so subtract 1
 when in doubt.
-
-
 
 ---
 
@@ -45,14 +42,14 @@ when in doubt.
 wr = client.write_register(address=100, value=12345, device_id=1)
 if wr.isError():
     raise RuntimeError(wr)
-print(wr)   # WriteRegisterResponse
+print(wr) # WriteRegisterResponse
 ```
 
 Writing coils (on/off) works the same way with bool values:
 
 ```python
 wc = client.write_coil(address=10, value=True, device_id=1)
-wc.isError()  # False
+wc.isError() # False
 ```
 
 ---
@@ -71,7 +68,7 @@ if not client.connect():
 try:
     rr = client.read_holding_registers(address=100, count=4, device_id=1)
     if rr.isError():
-        print("Modbus error:", rr)   # e.g. IllegalAddress
+        print("Modbus error:", rr) # e.g. IllegalAddress
     else:
         print(rr.registers)
 finally:
@@ -89,7 +86,7 @@ wrong or unreachable).
 ```python
 # single register with scaling
 reading = client.read_holding_registers(address=10, count=1, device_id=1)
-scale = 0.1                      # temperature stored as 10x real
+scale = 0.1 # temperature stored as 10x real
 temp_c = reading.registers[0] * scale
 print(f"{temp_c:.1f} C")
 ```

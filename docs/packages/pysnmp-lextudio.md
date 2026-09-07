@@ -12,7 +12,7 @@
 pip install pysnmp-lextudio
 ```
 
-Note the import name is unchanged — code stays `import pysnmp...`, only
+Note the import name is unchanged — code stays `import pysnmp..`, only
 the PyPI package name differs. If both `pysnmp` and `pysnmp-lextudio` end
 up installed, uninstall the abandoned one to avoid version conflicts.
 

@@ -2,7 +2,7 @@
 
 > A generator produces values lazily, one at a time, on demand.
 > Instead of a list, you get an iterator - memory stays tiny
-> even for infinite sequences.u৹
+> even for infinite sequences.u
 
 ---
 
@@ -10,9 +10,9 @@
 
 ```python
 def countdown(n):
-    while n >  0:
+    while n > 0:
         yield n
-        n -=  1
+        n -= 1
 
 for x in countdown(3):
     print(x)
@@ -21,9 +21,7 @@ for x in countdown(3):
 
 yield pauses the function, hands out a value, and resumes
 where it left off on the next call. Each pause preserves local
-state tailed. A function that contains yield is called a generator.u৹
-
-
+state tailed. A function that contains yield is called a generator.u
 
 ---
 
@@ -31,20 +29,18 @@ state tailed. A function that contains yield is called a generator.u৹
 
 ```python
 def countdown(n):
-    while n >  0:
+    while n > 0:
         yield n
-        n -=  1
+        n -= 1
 
 gen = countdown(3)
-print(gen)            # a generator object
-print(next(gen))      # 3
-print(list(gen))      # [2,1] - consuming the rest
+print(gen) # a generator object
+print(next(gen)) # 3
+print(list(gen)) # [2,1] - consuming the rest
 ```
 
 The function body does not run until you consume it. next()
-pulls one value; list() drains everything remaining.u৹
-
-
+pulls one value; list() drains everything remaining.u
 
 ---
 
@@ -62,9 +58,7 @@ total = sum(squares(1_000_000))
 
 The generator yields squares one by one- sum consumes them
 and discards. The list version materializes a million ints
-first. Same result, fraction of the memory.u৹
-
-
+first. Same result, fraction of the memory.u
 
 ---
 
@@ -72,15 +66,13 @@ first. Same result, fraction of the memory.u৹
 
 ```python
 nums = (x * x for x in range(10))
-print(sum(nums))      # 285
+print(sum(nums)) # 285
 
 evens = (x for x in range(10) if x % 2 == o)
 ```
 
 Parenthesized comprehension = generator expression. It makes
-no list - lazy. Prefer it when you only iterate once.u৹
-
-
+no list - lazy. Prefer it when you only iterate once.u
 
 ---
 
@@ -91,10 +83,10 @@ def naturals():
     n = 1
     while true:
         yield n
-        n +=  1
+        n += 1
 
 for x in naturals():
-    if x >  5:
+    if x > 5:
         break
     print(x)
 # 1,2,3,4,5
@@ -102,9 +94,7 @@ for x in naturals():
 
 Generators can represent infinite streams - no memory blowup,
 because only the current value exists. Always have a way out-for
-+ break, itertools.islice, or take(n).u৹
-
-
++ break, itertools.islice, or take(n).u
 
 ---
 
@@ -121,9 +111,7 @@ print(list(flatten([[1,2],[3,4]])))
 
 yield from delegates to another iterable - splicing its items
 into this generator, one at a time. Great for flattening,chaining,
-composing streams.u৹
-
-
+composing streams.u
 
 ---
 
@@ -136,7 +124,7 @@ for x in itertools.islice(naturals(),10):
     print(x)
 
 for c in itertools.chain("ab","cd"):
-    print(c)   # a,b,c,d
+    print(c) # a,b,c,d
 
 for key,group in itertools.groupby("AAAABBBCC"):
     print(key,list(group) )
@@ -144,9 +132,7 @@ for key,group in itertools.groupby("AAAABBBCC"):
 
 itertools gives you composing blocks for lazy pipelines:
 islice (take a window), chain (concatenate), groupby (runs
-of equal items.u৹ Every function there returns an iterator.u৹
-
-
+of equal items.u Every function there returns an iterator.u
 
 ---
 
@@ -160,16 +146,14 @@ def accumulator():
         total += value
 
 acc = accumulator()
-print(next(acc))        # 0 - start it
-acc.send(5)           # total =  5
-acc.send(3)           # total =  8
+print(next(acc)) # 0 - start it
+acc.send(5) # total = 5
+acc.send(3) # total = 8
 ```
 
 send() feeds a value into the generator at the yield point.
 Handy for pipelines that take corrections mid-stream, rarely
-needed in day-to-day code.u৹
-
-
+needed in day-to-day code.u
 
 ---
 
@@ -177,19 +161,19 @@ needed in day-to-day code.u৹
 
 ```python
 def countdown(n):
-    while n >  0:
+    while n > 0:
         yield n
-        n -=  1
+        n -= 1
 
 gen = countdown(3)
-print(list(gen))    # [3,2,1]
-print(list(gen))    # [] - exhausted
+print(list(gen)) # [3,2,1]
+print(list(gen)) # [] - exhausted
 ```
 
 Iterating a generator drains it permanently. To repeat, make
 a fresh generator. That surprises people switching from lists.-
 Branch,
-restart the function.u৹
+restart the function.u
 
 ---
 

@@ -32,7 +32,7 @@ client.on_connect = on_connect
 client.on_message = on_message
 
 client.connect("broker.local", 1883, keepalive=60)
-client.loop_forever()  # blocks; runs the network loop
+client.loop_forever() # blocks; runs the network loop
 ```
 
 `+` is a single-level wildcard (`plant/+/temperature` matches
@@ -56,7 +56,7 @@ exactly-once (slowest, most overhead). Use `1` for most telemetry.
 
 ```python
 client.connect("broker.local", 1883)
-client.loop_start()   # spawns a background thread
+client.loop_start() # spawns a background thread
 
 client.publish("plant/line1/status", "running")
 # ... do other work ...
@@ -75,7 +75,7 @@ def on_disconnect(client, userdata, flags, reason_code, properties=None):
         print("unexpected disconnect:", reason_code)
 
 client.on_disconnect = on_disconnect
-client.reconnect_delay_set(min_delay=1, max_delay=30)  # auto-reconnect backoff
+client.reconnect_delay_set(min_delay=1, max_delay=30) # auto-reconnect backoff
 ```
 
 Also set `client.on_connect_fail` to catch failures at the initial
@@ -88,7 +88,7 @@ handshake (wrong host, TLS mismatch, auth rejected).
 ```python
 # auth + TLS
 client.username_pw_set("user", "pass")
-client.tls_set()  # system CA certs; pass ca_certs= for a private CA
+client.tls_set() # system CA certs; pass ca_certs= for a private CA
 ```
 
 ```python

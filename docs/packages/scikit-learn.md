@@ -22,8 +22,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import numpy as np
 
-X = np.array([[0], [1], [2], [3], [4]])       # feature: hour
-y = np.array([18.2, 23.4, 31.1, 19.8, 25.0])  # target: temperature
+X = np.array([[0], [1], [2], [3], [4]]) # feature: hour
+y = np.array([18.2, 23.4, 31.1, 19.8, 25.0]) # target: temperature
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
@@ -93,7 +93,7 @@ import numpy as np
 
 model = LinearRegression()
 try:
-    model.fit(np.array([[1, 2], [3, 4]]), np.array([1, 2, 3]))  # mismatched lengths
+    model.fit(np.array([[1, 2], [3, 4]]), np.array([1, 2, 3])) # mismatched lengths
 except ValueError as e:
     print("shape mismatch:", e)
 ```

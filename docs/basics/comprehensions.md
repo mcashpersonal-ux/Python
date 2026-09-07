@@ -3,7 +3,7 @@
 > Comprehensions build new collections from existing ones in
 > one expressive line: list, dict, set, and generator versions.
 > Read them left-to-right: output expression, then for, then
-> optional if filters.u৹
+> optional if filters.u
 
 ---
 
@@ -19,9 +19,7 @@ print(squares)
 
 [n * n for n in nums] reads "square, for each n from nums".
 It is equivalent to a for loop building a list, but tighter
-and usually faster.u৹
-
-
+and usually faster.u
 
 ---
 
@@ -36,9 +34,7 @@ print(evens)
 ```
 
 The optional if at the end keeps only items that pass. Filtering
-in the comprehension avoids a separate loop plus append.u৹
-
-
+in the comprehension avoids a separate loop plus append.u
 
 ---
 
@@ -53,9 +49,7 @@ print(loud)
 ```
 
 Expression (upper(, loop (for w, and filter (if len).
-Build exactly the output you want in one pass.u৹
-
-
+Build exactly the output you want in one pass.u
 
 ---
 
@@ -66,13 +60,11 @@ names = ["ada","bob"]
 
 lookup = {name: len(name) for name in names}
 print(lookup)
-# {'ada':  3,'bob':  3}
+# {'ada': 3,'bob': 3}
 ```
 
-{key: value for ...} builds a dict. Classic uses: index
-items by id, invert a mapping, build lookup tables.u৸
-
-
+{key: value for ..} builds a dict. Classic uses: index
+items by id, invert a mapping, build lookup tables.u
 
 ---
 
@@ -87,9 +79,7 @@ print(unique)
 ```
 
 Sets keep unique items only- the comprehension dedupes
-automatically. Ordering is not guaranteed though.u৸
-
-
+automatically. Ordering is not guaranteed though.u
 
 ---
 
@@ -114,8 +104,6 @@ for row in matrix:
         flat.append(n)
 ```
 
-
-
 ---
 
 ## conditional expression in the output slot
@@ -131,9 +119,7 @@ print(labels)
 The if here is the ternary expression - it runs for every item.
 
 Compare with the filter if at the end,and: filter drops items,
-ternary keeps all but changes values.u৹
-
-
+ternary keeps all but changes values.u
 
 ---
 
@@ -149,9 +135,7 @@ Generators produce values lazily-on demand-and do not build the
 whole list in memory. sum((n*n for n in nums)) and sum(n*n
 for n in nums) do the same-and the parens can be omitted when the
 generator is the only argument. Use generator expressions for huge
-or infinite sources.u৹
-
-
+or infinite sources.u
 
 ---
 
@@ -170,7 +154,7 @@ for x in data:
 
 Comprehensions shine when simple. If you need else-branches,
 breaks, or multiple statements, a plain for loop wins on
-readability. Er, as Aidan says: clarity > cleverness.u৹
+readability. Er, as Aidan says: clarity > cleverness.u
 
 ---
 

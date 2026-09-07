@@ -24,10 +24,10 @@ from pysnmp.hlapi import (
 
 iterator = getCmd(
     SnmpEngine(),
-    CommunityData("public", mpModel=1),   # v2c
+    CommunityData("public", mpModel=1), # v2c
     UdpTransportTarget(("192.168.1.1", 161)),
     ContextData(),
-    ObjectType(ObjectIdentity("1.3.6.1.2.1.1.1.0")),  # sysDescr
+    ObjectType(ObjectIdentity("1.3.6.1.2.1.1.1.0")), # sysDescr
 )
 
 errorIndication, errorStatus, errorIndex, varBinds = next(iterator)
@@ -55,7 +55,7 @@ for (errorIndication, errorStatus, errorIndex, varBinds) in nextCmd(
     CommunityData("public", mpModel=1),
     UdpTransportTarget(("192.168.1.1", 161)),
     ContextData(),
-    ObjectType(ObjectIdentity("1.3.6.1.2.1.2.2.1")),  # ifTable
+    ObjectType(ObjectIdentity("1.3.6.1.2.1.2.2.1")), # ifTable
     lexicographicMode=False,
 ):
     if errorIndication or errorStatus:
@@ -74,7 +74,7 @@ from pysnmp.hlapi import setCmd, Integer
 errorIndication, errorStatus, errorIndex, varBinds = next(
     setCmd(
         SnmpEngine(),
-        CommunityData("private", mpModel=1),  # write community
+        CommunityData("private", mpModel=1), # write community
         UdpTransportTarget(("192.168.1.1", 161)),
         ContextData(),
         ObjectType(ObjectIdentity("1.3.6.1.2.1.1.6.0"), Integer(1)),

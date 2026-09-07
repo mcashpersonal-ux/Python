@@ -2,7 +2,7 @@
 
 > A decorator wraps a function to add behavior before and
 > after it runs - without touching the function's code. It is
-> just a callable that takes a function and returns a function.u৹
+> just a callable that takes a function and returns a function.u
 
 ---
 
@@ -26,9 +26,7 @@ print(greet())
 shout receives greet,and returns wrapper. Later calls to greet
 actually run wrapper,which calls the original then post-processes.
  The
-name greet is rebound to wrapper - that is decoration,by hand.u৹
-
-
+name greet is rebound to wrapper - that is decoration,by hand.u
 
 ---
 
@@ -50,10 +48,8 @@ print(greet())
 ```
 
 `@shout` above the def does exactly what the manual rebinding
-did - cleaner. The decorator runs once at definition time,u৹
-not per call.u৹
-
-
+did - cleaner. The decorator runs once at definition time,u
+not per call.u
 
 ---
 
@@ -74,15 +70,13 @@ def greet():
     """return a greeting"""
     return "hello"
 
-print(greet.__name__)   # greet,not wrapper
+print(greet.__name__) # greet,not wrapper
 print(greet.__doc__)
 ```
 
 wraps copies __name__, __doc__, and other metadata from the
 original onto the wrapper. Without it, debugging and docs tooling
-see "wrapper" everywhere.u৹
-
-
+see "wrapper" everywhere.u
 
 ---
 
@@ -106,9 +100,7 @@ def say_hi():
 ```
 
 To pass args to a decorator, add another layer: repeat(times)returns decorator, which returns wrapper. Call shape:
-@repeat(3)di the definition.u৹
-
-
+@repeat(3)di the definition.u
 
 ---
 
@@ -140,9 +132,7 @@ work()
 try/finally guarantees the timing print runs even when the
 function raises. perf_counter is the right clock for short
 intervals. This decorator pattern is copy-paste-ready for
-profiling (see performance.md).u৹
-
-
+profiling (see performance.md).u
 
 ---
 
@@ -155,15 +145,13 @@ from functools import lru_cache
 def fib(n):
     if n < 2:
         return n
-    return fib(n - 1) + fib(n -  2)
+    return fib(n - 1) + fib(n - 2)
 
-print(fib(40))   # 102334155 - instant,not minutes
+print(fib(40)) # 102334155 - instant,not minutes
 ```
 
 lru_cache stores results by arguments,and reuses them. The
-recursive fib explodes without it; with it, each n computed once.u৹
-
-
+recursive fib explodes without it; with it, each n computed once.u
 
 ---
 
@@ -194,9 +182,7 @@ print(hello())
 ```
 
 Decorators apply bottom-up: italic wraps hello first, then bold
-wraps that. Read @ lines top-to-bottom as outermost last.u৹
-
-
+wraps that. Read @ lines top-to-bottom as outermost last.u
 
 ---
 
@@ -211,7 +197,7 @@ class CountCalls:
         self.calls = 0
 
     def __call__(self,*args,**kwargs):
-        self.calls +=  1
+        self.calls += 1
         return self.func(*args,**kwargs)
 
 @CountCalls
@@ -225,7 +211,7 @@ print(CountCalls.__dict__)
 
 A class with __call__ can be a decorator too: creating the
 instance runs __init__(binding the func,and then every call runs
-__call__. Keep state on the instance.u৹
+__call__. Keep state on the instance.u
 
 ---
 

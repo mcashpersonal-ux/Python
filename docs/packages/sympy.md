@@ -22,7 +22,7 @@ import sympy as sp
 x, y = sp.symbols("x y")
 expr = x**2 + 2*x*y + y**2
 print(sp.expand(expr))
-print(sp.factor(expr))       # (x + y)**2
+print(sp.factor(expr)) # (x + y)**2
 ```
 
 ---
@@ -32,12 +32,12 @@ print(sp.factor(expr))       # (x + y)**2
 ```python
 x = sp.symbols("x")
 solutions = sp.solve(sp.Eq(x**2 - 4, 0), x)
-print(solutions)  # [-2, 2]
+print(solutions) # [-2, 2]
 
 # system of equations
 x, y = sp.symbols("x y")
 solutions = sp.solve([sp.Eq(x + y, 10), sp.Eq(x - y, 2)], [x, y])
-print(solutions)  # {x: 6, y: 4}
+print(solutions) # {x: 6, y: 4}
 ```
 
 ---
@@ -48,10 +48,10 @@ print(solutions)  # {x: 6, y: 4}
 x = sp.symbols("x")
 f = x**3 + 2*x**2
 
-print(sp.diff(f, x))          # derivative: 3*x**2 + 4*x
-print(sp.integrate(f, x))     # antiderivative
-print(sp.integrate(f, (x, 0, 2)))  # definite integral, 0 to 2
-print(sp.limit(sp.sin(x) / x, x, 0))  # 1
+print(sp.diff(f, x)) # derivative: 3*x**2 + 4*x
+print(sp.integrate(f, x)) # antiderivative
+print(sp.integrate(f, (x, 0, 2))) # definite integral, 0 to 2
+print(sp.limit(sp.sin(x) / x, x, 0)) # 1
 ```
 
 ---
@@ -62,10 +62,10 @@ print(sp.limit(sp.sin(x) / x, x, 0))  # 1
 x = sp.symbols("x")
 f = x**2 + 1
 
-print(f.subs(x, 3))   # 10, still a sympy object
+print(f.subs(x, 3)) # 10, still a sympy object
 
-numeric_f = sp.lambdify(x, f, "numpy")   # fast numpy-callable function
-print(numeric_f(3))   # 10 as a plain number
+numeric_f = sp.lambdify(x, f, "numpy") # fast numpy-callable function
+print(numeric_f(3)) # 10 as a plain number
 ```
 
 `lambdify` is the bridge from symbolic derivation to fast numeric
@@ -101,7 +101,7 @@ sp.init_printing()
 
 ```python
 # simplify a messy expression
-sp.simplify((x**2 - 1) / (x - 1))  # x + 1
+sp.simplify((x**2 - 1) / (x - 1)) # x + 1
 ```
 
 ---

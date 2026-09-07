@@ -117,7 +117,7 @@ def set_mode(mode: Literal["fast", "safe"]) -> None:
 
 set_mode("fast")
 set_mode("safe")
-# set_mode("slow")  # type checker error
+# set_mode("slow") # type checker error
 ```
 
 Literal pins args to a fixed set- catches typos likem "sloe"

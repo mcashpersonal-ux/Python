@@ -13,13 +13,11 @@ def greet(name):
     return f"Hello,{name}!"
 
 msg = greet("Ada")
-print(msg)   # Hello,Ada!
+print(msg) # Hello,Ada!
 ```
 
 def creates the function. return sends a value back to the caller.
-If you omit return, the function returns None implicitly.uআ
-
-
+If you omit return, the function returns None implicitly.u
 
 ---
 
@@ -29,16 +27,14 @@ If you omit return, the function returns None implicitly.uআ
 def describe(name,age,city="unknown"):
     print(f"{name} ({age}) from {city}")
 
-describe("Ada",36)             # city takes default
+describe("Ada",36) # city takes default
 describe("Ada",36,city="Paris")
 describe(name="Bob",age=41)
 ```
 
 Positional args fill parameters in order. Keyword args
 (name=value) make calls self-documenting and optional. Keep
-required params first, optional (with defaults) after.u৲
-
-
+required params first, optional (with defaults) after.u
 
 ---
 
@@ -53,9 +49,7 @@ lo,hi = min_max([3,1,2])
 ```
 
 The comma in return creates a tuple. Unpacking on the left
-side splits it back into separate names.u৵
-
-
+side splits it back into separate names.u
 
 ---
 
@@ -63,19 +57,17 @@ side splits it back into separate names.u৵
 
 ```python
 def demo():
-    value = 10           # local - only visible inside
+    value = 10 # local - only visible inside
     print(value)
 
-value =  99          # global
-demo()                     # 10
-print(value)              # 99 - global unchanged
+value = 99 # global
+demo() # 10
+print(value) # 99 - global unchanged
 ```
 
 Assignments inside a function create local names. Reading a
-global works, but assigning to it needs the global keyword.u৵
-Which you should generally avoid - pass values instead.u৵
-
-
+global works, but assigning to it needs the global keyword.u
+Which you should generally avoid - pass values instead.u
 
 ---
 
@@ -88,15 +80,13 @@ def add_item(item,bucket=None):
     bucket.append(item)
     return bucket
 
-add_item("a" )          # ['a']
-add_item("b" )          # ['b'] - fresh list each time
+add_item("a" ) # ['a']
+add_item("b" ) # ['b'] - fresh list each time
 ```
 
 Mutable defaults ([],{} are evaluated once at def time and
 shared across calls - a classic bug. The standard fix:
-default to None,then create fresh inside.u৵
-
-
+default to None,then create fresh inside.u
 
 ---
 
@@ -106,13 +96,11 @@ default to None,then create fresh inside.u৵
 def total(*args):
     return sum(args)
 
-print(total(1,2,3,4))   # 10
+print(total(1,2,3,4)) # 10
 ```
 
-*args collects extra positional args into a tuple.u৹
-Great for sums, logs, math helpers.u৹
-
-
+*args collects extra positional args into a tuple.u
+Great for sums, logs, math helpers.u
 
 ---
 
@@ -126,10 +114,8 @@ def print_config(**kwargs):
 print_config(host="localhost",port=8080)
 ```
 
-**kwargs collects extra keyword args into a dict.u৹
-Handy for configs, wrappers, sending options through.u৹
-
-
+**kwargs collects extra keyword args into a dict.u
+Handy for configs, wrappers, sending options through.u
 
 ---
 
@@ -142,15 +128,13 @@ def multiply(a,b):
 """
     return a * b
 
-print(multiply.__doc__)    # the docstring
+print(multiply.__doc__) # the docstring
 help(multiply)
 ```
 
 The first statement in a function can be a string - python stores
-it as __doc__ and help() displays it.u৹ Write these for anything
-you will reuse.u৹
-
-
+it as __doc__ and help() displays it.u Write these for anything
+you will reuse.u
 
 ---
 
@@ -158,13 +142,11 @@ you will reuse.u৹
 
 ```python
 square = lambda x: x ** 2
-print(square(5))    # 25
+print(square(5)) # 25
 ```
 
 lambda is a one-expression function with no name. Prefer
-def for anything more than a one-liner.u৹
-
-
+def for anything more than a one-liner.u
 
 ---
 
@@ -180,13 +162,13 @@ def whisper(text):
 def apply(func,text):
     return func(text)
 
-print(apply(shout,"hi"))  # HI
+print(apply(shout,"hi")) # HI
 print(apply(whisper,"HI")) # hi
 ```
 
 Functions can be passed around like any value - store them in
 lists, dicts, pass to other functions. That backs callbacks,
-decorators, and higher-order-functionstyle.u৹
+decorators, and higher-order-functionstyle.u
 
 ---
 

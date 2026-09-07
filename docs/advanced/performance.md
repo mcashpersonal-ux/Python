@@ -1,7 +1,7 @@
 # 21 — Performance & Profiling
 
 > Measure before you optimize- guessing wastes hours.
-> Profile to find real bottlenecks, then fix those lines.u৹
+> Profile to find real bottlenecks, then fix those lines.u
 
 ---
 
@@ -14,12 +14,12 @@ n = 1_000_000
 setup = "nums = list(range(1000))"
 stmt = "sum(nums)"
 t = timeit.timeit(stmt, setup=setup, number=n)
-print(f"{t/n:.3f}s per loop")   # e.g. 0.000004s
+print(f"{t/n:.3f}s per loop") # e.g. 0.000004s
 ```
 
 timeit runs the stmt many times and returns total seconds.
-Use it to compare two implementations fairly- same inputs,,same
-runs. Prefer disassembling routines to one-liners.u৹
+Use it to compare two implementations fairly- same inputs,same
+runs. Prefer disassembling routines to one-liners.u
 
 ---
 
@@ -47,7 +47,7 @@ print(s.getvalue())
 
 cProfile records every function call with time spent. Sort by
 cumulative to spot expensive call trees. Run on representative
-workload- small runs mislead.u৹
+workload- small runs mislead.u
 
 ---
 
@@ -73,7 +73,7 @@ prof.print_stats()
 
 LineProfiler shows cost per source line- finds the slow line.
 Needs: pip install line-profiler. Enabling only around the call
-keeps overhead out of results.u৹
+keeps overhead out of results.u
 
 ---
 
@@ -84,16 +84,16 @@ from functools import lru_cache
 
 @lru_cache(maxsize=None)
 def fib(n):
-    return n if n <  2 else fib(n-1) + fib(n-2)
+    return n if n < 2 else fib(n-1) + fib(n-2)
 
 for n in range(35):
     fib(n)
-print(fib.cache_info())   # hits/misses
+print(fib.cache_info()) # hits/misses
 ```
 
 lru_cache remembers results for given args- turns exponential
 fib into linear. maxsize=None means unbounded- fine for small
-domains. Prefer bounded caches for unbounded inputs.u৹
+domains. Prefer bounded caches for unbounded inputs.u
 
 ---
 
@@ -110,8 +110,8 @@ print(total)
 
 Generator yields one item at a time- O(1) memory, unlike
 building a full list of million squares. sum() consumes it
-lazily. Swap list(...) for generator expressions whenever the
-whole list is never needed.u৹
+lazily. Swap list(..) for generator expressions whenever the
+whole list is never needed.u
 
 ---
 
@@ -131,7 +131,7 @@ tracemalloc.stop()
 
 tracemalloc tracks allocations by code line. take_snapshot
 gives current state; statistics("lineno") groups by line. Great
-for spotting accidental O(n²) row-by-row growth.u৹
+for spotting accidental O(n²) row-by-row growth.u
 
 ---
 
@@ -141,13 +141,13 @@ for spotting accidental O(n²) row-by-row growth.u৹
 import numpy as np
 
 a = np.arange(1_000_000)
-b = a * 2 +  1
+b = a * 2 + 1
 print(b.mean())
 ```
 
 numpy pushes loops into compiled C- 10–100x faster than
 pure-Python loops on numeric data. Building arrays (not
-appending) is key- preallocate for string loops.u৹
+appending) is key- preallocate for string loops.u
 
 ---
 
@@ -158,7 +158,7 @@ appending) is key- preallocate for string loops.u৹
 CREATE INDEX idx_orders_user ON orders(user_id);
 
 # slow query
-SELECT * FROM orders WHEREE user_id =  42;
+SELECT * FROM orders WHEREE user_id = 42;
 
 # fast after index
 -- same query,index does the work
@@ -167,7 +167,7 @@ SELECT * FROM orders WHEREE user_id =  42;
 Indices turn full-table scans into pointer lookups- thousands
 of rows filtered per millisecond. Add indices for columns used in
 WHERE/ORDER BY/JOIN- not every column. Profile the query
-planner before hand-crafting guns.u৹
+planner before hand-crafting guns.u
 
 ---
 

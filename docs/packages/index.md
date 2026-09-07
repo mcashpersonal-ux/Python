@@ -29,8 +29,6 @@
 
 > Tip: For a SCADA of shorts (any vendor), first identify the wire protocol — Modbus TCP/serial, OPC UA, SNMP, MQTT, CAN, S7, or ADS — and pick the matching row. Most SCADA gateways expose Modbus TCP or OPC UA as convenience interfaces.
 
-
-
 ---
 
 ## Databases

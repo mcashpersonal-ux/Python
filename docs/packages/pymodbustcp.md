@@ -23,7 +23,7 @@ from pyModbusTCP.client import ModbusClient
 client = ModbusClient(host="192.168.1.50", port=502, unit_id=1, auto_open=True)
 
 regs = client.read_holding_registers(0, 4)
-print(regs)  # list[int] or None on failure
+print(regs) # list[int] or None on failure
 ```
 
 `auto_open=True` reconnects automatically before each request — handy for
@@ -35,7 +35,7 @@ long-running pollers on flaky links.
 
 ```python
 ok = client.write_single_register(100, 1234)
-print(ok)  # True/False
+print(ok) # True/False
 ```
 
 ```python
@@ -58,7 +58,7 @@ else:
 ```
 
 `client.last_error_as_txt` and `client.last_except_as_txt` give a
-human-readable reason (timeout, connection refused, illegal address, ...).
+human-readable reason (timeout, connection refused, illegal address, ..).
 
 ---
 

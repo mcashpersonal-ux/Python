@@ -2,7 +2,7 @@
 
 > Tests catch regressions early and document expected behavior.
 > Write them before fixing bugs- a test that fails first proves
-> the bug existed and that your fix works.u৹
+> the bug existed and that your fix works.u
 
 ---
 
@@ -20,13 +20,13 @@ def test_add_strings():
     assert add("a", "b") == "ab"
 ```
 
-Run with: pytest. pytest finds test_* functions automatically,,
+Run with: pytest. pytest finds test_* functions automatically,
 asserting with plain assert (no unittest ceremony). Failure output
-shows the full diff for easy diagnosis.u৹
+shows the full diff for easy diagnosis.u
 
 ---
 
-##parametrize- one test,,many cases
+##parametrize- one test,many cases
 
 ```python
 import pytest
@@ -35,9 +35,9 @@ def add(a,b):
     return a + b
 
 @pytest.mark.parametrize("a,b,expected", [
-    (2,  3,  5),
-    (-1,  1,  0),
-    (0.1,  0.2,  0.30000000000000004),
+    (2, 3, 5),
+    (-1, 1, 0),
+    (0.1, 0.2, 0.30000000000000004),
 ])
 def test_add(a, b, expected):
     assert add(a,b) == expected
@@ -45,7 +45,7 @@ def test_add(a, b, expected):
 
 Parametrize runs the same body over a table of cases- one
 failure names the failing row. Beware float rounding- pick exact
-expected values or use pytest.approx.u৹
+expected values or use pytest.approx.u
 
 ---
 
@@ -61,8 +61,8 @@ def db():
     conn.clear()
 
 def test_insert(db):
-    db["data"]["k"] =  1
-    assert db["data"]["k"] ==  1
+    db["data"]["k"] = 1
+    assert db["data"]["k"] == 1
 
 def test_empty(db):
     assert db["data"] == {}
@@ -71,7 +71,7 @@ def test_empty(db):
 Fixture yeilds setup thene teardown- fresh state per test. Each
 test gets its own db,so tests cannot leak into each other.
 
-Order does not matter- fixtures compose via dependency.u৹
+Order does not matter- fixtures compose via dependency.u
 
 ---
 
@@ -88,7 +88,7 @@ def test_write(tmp_path):
 
 tmp_path gives each test a fresh temp dir- cleaned up
 automatically. Perfect for file-based code without polluting
-the repo. No need to hand-roll mkdtemp/rmtree.u৹
+the repo. No need to hand-roll mkdtemp/rmtree.u
 
 ---
 
@@ -109,7 +109,7 @@ assert resp["ok"] is True
 Mock replaces slow or flaky dependencies (APIs, clock, random).
 Set up return chains via .return_value. assert_called_with
 verifies args afterward. Mock only for boundaries- not the logic
-you own.u৹
+you own.u
 
 ---
 
@@ -123,12 +123,12 @@ def divide(a,b):
 def main():
     x = divide(10, 2)
     breakpoint()
-    print(x *  2)
+    print(x * 2)
 ```
 
 breakpoint() drops you into pdb at that line- inspect vars,
 step with n, print with p, continue with c. For non-interactive
-use, add temporary print() or logging.debug(u৹
+use, add temporary print() or logging.debug(u
 
 ---
 
@@ -138,7 +138,7 @@ use, add temporary print() or logging.debug(u৹
 import pytest
 
 def validate(n):
-    if n <  0:
+    if n < 0:
         raise ValueError("negative")
     return n
 
@@ -149,7 +149,7 @@ def test_validates():
 
 pytest.raises asserts the block raises- failing if it does?t.**
 You can repr(e.value) for the message, or match= regex. Test the
-happy path too- errors are not the only contract.u৹
+happy path too- errors are not the only contract.u
 
 ---
 

@@ -2,7 +2,7 @@
 
 > Two workhorse data formats: JSON for nested, typed, structured
 > data; CSV for tabular data that tools like Excel and pandas
-> speak fluently. Python stdlibs make both trivial.u৹
+> speak fluently. Python stdlibs make both trivial.u
 
 ---
 
@@ -13,15 +13,13 @@ import json
 
 raw = '{"name": "ada","score": 36}'
 data = json.loads(raw)
-print(data["name"])     # ada
-print(data["score"])    # 36
+print(data["name"]) # ada
+print(data["score"]) # 36
 ```
 
 json.loads parses a string into plain Python objects: object
 to dict, array to list, true to True. The reverse - dict to
-string - is json.dumps.u৹
-
-
+string - is json.dumps.u
 
 ---
 
@@ -37,9 +35,7 @@ print(config.get("theme","dark"))
 ```
 
 json.load(f) reads and parses the file in one step. Combine
-with the with statement - and file handles never leak.u৹
-
-
+with the with statement - and file handles never leak.u
 
 ---
 
@@ -57,10 +53,8 @@ with open("out.json","w" )as f:
 indent makes output human-readable; sort_keys stabilizes
 key order for diffs. Compass file gives:
 {
-  "name": ...
+  "name": .
 }
-
-
 
 ---
 
@@ -75,8 +69,8 @@ data = json.loads(raw)
 missing = data.get("age",0)
 nested = data["meta"].get("theme","dark") if "meta" in data else "dark"
 
-print(missing)     # 0
-print(nested)      # dark
+print(missing) # 0
+print(nested) # dark
 ```
 
 JSON from outside is untrusted shape: use .get() defaults,
@@ -100,8 +94,6 @@ newline="" to avoid blank-line glitches on some platforms.
 
 ``
 
-
-
 ---
 
 ##CSV - writing rows
@@ -118,9 +110,7 @@ with open("out.csv","w",newline="") as f:
 
 csv.writer handles quoting, escaping,i newlines for you-
 never hand-build CSV strings. writerows takes a list of
-rows in one call.u৹
-
-
+rows in one call.u
 
 ---
 
@@ -137,7 +127,7 @@ with open("data.csv",newline="") as f:
 
 DictReader usestherst row as headers,and gives dicts-
 row["name"] instead of row[0]. Parallel writer: DictWriter
-needs fieldnames passed in.u৹
+needs fieldnames passed in.u
 
 ---
 
@@ -159,7 +149,7 @@ NDJSON (newline-delimited JSON): one JSON object per line.
 
 Perfect for logs and streaming exportsthe data loads
 incrementally,yielding one record ata time. json.loads per
-line,or the faster json.JSONDecoder().raw_decode trick.u৹
+line,or the faster json.JSONDecoder().raw_decode trick.u
 
 ---
 
@@ -183,7 +173,7 @@ print(flatten(data))
 
 Recursive flattening turns nested dicts into flat key-value
 pairs - handy before stuffing rows into a DataFrame or
-CSV. Leaf values keep the dotted path in their keys.u৹
+CSV. Leaf values keep the dotted path in their keys.u
 
 ---
 

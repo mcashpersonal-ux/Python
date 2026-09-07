@@ -34,7 +34,7 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv("readings.csv")
 df.plot(x="hour", y="value")
-plt.show()  # renders inline in the notebook, unlike in a plain script
+plt.show() # renders inline in the notebook, unlike in a plain script
 ```
 
 `plt.show()` (or just leaving the figure as the last expression) renders
@@ -45,8 +45,8 @@ directly under the cell — no `savefig` needed for exploration.
 ## magic commands
 
 ```ipython
-%matplotlib inline      # ensure plots render inline (usually automatic now)
-%timeit df["value"].sum()   # benchmark a single line
+%matplotlib inline # ensure plots render inline (usually automatic now)
+%timeit df["value"].sum() # benchmark a single line
 %%time
 # benchmark an entire cell
 result = df.groupby("sensor").mean()
@@ -63,7 +63,7 @@ not valid outside a notebook/IPython session.
 from IPython.display import display, Markdown
 
 display(Markdown("## Summary"))
-display(df.describe())   # renders as a formatted table, not repr() text
+display(df.describe()) # renders as a formatted table, not repr() text
 ```
 
 ---

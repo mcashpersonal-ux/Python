@@ -69,7 +69,7 @@ def callback(handle, name, timestamp, value):
     print(name, value)
 
 with pyads.Connection(net_id, port, ip) as plc:
-    attr = pyads.NotificationAttrib(4)  # size in bytes, PLCTYPE_INT here
+    attr = pyads.NotificationAttrib(4) # size in bytes, PLCTYPE_INT here
     plc.add_device_notification("MAIN.counter", attr, callback)
     import time; time.sleep(60)
 ```

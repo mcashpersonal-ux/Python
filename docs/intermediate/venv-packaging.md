@@ -2,7 +2,7 @@
 
 > A virtual environment isolates a project's dependencies from
 > the system Python. Packaging describes how to distribute
-> your code to others. Both are table stakes for any real project.u৹
+> your code to others. Both are table stakes for any real project.u
 
 ---
 
@@ -11,19 +11,17 @@
 ```bash
 # terminal - everything below builds on this:
 
-#  python3 -m venv .venv
-#  source .venv/bin/activate      # Windows: .venv\Scripts\activate
-#  pip install requests
-#  python script.py
+# python3 -m venv .venv
+# source .venv/bin/activate # Windows: .venv\Scripts\activate
+# pip install requests
+# python script.py
 ```
 
 Each project gets its own site-packages- so two projects can
 want different versions of the same library without fighting.
 **
 Activate scopes your shell; deactivate exits. Commit.gitignore
-entry: .venv/.u৹
-
-
+entry: .venv/.u
 
 ---
 
@@ -31,19 +29,17 @@ entry: .venv/.u৹
 
 ```bash
 # terminal
-#  pip freeze > requirements.txt
+# pip freeze > requirements.txt
 
 # requirements.txt (sample content(:
-#  requests==2.32.3
-#  flask==3.0.3
+# requests==2.32.3
+# flask==3.0.3
 ```
 
 pip freeze lists exact installed versions-and > writes them
 to requirements.txt,keeping deployments reproducible. Pin
 top-level deps,not transitive ones:use pip freeze > reqs.lock"
-for locked builds,u৹ prefer ranges for libraries.u৹
-
-
+for locked builds,u prefer ranges for libraries.u
 
 ---
 
@@ -51,16 +47,14 @@ for locked builds,u৹ prefer ranges for libraries.u৹
 
 ```bash
 # terminal
-#  python3 -m pip install -r requirements.txt
-#  python3 -m pip install -r requirements.txt --upgrade
+# python3 -m pip install -r requirements.txt
+# python3 -m pip install -r requirements.txt --upgrade
 ```
 
 -r installs every pinned dependency at once into the active venv.
 **
 Do this after cloning a repo: create venv,activate,install,run.
-Never pip install into system Python for a project.u৹
-
-
+Never pip install into system Python for a project.u
 
 ---
 
@@ -88,9 +82,7 @@ my-tool = "mytool.cli:main"
 pyproject.toml is today's single-source packaging file:
 metadata, deps, entry points in one place. Install it
 locally with: pip install -e . ("editable" - live dev mode(.
-u৹
-
-
+u
 
 ---
 
@@ -111,17 +103,17 @@ def main():
 
 ```bash
 # terminal
-#  pip install build twine
-#  python3 -m build            # creates dist/
-#  twine check dist/*
-#  twine upload dist/*
+# pip install build twine
+# python3 -m build # creates dist/
+# twine check dist/*
+# twine upload dist/*
 ```
 
 build makes sdist+w+wheel; twine checks and uploads to PyPI.
 **
 Rarely you'll need it- but knowing the four commands demystifies
-pip install from anywhere.u৹ Once on PyPI, anyone can
-pip install your-tool.u৹
+pip install from anywhere.u Once on PyPI, anyone can
+pip install your-tool.u
 
 ---
 

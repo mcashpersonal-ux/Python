@@ -18,7 +18,7 @@ class Config:
 
 a = Config()
 b = Config()
-print(a is b)   # True
+print(a is b) # True
 ```
 
 Singleton locks a class to one instance- shared config,db,

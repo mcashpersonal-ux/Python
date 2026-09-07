@@ -20,12 +20,12 @@ pip install minimalmodbus
 ```python
 import minimalmodbus
 
-instrument = minimalmodbus.Instrument("/dev/ttyUSB0", 1)  # port, slave address
+instrument = minimalmodbus.Instrument("/dev/ttyUSB0", 1) # port, slave address
 instrument.serial.baudrate = 9600
-instrument.serial.timeout = 1  # seconds
+instrument.serial.timeout = 1 # seconds
 
 value = instrument.read_register(100, number_of_decimals=1)
-print(value)  # e.g. 23.4
+print(value) # e.g. 23.4
 ```
 
 `number_of_decimals` tells minimalmodbus to divide the raw integer by
@@ -84,7 +84,7 @@ instrument.mode = minimalmodbus.MODE_ASCII
 
 ```python
 # read several registers at once
-values = instrument.read_registers(0, 8)  # list[int]
+values = instrument.read_registers(0, 8) # list[int]
 ```
 
 ```python

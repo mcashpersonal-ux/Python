@@ -31,7 +31,7 @@ print(df.describe())
 
 ```python
 hot = df[df["value"] > 25]
-df["value_f"] = df["value"] * 9 / 5 + 32   # new column from existing ones
+df["value_f"] = df["value"] * 9 / 5 + 32 # new column from existing ones
 subset = df[["sensor", "value"]]
 ```
 
@@ -97,7 +97,7 @@ merged = df.merge(metadata_df, on="sensor", how="left")
 ```python
 # write back out
 df.to_csv("cleaned.csv", index=False)
-df.to_excel("cleaned.xlsx", index=False)  # needs openpyxl installed
+df.to_excel("cleaned.xlsx", index=False) # needs openpyxl installed
 ```
 
 ---

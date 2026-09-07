@@ -15,10 +15,8 @@ print(text)
 ```
 
 Path.read_text() opens, reads, and closes the file for you.
-One line, no with needed. Encoding defaults to UTF-8.u৵
-Add encoding="utf-8" when reading files your OS did not create.u৵
-
-
+One line, no with needed. Encoding defaults to UTF-8.u
+Add encoding="utf-8" when reading files your OS did not create.u
 
 ---
 
@@ -31,10 +29,8 @@ Path("out.txt" ).write_text("hello world\n")
 ```
 
 write_text() overwrites existing content. For append,
-use mode="a". It is equivalent to open().write() but shorter.u৹
-Folders must exist first - write_text does not create parents.u৹
-
-
+use mode="a". It is equivalent to open().write() but shorter.u
+Folders must exist first - write_text does not create parents.u
 
 ---
 
@@ -46,9 +42,7 @@ with open("log.txt","a") as f:
 ```
 
 mode "a" appends to the end. with closes the file automatically
-even on errors - never forget closing, or data can vanish.u৹
-
-
+even on errors - never forget closing, or data can vanish.u
 
 ---
 
@@ -63,9 +57,7 @@ with open("data.txt")as f:
 
 Iterating over a file object yields lines lazily - great for
 huge files. .strip() removes the trailing newline. Use
-rstrip("\n") if you want to keep leading space.u৹
-
-
+rstrip("\n") if you want to keep leading space.u
 
 ---
 
@@ -80,9 +72,7 @@ print(len(lines))
 ```
 
 readlines() consumes the whole file at once - fine for small
-files, wasteful for gigabytes.u৹ Prefer iterating for big data.u৹
-
-
+files, wasteful for gigabytes.u Prefer iterating for big data.u
 
 ---
 
@@ -96,9 +86,7 @@ with open("out.txt","w")as f:
 ```
 
 writelines() takes an iterable of strings and writes each
-with no separator added - you supply newlines yourself.u৹
-
-
+with no separator added - you supply newlines yourself.u
 
 ---
 
@@ -115,14 +103,12 @@ with open("data.json","w")as f:
 with open("data.json" )as f:
     loaded = json.load(f)
 
-print(loaded["skills"][0])   # python
+print(loaded["skills"][0]) # python
 ```
 
 json.dump serializes a python object into the file; json.load
 reads it back. Round-trip safe for dicts, lists, strings,
-numbers, booleans, and None.u৹
-
-
+numbers, booleans, and None.u
 
 ---
 
@@ -142,9 +128,7 @@ with open("people.csv",newline="" )as f:
 ```
 
 newline="" prevents blank lines on Windows. reader yields
-lists of strings per row; writerows writes them all.u৹
-
-
+lists of strings per row; writerows writes them all.u
 
 ---
 
@@ -163,8 +147,7 @@ print(raw)
 
 Open in "rb"/"wb" for binary content - images, audio,
 pickles. Bytes are just integers 0-255; text mode would
-mangle them.u৹
-
+mangle them.u
 
 ---
 
@@ -184,7 +167,7 @@ else:
 Check exists() before reading to dodgea FileNotFoundError.
 For
 racy situations (file deleted between check and open,use try/except:
-see errors-exceptions.md).u৹
+see errors-exceptions.md).u
 
 ---
 

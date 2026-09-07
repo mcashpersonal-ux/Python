@@ -24,10 +24,10 @@ sock = socket.create_connection(("192.168.1.50", 502), timeout=5)
 
 message = tcp.read_holding_registers(slave_id=1, starting_address=0, quantity=4)
 response = tcp.send_message(message, sock)
-print(response)  # list[int]
+print(response) # list[int]
 ```
 
-`umodbus` builds a raw PDU with `tcp.read_holding_registers(...)` and you
+`umodbus` builds a raw PDU with `tcp.read_holding_registers(..)` and you
 send it yourself over a socket you own — more explicit, less magic.
 
 ---

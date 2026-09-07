@@ -34,9 +34,9 @@ unless you're storing raw binary data.
 ## expiring keys (caching)
 
 ```python
-r.set("cache:report", "...", ex=300)   # expires in 300 seconds
-r.setex("cache:report", 300, "...")    # equivalent, explicit form
-print(r.ttl("cache:report"))           # seconds remaining, -1 if no expiry
+r.set("cache:report", "...", ex=300) # expires in 300 seconds
+r.setex("cache:report", 300, "...") # equivalent, explicit form
+print(r.ttl("cache:report")) # seconds remaining, -1 if no expiry
 ```
 
 ---

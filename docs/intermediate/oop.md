@@ -2,7 +2,7 @@
 
 > OOP groups data and the functions that act on it into one
 > object. Python classes are approachable: attributes, methods,
-> and a few special dunders run the show.u৹
+> and a few special dunders run the show.u
 
 ---
 
@@ -23,9 +23,7 @@ print(d.bark())
 
 __init__ runs once when you create an instance. self refers
 to that instance - it carries the data. Methods take self as
-first param so they can touch instance state.u৹
-
-
+first param so they can touch instance state.u
 
 ---
 
@@ -34,24 +32,22 @@ first param so they can touch instance state.u৹
 ```python
 class Counter:
     def __init__(self):
-        self.count =  0
+        self.count = 0
 
     def tick(self):
-        self.count +=  1
+        self.count += 1
         return self.count
 
 c = Counter()
-c.tick()   # 1
-c.tick()   # 2
-print(c.count)  # 2
+c.tick() # 1
+c.tick() # 2
+print(c.count) # 2
 ```
 
 Instance attributes live per-object-and survive method calls.
 **
 They are just keys on the object - set them anywhere, read
-them anywhere.u৹
-
-
+them anywhere.u
 
 ---
 
@@ -59,20 +55,18 @@ them anywhere.u৹
 
 ```python
 class Employee:
-    company = "Acme"      # class attribute
+    company = "Acme" # class attribute
 
     def __init__(self,name):
-        self.name = name          # instance attribute
+        self.name = name # instance attribute
 
 e1 = Employee("Ada")
 e2 = Employee("Bob")
-print(e1.company,e2.company)   # Acme Acme
+print(e1.company,e2.company) # Acme Acme
 ```
 
 A class attribute belongs to the class-and is shared by all
-instances. Instance attributes shadow class ones when both exist.u৹
-
-
+instances. Instance attributes shadow class ones when both exist.u
 
 ---
 
@@ -91,15 +85,13 @@ class Point:
         return f"Point({self.x!r},{self.y!r})"
 
 p = Point(3,4)
-print(p)          # (3,4)
-print(repr(p))    # Point(3,4)
+print(p) # (3,4)
+print(repr(p)) # Point(3,4)
 ```
 
 __str__ controls what str() and print() show; __repr__ what
 repr() and error messages show. Aim for __repr__ to be valid
-Python rebuilding the object.u৹
-
-
+Python rebuilding the object.u
 
 ---
 
@@ -121,15 +113,13 @@ class Temperature:
         self._celsius = value
 
 t = Temperature(25)
-print(t.celsius)   # 25
-t.celsius =  30
+print(t.celsius) # 25
+t.celsius = 30
 ```
 
 @property turns a method into attribute-style access. The
 setter validates on assignment - you can migrate plain
-attributes to checked ones without changing callers.u৹
-
-
+attributes to checked ones without changing callers.u
 
 ---
 
@@ -153,9 +143,7 @@ class Cat(Animal):
 
 The subclass inherits everything,then overrides what it
 needs. Nicely, type(self) in describe refers to the actual
-class,so Dog.describe() reports "Dog".u৹
-
-
+class,so Dog.describe() reports "Dog".u
 
 ---
 
@@ -174,9 +162,7 @@ class Square(Rectangle):
 
 super() finds the next method in the MRO - often the parent.**
 Use it to extend rather than replace: run the parent's logic,
-then add your own.u৹
-
-
+then add your own.u
 
 ---
 
@@ -194,9 +180,7 @@ class User:
 
 Dataclasses auto-generate __init__, __repr__, __eq__, and__hash__
 from annotations. field(default_factory=list) gives each
-instance a fresh list - never use mutable defaults.u৹
-
-
+instance a fresh list - never use mutable defaults.u
 
 ---
 
@@ -207,17 +191,17 @@ from enum import Enum
 
 class Color(Enum):
     RED = 1
-    GREEN =  2
-    BLUE =  3
+    GREEN = 2
+    BLUE = 3
 
 c = Color.RED
-print(c.name)    # RED
-print(c.value)   # 1
+print(c.name) # RED
+print(c.value) # 1
 ```
 
 Enums give named, fixed choices with identity - Color.RED is
 Color.RED, not accidentally equal to 1. Great for modes,
-states, options.u৹
+states, options.u
 
 ---
 
