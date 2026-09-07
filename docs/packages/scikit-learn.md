@@ -119,6 +119,10 @@ joblib.dump(model, "model.joblib")
 model = joblib.load("model.joblib")
 ```
 
+!!! warning "Load only trusted artifacts"
+    `joblib.load()` can execute code while deserializing. Load model files only
+    from a trusted source, and verify their package versions and provenance.
+
 ---
 
 ## when to use what

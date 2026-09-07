@@ -1,9 +1,16 @@
 # Useful Python Packages — Hub
 
 > Curated catalog of high-value third-party packages, grouped by job.
-> Each category below will get its own tutorial page with copy-paste snippets.
+> The numbered pages in the navigation provide focused tutorials with tested snippets.
 
-> All names verified live on PyPI.
+> Package APIs change. Check the package's current documentation and pin versions
+> for reproducible applications rather than copying an unbounded install command.
+
+!!! warning "Safe defaults for package examples"
+    Examples that connect to services are illustrative. Keep credentials in
+    environment variables or a secret manager, use TLS where supported, set
+    network timeouts, and grant only the permissions the example needs. Do not
+    paste real passwords or tokens into source control.
 
 ---
 
@@ -67,7 +74,7 @@
 |---|---|---|
 | Arrays | `numpy` | N-dimensional arrays + linear algebra — foundation of everything |
 | Tables | `pandas` | DataFrames — munge time series, compute stats, resample |
-| Plotting | `matplotlib` | Publication-quality static plots, thisicals, charts |
+| Plotting | `matplotlib` | Publication-quality static plots, statistical charts |
 | Interactive charts | `plotly` | Interactive web charts — zoom, hover, export |
 | Dashboards | `dash` | Web dashboards purely in Python (Plotly-backed) |
 | Quick dashboards | `streamlit` | Bare-bones data apps with scripts — fastest ROI |
@@ -138,6 +145,7 @@
 
 ## Next steps
 
-Each table row will bloom into a dedicated tutorial page under this section.
-Pick a row you use at work (the SCADA/Modbus/OPC UA rows are prime candidates),
-and we will go deep: install, connect, read/write data, handle errors, real snippet.
+The numbered package pages in the navigation provide focused tutorials for the
+covered packages. Pick a package you use at work and read its prerequisites,
+installation command, first operation, error handling, and lifecycle guidance
+before adapting an example to production.

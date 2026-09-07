@@ -9,7 +9,7 @@
 ## install
 
 ```bash
-pip install requests
+python -m pip install requests
 ```
 
 ---
@@ -34,10 +34,13 @@ using the response.
 ## POST with JSON body and headers
 
 ```python
+import os
+import requests
+
 resp = requests.post(
     "https://api.example.com/readings",
     json={"sensor": "line1", "value": 23.4},
-    headers={"Authorization": "Bearer TOKEN"},
+    headers={"Authorization": f"Bearer {os.environ['API_TOKEN']}"},
     timeout=5,
 )
 resp.raise_for_status()
@@ -51,12 +54,15 @@ automatically — no manual `json.dumps` needed.
 ## sessions for repeated calls
 
 ```python
-session = requests.Session()
-session.headers.update({"Authorization": "Bearer TOKEN"})
+import os
+import requests
 
-for i in range(5):
-    resp = session.get(f"https://api.example.com/items/{i}", timeout=5)
-    print(resp.json())
+with requests.Session() as session:
+    session.headers.update({"Authorization": f"Bearer {os.environ['API_TOKEN']}"})
+    for i in range(5):
+        resp = session.get(f"https://api.example.com/items/{i}", timeout=5)
+        resp.raise_for_status()
+        print(resp.json())
 ```
 
 A `Session` reuses the underlying TCP connection (connection pooling) —
@@ -90,8 +96,13 @@ a dead connection.
 ```python
 # file upload
 with open("report.csv", "rb") as f:
-    requests.post("https://api.example.com/upload", files={"file": f})
+    resp = requests.post("https://api.example.com/upload", files={"file": f}, timeout=30)
+    resp.raise_for_status()
 ```
+
+The URLs above are placeholders. Set `API_TOKEN` in the environment rather
+than storing a real credential in source code, and follow the service's terms,
+rate limits, and privacy requirements when uploading or scraping data.
 
 ```python
 # retries with backoff

@@ -118,8 +118,13 @@ both operands.
 ```python
 # save/load model weights
 torch.save(model.state_dict(), "model.pt")
-model.load_state_dict(torch.load("model.pt"))
+state = torch.load("model.pt", map_location="cpu", weights_only=True)
+model.load_state_dict(state)
 ```
+
+Load checkpoints only from trusted sources. PyTorch deserialization behavior is
+version-sensitive; `weights_only=True` is the safer choice for a state-dict
+checkpoint when the installed version supports it.
 
 ```python
 # switch to eval mode for inference (disables dropout/batchnorm training behavior)
