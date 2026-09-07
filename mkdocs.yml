@@ -111,3 +111,12 @@ nav:
       - "46 — Redis (redis-py)": packages/redis.md
       - "47 — Time-series (influxdb-client)": packages/influxdb-client.md
       - "48 — Async SQLite (aiosqlite)": packages/aiosqlite.md
+    - "HTTP, APIs & Scraping":
+      - "49 — HTTP client (requests)": packages/requests.md
+      - "50 — Async HTTP (httpx)": packages/httpx.md
+      - "51 — Low-level HTTP (urllib3)": packages/urllib3.md
+      - "52 — Async client/server (aiohttp)": packages/aiohttp.md
+      - "53 — HTML parsing (Beautiful Soup)": packages/beautifulsoup4.md
+      - "54 — Fast HTML/XML (lxml)": packages/lxml.md
+      - "55 — WebSockets": packages/websockets.md
+      - "56 — GraphQL (gql)": packages/gql.md
