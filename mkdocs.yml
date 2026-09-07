@@ -102,3 +102,12 @@ nav:
       - "38 — Beckhoff TwinCAT (pyads)": packages/pyads.md
       - "39 — CAN bus (python-can)": packages/python-can.md
       - "40 — Serial ports (pyserial)": packages/pyserial.md
+    - "Databases":
+      - "41 — SQLite built-in (sqlite3)": packages/sqlite3-stdlib.md
+      - "42 — PostgreSQL (psycopg2-binary)": packages/psycopg2-binary.md
+      - "43 — PostgreSQL modern (psycopg)": packages/psycopg.md
+      - "44 — MySQL (PyMySQL)": packages/pymysql.md
+      - "45 — MongoDB (PyMongo)": packages/pymongo.md
+      - "46 — Redis (redis-py)": packages/redis.md
+      - "47 — Time-series (influxdb-client)": packages/influxdb-client.md
+      - "48 — Async SQLite (aiosqlite)": packages/aiosqlite.md
