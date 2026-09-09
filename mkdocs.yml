@@ -159,3 +159,15 @@ nav:
       - "ORM (SQLAlchemy)": packages/sqlalchemy.md
       - "Migrations (Alembic)": packages/alembic.md
       - "Telemetry (OpenTelemetry)": packages/opentelemetry-api.md
+    - "Testing & Developer Tools":
+      - "Testing (pytest)": packages/pytest.md
+      - "Coverage (pytest-cov)": packages/pytest-cov.md
+      - "Test data (Faker)": packages/faker.md
+      - "HTTP mocking (responses)": packages/responses.md
+      - "Linting and formatting (Ruff)": packages/ruff.md
+      - "Type checking (mypy)": packages/mypy.md
+      - "Formatting (Black)": packages/black.md
+      - "Import sorting (isort)": packages/isort.md
+      - "Git hooks (pre-commit)": packages/pre-commit.md
+      - "Package builds (build)": packages/build.md
+      - "Build backend (Hatchling)": packages/hatchling.md
