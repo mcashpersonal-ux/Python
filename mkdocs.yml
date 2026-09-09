@@ -102,31 +102,31 @@ nav:
       - "38 — Beckhoff TwinCAT (pyads)": packages/040-pyads.md
       - "39 — CAN bus (python-can)": packages/041-python-can.md
       - "40 — Serial ports (pyserial)": packages/042-pyserial.md
-      - "95 — EtherNet/IP (pycomm3)": packages/113-pycomm3.md
-      - "96 — BACnet (bacpypes3)": packages/114-bacpypes3.md
-      - "97 — DNP3 (pydnp3)": packages/115-pydnp3.md
-      - "98 — IEC 60870-5-104 (c104)": packages/116-c104.md
-      - "99 — IEC 61850 (pyiec61850)": packages/117-pyiec61850.md
-      - "100 — Sparkplug B (tahu)": packages/118-tahu.md
+      - "111 — EtherNet/IP (pycomm3)": packages/113-pycomm3.md
+      - "112 — BACnet (bacpypes3)": packages/114-bacpypes3.md
+      - "113 — DNP3 (pydnp3)": packages/115-pydnp3.md
+      - "114 — IEC 60870-5-104 (c104)": packages/116-c104.md
+      - "115 — IEC 61850 (pyiec61850)": packages/117-pyiec61850.md
+      - "116 — Sparkplug B (tahu)": packages/118-tahu.md
     - "Machine Vision & Quality":
-      - "101 — Computer vision (opencv-python)": packages/119-opencv-python.md
-      - "102 — Barcode/QR reading (pyzbar)": packages/120-pyzbar.md
-      - "103 — Barcode generation (python-barcode)": packages/121-python-barcode.md
+      - "117 — Computer vision (opencv-python)": packages/119-opencv-python.md
+      - "118 — Barcode/QR reading (pyzbar)": packages/120-pyzbar.md
+      - "119 — Barcode generation (python-barcode)": packages/121-python-barcode.md
     - "Predictive Maintenance & Reliability":
-      - "104 — Wavelets (PyWavelets)": packages/122-pywavelets.md
-      - "105 — Time-series features (tsfresh)": packages/123-tsfresh.md
-      - "106 — Anomaly detection (PyOD)": packages/124-pyod.md
-      - "107 — Survival analysis (lifelines)": packages/125-lifelines.md
+      - "120 — Wavelets (PyWavelets)": packages/122-pywavelets.md
+      - "121 — Time-series features (tsfresh)": packages/123-tsfresh.md
+      - "122 — Anomaly detection (PyOD)": packages/124-pyod.md
+      - "123 — Survival analysis (lifelines)": packages/125-lifelines.md
     - "Simulation & Modeling":
-      - "108 — Discrete-event simulation (SimPy)": packages/126-simpy.md
-      - "109 — Power-system analysis (pandapower)": packages/127-pandapower.md
+      - "124 — Discrete-event simulation (SimPy)": packages/126-simpy.md
+      - "125 — Power-system analysis (pandapower)": packages/127-pandapower.md
     - "HMI & Desktop":
-      - "110 — Desktop HMI (PySide6)": packages/128-pyside6.md
-      - "111 — Touchscreen HMI (Kivy)": packages/129-kivy.md
+      - "126 — Desktop HMI (PySide6)": packages/128-pyside6.md
+      - "127 — Touchscreen HMI (Kivy)": packages/129-kivy.md
     - "OT Networking & State Logic":
-      - "112 — Packet analysis (Scapy)": packages/130-scapy.md
-      - "113 — Network automation (NAPALM)": packages/131-napalm.md
-      - "114 — State machines (transitions)": packages/132-transitions.md
+      - "128 — Packet analysis (Scapy)": packages/130-scapy.md
+      - "129 — Network automation (NAPALM)": packages/131-napalm.md
+      - "130 — State machines (transitions)": packages/132-transitions.md
     - "Databases":
       - "41 — SQLite built-in (sqlite3)": packages/043-sqlite3-stdlib.md
       - "42 — PostgreSQL (psycopg2-binary)": packages/044-psycopg2-binary.md
@@ -148,7 +148,7 @@ nav:
     - "Data Science & Charts":
       - "57 — Arrays (NumPy)": packages/059-numpy.md
       - "58 — DataFrames (pandas)": packages/060-pandas.md
-      - "Fast DataFrames (polars)": packages/110-polars.md
+      - "108 — Fast DataFrames (polars)": packages/110-polars.md
       - "59 — Static plots (Matplotlib)": packages/061-matplotlib.md
       - "60 — Interactive charts (Plotly)": packages/062-plotly.md
       - "61 — Dashboards (Dash)": packages/063-dash.md
@@ -162,44 +162,44 @@ nav:
       - "69 — Deep learning (PyTorch)": packages/071-torch.md
       - "70 — Columnar data (pyarrow)": packages/072-pyarrow.md
     - "CLI, Config & Automation":
-      - "Click": packages/073-click.md
-      - "Typer": packages/074-typer.md
-      - "Progress bars (tqdm)": packages/075-tqdm.md
-      - "Terminal output (Rich)": packages/076-rich.md
-      - "Structured logging (structlog)": packages/077-structlog.md
-      - "Zero-setup logging (loguru)": packages/109-loguru.md
-      - "YAML configuration (PyYAML)": packages/078-pyyaml.md
-      - "Environment files (python-dotenv)": packages/079-python-dotenv.md
-      - "Validation (Pydantic)": packages/080-pydantic.md
-      - "In-process scheduling (schedule)": packages/081-schedule.md
-      - "Cron expressions (croniter)": packages/082-croniter.md
-      - "Date handling (dateutil)": packages/083-dateutil.md
-      - "Date handling (Pendulum)": packages/084-pendulum.md
-      - "Date handling (Arrow)": packages/085-arrow.md
+      - "71 — Click": packages/073-click.md
+      - "72 — Typer": packages/074-typer.md
+      - "73 — Progress bars (tqdm)": packages/075-tqdm.md
+      - "74 — Terminal output (Rich)": packages/076-rich.md
+      - "75 — Structured logging (structlog)": packages/077-structlog.md
+      - "107 — Zero-setup logging (loguru)": packages/109-loguru.md
+      - "76 — YAML configuration (PyYAML)": packages/078-pyyaml.md
+      - "77 — Environment files (python-dotenv)": packages/079-python-dotenv.md
+      - "78 — Validation (Pydantic)": packages/080-pydantic.md
+      - "79 — In-process scheduling (schedule)": packages/081-schedule.md
+      - "80 — Cron expressions (croniter)": packages/082-croniter.md
+      - "81 — Date handling (dateutil)": packages/083-dateutil.md
+      - "82 — Date handling (Pendulum)": packages/084-pendulum.md
+      - "83 — Date handling (Arrow)": packages/085-arrow.md
     - "Web Frameworks & APIs":
-      - "FastAPI": packages/086-fastapi.md
-      - "ASGI server (Uvicorn)": packages/087-uvicorn.md
-      - "Flask": packages/088-flask.md
-      - "Django": packages/089-django.md
-      - "ASGI toolkit (Starlette)": packages/090-starlette.md
-      - "Templates (Jinja2)": packages/091-jinja2.md
-      - "ORM (SQLAlchemy)": packages/092-sqlalchemy.md
-      - "Migrations (Alembic)": packages/093-alembic.md
-      - "Telemetry (OpenTelemetry)": packages/094-opentelemetry-api.md
+      - "84 — FastAPI": packages/086-fastapi.md
+      - "85 — ASGI server (Uvicorn)": packages/087-uvicorn.md
+      - "86 — Flask": packages/088-flask.md
+      - "87 — Django": packages/089-django.md
+      - "88 — ASGI toolkit (Starlette)": packages/090-starlette.md
+      - "89 — Templates (Jinja2)": packages/091-jinja2.md
+      - "90 — ORM (SQLAlchemy)": packages/092-sqlalchemy.md
+      - "91 — Migrations (Alembic)": packages/093-alembic.md
+      - "92 — Telemetry (OpenTelemetry)": packages/094-opentelemetry-api.md
     - "Cloud, Security & Networking":
-      - "AWS SDK (boto3)": packages/106-boto3.md
-      - "SSH/SFTP (paramiko)": packages/107-paramiko.md
-      - "Crypto primitives (cryptography)": packages/108-cryptography.md
+      - "104 — AWS SDK (boto3)": packages/106-boto3.md
+      - "105 — SSH/SFTP (paramiko)": packages/107-paramiko.md
+      - "106 — Crypto primitives (cryptography)": packages/108-cryptography.md
     - "Testing & Developer Tools":
-      - "Testing (pytest)": packages/095-pytest.md
-      - "Browser automation (Playwright)": packages/111-playwright.md
-      - "Coverage (pytest-cov)": packages/096-pytest-cov.md
-      - "Test data (Faker)": packages/097-faker.md
-      - "HTTP mocking (responses)": packages/098-responses.md
-      - "Linting and formatting (Ruff)": packages/099-ruff.md
-      - "Type checking (mypy)": packages/100-mypy.md
-      - "Formatting (Black)": packages/101-black.md
-      - "Import sorting (isort)": packages/102-isort.md
-      - "Git hooks (pre-commit)": packages/103-pre-commit.md
-      - "Package builds (build)": packages/104-build.md
-      - "Build backend (Hatchling)": packages/105-hatchling.md
+      - "93 — Testing (pytest)": packages/095-pytest.md
+      - "109 — Browser automation (Playwright)": packages/111-playwright.md
+      - "94 — Coverage (pytest-cov)": packages/096-pytest-cov.md
+      - "95 — Test data (Faker)": packages/097-faker.md
+      - "96 — HTTP mocking (responses)": packages/098-responses.md
+      - "97 — Linting and formatting (Ruff)": packages/099-ruff.md
+      - "98 — Type checking (mypy)": packages/100-mypy.md
+      - "99 — Formatting (Black)": packages/101-black.md
+      - "100 — Import sorting (isort)": packages/102-isort.md
+      - "101 — Git hooks (pre-commit)": packages/103-pre-commit.md
+      - "102 — Package builds (build)": packages/104-build.md
+      - "103 — Build backend (Hatchling)": packages/105-hatchling.md
