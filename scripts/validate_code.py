@@ -11,8 +11,13 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 MKDOCS = ROOT / "mkdocs.yml"
 FENCE_RE = re.compile(r"```(?P<language>python|python3|py)\s*\n(?P<code>.*?)```", re.S | re.I)
+ANY_FENCE_RE = re.compile(r"```.*?```", re.S)
+INLINE_CODE_RE = re.compile(r"`[^`]*`")
 NAV_TARGET_RE = re.compile(r":\s+(?P<target>[^\s#]+\.md)\s*$", re.M)
 LINK_RE = re.compile(r"!?(?:\[[^\]]*\])\((?P<target>[^)\s]+)(?:\s+['\"][^)]*['\"])?\)")
+COMMA_SPACING_RE = re.compile(r",(?=[A-Za-z])")
+PACKAGE_HUB_ROW_RE = re.compile(r"\| ([^|]+) \| `([^`]+)` \|")
+PACKAGE_ALIASES = {"pymodbus": "modbus-pymodbus", "python-dateutil": "dateutil"}
 
 
 def python_blocks(path: Path) -> list[str]:
@@ -60,6 +65,40 @@ def validate_internal_links() -> list[str]:
     return errors
 
 
+def validate_prose_comma_spacing() -> list[str]:
+    """Regression guard for the 'meangyou'-style corruption fixed in the past:
+    a comma immediately followed by a letter, outside of fenced code blocks
+    and inline code spans (where such a pattern can be legitimate example
+    data, e.g. "cat,dog,cat,bird")."""
+    errors: list[str] = []
+    for path in sorted(DOCS.rglob("*.md")):
+        text = path.read_text(encoding="utf-8")
+        prose = ANY_FENCE_RE.sub("", text)
+        prose = INLINE_CODE_RE.sub("", prose)
+        for match in COMMA_SPACING_RE.finditer(prose):
+            snippet = prose[max(0, match.start() - 20):match.start() + 20]
+            errors.append(f"{path.relative_to(ROOT)}: missing space after comma near {snippet!r}")
+    return errors
+
+
+def validate_package_hub_coverage() -> list[str]:
+    """Every package listed in the packages hub table should have a
+    corresponding tutorial page in docs/packages/, and vice versa is not
+    required (a page may cover more than the hub summarizes)."""
+    package_dir = DOCS / "packages"
+    hub_candidates = sorted(package_dir.glob("[0-9][0-9][0-9]-index.md"))
+    if not hub_candidates:
+        return ["docs/packages/*-index.md hub page is missing"]
+    hub = hub_candidates[0]
+    existing = {re.sub(r"^\d{3}-", "", p.stem) for p in package_dir.glob("*.md")}
+    errors: list[str] = []
+    for label, package in PACKAGE_HUB_ROW_RE.findall(hub.read_text(encoding="utf-8")):
+        slug = PACKAGE_ALIASES.get(package, package.lower().replace("_", "-"))
+        if slug not in existing:
+            errors.append(f"hub lists '{label.strip()}' (`{package}`) with no matching docs/packages/*-{slug}.md page")
+    return errors
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--fix", action="store_true", help="remove legacy corruption markers")
@@ -73,7 +112,13 @@ def main(argv: list[str] | None = None) -> int:
                 path.write_text(cleaned, encoding="utf-8")
                 print(f"fixed {path.relative_to(ROOT)}")
 
-    errors = validate_python_examples() + validate_navigation() + validate_internal_links()
+    errors = (
+        validate_python_examples()
+        + validate_navigation()
+        + validate_internal_links()
+        + validate_prose_comma_spacing()
+        + validate_package_hub_coverage()
+    )
     if errors:
         for error in errors:
             print(f"ERROR: {error}", file=sys.stderr)

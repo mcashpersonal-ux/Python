@@ -17,6 +17,12 @@ class DocumentationValidationTests(unittest.TestCase):
     def test_internal_links_exist(self):
         self.assertEqual(validate_code.validate_internal_links(), [])
 
+    def test_no_missing_space_after_comma_in_prose(self):
+        self.assertEqual(validate_code.validate_prose_comma_spacing(), [])
+
+    def test_package_hub_matches_tutorial_pages(self):
+        self.assertEqual(validate_code.validate_package_hub_coverage(), [])
+
     def test_markdown_structure_has_valid_headings(self):
         malformed = []
         for path in validate_code.DOCS.rglob("*.md"):

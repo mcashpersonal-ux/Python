@@ -1,0 +1,8 @@
+# Tools used to develop and validate this site.
+# Install with: python -m pip install -r requirements-dev.txt
+-r requirements.txt
+
+pytest>=8.0
+ruff>=0.6
+mypy>=1.11
+black>=24.0
