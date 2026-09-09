@@ -123,6 +123,7 @@ nav:
     - "Data Science & Charts":
       - "57 — Arrays (NumPy)": packages/059-numpy.md
       - "58 — DataFrames (pandas)": packages/060-pandas.md
+      - "Fast DataFrames (polars)": packages/110-polars.md
       - "59 — Static plots (Matplotlib)": packages/061-matplotlib.md
       - "60 — Interactive charts (Plotly)": packages/062-plotly.md
       - "61 — Dashboards (Dash)": packages/063-dash.md
@@ -141,6 +142,7 @@ nav:
       - "Progress bars (tqdm)": packages/075-tqdm.md
       - "Terminal output (Rich)": packages/076-rich.md
       - "Structured logging (structlog)": packages/077-structlog.md
+      - "Zero-setup logging (loguru)": packages/109-loguru.md
       - "YAML configuration (PyYAML)": packages/078-pyyaml.md
       - "Environment files (python-dotenv)": packages/079-python-dotenv.md
       - "Validation (Pydantic)": packages/080-pydantic.md
@@ -159,8 +161,13 @@ nav:
       - "ORM (SQLAlchemy)": packages/092-sqlalchemy.md
       - "Migrations (Alembic)": packages/093-alembic.md
       - "Telemetry (OpenTelemetry)": packages/094-opentelemetry-api.md
+    - "Cloud, Security & Networking":
+      - "AWS SDK (boto3)": packages/106-boto3.md
+      - "SSH/SFTP (paramiko)": packages/107-paramiko.md
+      - "Crypto primitives (cryptography)": packages/108-cryptography.md
     - "Testing & Developer Tools":
       - "Testing (pytest)": packages/095-pytest.md
+      - "Browser automation (Playwright)": packages/111-playwright.md
       - "Coverage (pytest-cov)": packages/096-pytest-cov.md
       - "Test data (Faker)": packages/097-faker.md
       - "HTTP mocking (responses)": packages/098-responses.md

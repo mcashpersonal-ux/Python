@@ -74,6 +74,7 @@
 |---|---|---|
 | Arrays | `numpy` | N-dimensional arrays + linear algebra — foundation of everything |
 | Tables | `pandas` | DataFrames — munge time series, compute stats, resample |
+| DataFrames (fast) | `polars` | Multi-threaded, Rust-backed DataFrames — a faster pandas alternative |
 | Plotting | `matplotlib` | Publication-quality static plots, statistical charts |
 | Interactive charts | `plotly` | Interactive web charts — zoom, hover, export |
 | Dashboards | `dash` | Web dashboards purely in Python (Plotly-backed) |
@@ -98,6 +99,7 @@
 | Progress bars | `tqdm` | Instant progress bars over loops — must-have |
 | Pretty output | `rich` | Colorized tables, logs, syntax-highlighted terminal |
 | Logging | `structlog` | Structured JSON logs for services — greppable at scale |
+| Logging (simple) | `loguru` | Zero-setup logging with rotation, retention, JSON output |
 | Config YAML | `pyyaml` | Load/save YAML config files |
 | Config env vars | `python-dotenv` | Load .env files into environment — keep secrets out of code |
 | Validation | `pydantic` | Typed, validated settings and data models — pairs with FastAPI |
@@ -125,11 +127,22 @@
 
 ---
 
+## Cloud, Security & Networking
+
+| Package | PyPI name | What it does |
+|---|---|---|
+| AWS SDK | `boto3` | Official AWS SDK — S3, DynamoDB, SQS, and every other AWS service |
+| SSH/SFTP | `paramiko` | Pure-Python SSH2 — remote commands, file transfer, server automation |
+| Crypto primitives | `cryptography` | Audited encryption, hashing, and signatures — the safe default |
+
+---
+
 ## Testing & Dev Tools
 
 | Package | PyPI name | What it does |
 |---|---|---|
 | Test runner | `pytest` | The standard test framework — fixtures, parametrize |
+| Browser automation | `playwright` | Drive real browsers for E2E tests and JS-heavy scraping |
 | Coverage | `pytest-cov` | Coverage reports — see untested lines |
 | Fake data | `faker` | Generate realistic fake names, addresses, serials for tests |
 | Mock server | `responses` | Stub HTTP calls when unit-testing requests/httpx |
