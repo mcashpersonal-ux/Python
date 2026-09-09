@@ -2,10 +2,12 @@ from pathlib import Path
 import re
 
 root = Path(__file__).resolve().parents[1]
-existing = {p.stem for p in (root / 'docs/packages').glob('*.md')}
+package_dir = root / 'docs/packages'
+existing = {re.sub(r'^\d{3}-', '', p.stem) for p in package_dir.glob('*.md')}
 aliases = {'pymodbus': 'modbus-pymodbus', 'python-dateutil': 'dateutil'}
 rows = []
-for line in (root / 'docs/packages/index.md').read_text(encoding='utf-8').splitlines():
+hub = next(package_dir.glob('[0-9][0-9][0-9]-index.md'))
+for line in hub.read_text(encoding='utf-8').splitlines():
     m = re.match(r'\| ([^|]+) \| `([^`]+)` \|', line)
     if m:
         label, package = m.groups()

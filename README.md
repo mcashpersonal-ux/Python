@@ -7,7 +7,7 @@ with practical, copy-paste-ready snippets and short explanations. Built with
 ## Local development
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 mkdocs serve        # preview at http://127.0.0.1:8000
 ```
 
@@ -24,15 +24,20 @@ Static output goes into `site/` — deploy that folder to GitHub Pages
 
 ```
 docs/
-├── index.md              # Homepage
-├── cheatsheet.md         # Quick-reference snippets
-├── basics/               # 01 – 10
-├── intermediate/         # 11 – 18
-└── advanced/             # 19 – 25
+├── 000-index.md          # Homepage
+├── 001-cheatsheet.md     # Quick-reference snippets
+├── basics/               # Core lessons continue the global sequence
+├── intermediate/
+├── advanced/
+└── packages/             # Package guides continue the global sequence
 ```
+
+Every Markdown filename starts with a unique three-digit sequence number, so
+file listings sort in the same order as the navigation. Use the navigation
+entry rather than guessing a filename when linking to a page.
 
 ## Adding a page
 
-1. Create `docs/<section>/<name>.md`
+1. Create `docs/<section>/<NNN>-<name>.md` with the next available number.
 2. Add it under `nav:` in `mkdocs.yml`
 3. `mkdocs serve` to preview

@@ -54,120 +54,120 @@ extra:
   generator: false
 
 nav:
-  - Home: index.md
-  - Quick Reference: cheatsheet.md
+  - Home: 000-index.md
+  - Quick Reference: 001-cheatsheet.md
   - "Basics":
-    - "01 — Getting Started": basics/getting-started.md
-    - "02 — Variables & Types": basics/variables-types.md
-    - "03 — Numbers & Strings": basics/numbers-strings.md
-    - "04 — Collections": basics/collections.md
-    - "05 — Control Flow": basics/control-flow.md
-    - "06 — Functions": basics/functions.md
-    - "07 — Modules & Packages": basics/modules-packages.md
-    - "08 — File Handling": basics/file-handling.md
-    - "09 — Errors & Exceptions": basics/errors-exceptions.md
-    - "10 — Comprehensions": basics/comprehensions.md
+    - "01 — Getting Started": basics/002-getting-started.md
+    - "02 — Variables & Types": basics/003-variables-types.md
+    - "03 — Numbers & Strings": basics/004-numbers-strings.md
+    - "04 — Collections": basics/005-collections.md
+    - "05 — Control Flow": basics/006-control-flow.md
+    - "06 — Functions": basics/007-functions.md
+    - "07 — Modules & Packages": basics/008-modules-packages.md
+    - "08 — File Handling": basics/009-file-handling.md
+    - "09 — Errors & Exceptions": basics/010-errors-exceptions.md
+    - "10 — Comprehensions": basics/011-comprehensions.md
   - "Intermediate":
-    - "11 — OOP": intermediate/oop.md
-    - "12 — Decorators": intermediate/decorators.md
-    - "13 — Generators": intermediate/generators.md
-    - "14 — Context Managers": intermediate/context-managers.md
-    - "15 — Lambda & Functional": intermediate/lambda-functional.md
-    - "16 — JSON & CSV": intermediate/json-csv.md
-    - "17 — Regular Expressions": intermediate/regex.md
-    - "18 — VEnv & Packaging": intermediate/venv-packaging.md
+    - "11 — OOP": intermediate/012-oop.md
+    - "12 — Decorators": intermediate/013-decorators.md
+    - "13 — Generators": intermediate/014-generators.md
+    - "14 — Context Managers": intermediate/015-context-managers.md
+    - "15 — Lambda & Functional": intermediate/016-lambda-functional.md
+    - "16 — JSON & CSV": intermediate/017-json-csv.md
+    - "17 — Regular Expressions": intermediate/018-regex.md
+    - "18 — VEnv & Packaging": intermediate/019-venv-packaging.md
   - "Advanced":
-    - "19 — Asyncio": advanced/asyncio.md
-    - "20 — Concurrency": advanced/concurrency.md
-    - "21 — Performance & Profiling": advanced/performance.md
-    - "22 — Testing": advanced/testing.md
-    - "23 — Type Hints": advanced/type-hints.md
-    - "24 — Design Patterns": advanced/design-patterns.md
-    - "25 — Best Practices": advanced/best-practices.md
+    - "19 — Asyncio": advanced/020-asyncio.md
+    - "20 — Concurrency": advanced/021-concurrency.md
+    - "21 — Performance & Profiling": advanced/022-performance.md
+    - "22 — Testing": advanced/023-testing.md
+    - "23 — Type Hints": advanced/024-type-hints.md
+    - "24 — Design Patterns": advanced/025-design-patterns.md
+    - "25 — Best Practices": advanced/026-best-practices.md
   - "Packages":
-    - "Package Hub": packages/index.md
+    - "Package Hub": packages/027-index.md
     - "SCADA & Industrial":
-      - "26 — Modbus TCP (pymodbus)": packages/modbus-pymodbus.md
-      - "27 — Modbus RTU (minimalmodbus)": packages/minimalmodbus.md
-      - "28 — Modbus toolkit (modbus-tk)": packages/modbus-tk.md
-      - "29 — Modbus TCP minimal (pyModbusTCP)": packages/pymodbustcp.md
-      - "30 — Modbus lightweight (uModbus)": packages/umodbus.md
-      - "31 — OPC UA (asyncua)": packages/asyncua.md
-      - "32 — OPC UA legacy (opcua)": packages/opcua.md
-      - "33 — SNMP (pysnmp)": packages/pysnmp.md
-      - "34 — SNMP maintained fork (pysnmp-lextudio)": packages/pysnmp-lextudio.md
-      - "35 — MQTT (paho-mqtt)": packages/paho-mqtt.md
-      - "36 — MQTT async (aiomqtt)": packages/aiomqtt.md
-      - "37 — Siemens S7 (python-snap7)": packages/python-snap7.md
-      - "38 — Beckhoff TwinCAT (pyads)": packages/pyads.md
-      - "39 — CAN bus (python-can)": packages/python-can.md
-      - "40 — Serial ports (pyserial)": packages/pyserial.md
+      - "26 — Modbus TCP (pymodbus)": packages/028-modbus-pymodbus.md
+      - "27 — Modbus RTU (minimalmodbus)": packages/029-minimalmodbus.md
+      - "28 — Modbus toolkit (modbus-tk)": packages/030-modbus-tk.md
+      - "29 — Modbus TCP minimal (pyModbusTCP)": packages/031-pymodbustcp.md
+      - "30 — Modbus lightweight (uModbus)": packages/032-umodbus.md
+      - "31 — OPC UA (asyncua)": packages/033-asyncua.md
+      - "32 — OPC UA legacy (opcua)": packages/034-opcua.md
+      - "33 — SNMP (pysnmp)": packages/035-pysnmp.md
+      - "34 — SNMP maintained fork (pysnmp-lextudio)": packages/036-pysnmp-lextudio.md
+      - "35 — MQTT (paho-mqtt)": packages/037-paho-mqtt.md
+      - "36 — MQTT async (aiomqtt)": packages/038-aiomqtt.md
+      - "37 — Siemens S7 (python-snap7)": packages/039-python-snap7.md
+      - "38 — Beckhoff TwinCAT (pyads)": packages/040-pyads.md
+      - "39 — CAN bus (python-can)": packages/041-python-can.md
+      - "40 — Serial ports (pyserial)": packages/042-pyserial.md
     - "Databases":
-      - "41 — SQLite built-in (sqlite3)": packages/sqlite3-stdlib.md
-      - "42 — PostgreSQL (psycopg2-binary)": packages/psycopg2-binary.md
-      - "43 — PostgreSQL modern (psycopg)": packages/psycopg.md
-      - "44 — MySQL (PyMySQL)": packages/pymysql.md
-      - "45 — MongoDB (PyMongo)": packages/pymongo.md
-      - "46 — Redis (redis-py)": packages/redis.md
-      - "47 — Time-series (influxdb-client)": packages/influxdb-client.md
-      - "48 — Async SQLite (aiosqlite)": packages/aiosqlite.md
+      - "41 — SQLite built-in (sqlite3)": packages/043-sqlite3-stdlib.md
+      - "42 — PostgreSQL (psycopg2-binary)": packages/044-psycopg2-binary.md
+      - "43 — PostgreSQL modern (psycopg)": packages/045-psycopg.md
+      - "44 — MySQL (PyMySQL)": packages/046-pymysql.md
+      - "45 — MongoDB (PyMongo)": packages/047-pymongo.md
+      - "46 — Redis (redis-py)": packages/048-redis.md
+      - "47 — Time-series (influxdb-client)": packages/049-influxdb-client.md
+      - "48 — Async SQLite (aiosqlite)": packages/050-aiosqlite.md
     - "HTTP, APIs & Scraping":
-      - "49 — HTTP client (requests)": packages/requests.md
-      - "50 — Async HTTP (httpx)": packages/httpx.md
-      - "51 — Low-level HTTP (urllib3)": packages/urllib3.md
-      - "52 — Async client/server (aiohttp)": packages/aiohttp.md
-      - "53 — HTML parsing (Beautiful Soup)": packages/beautifulsoup4.md
-      - "54 — Fast HTML/XML (lxml)": packages/lxml.md
-      - "55 — WebSockets": packages/websockets.md
-      - "56 — GraphQL (gql)": packages/gql.md
+      - "49 — HTTP client (requests)": packages/051-requests.md
+      - "50 — Async HTTP (httpx)": packages/052-httpx.md
+      - "51 — Low-level HTTP (urllib3)": packages/053-urllib3.md
+      - "52 — Async client/server (aiohttp)": packages/054-aiohttp.md
+      - "53 — HTML parsing (Beautiful Soup)": packages/055-beautifulsoup4.md
+      - "54 — Fast HTML/XML (lxml)": packages/056-lxml.md
+      - "55 — WebSockets": packages/057-websockets.md
+      - "56 — GraphQL (gql)": packages/058-gql.md
     - "Data Science & Charts":
-      - "57 — Arrays (NumPy)": packages/numpy.md
-      - "58 — DataFrames (pandas)": packages/pandas.md
-      - "59 — Static plots (Matplotlib)": packages/matplotlib.md
-      - "60 — Interactive charts (Plotly)": packages/plotly.md
-      - "61 — Dashboards (Dash)": packages/dash.md
-      - "62 — Quick data apps (Streamlit)": packages/streamlit.md
-      - "63 — Notebooks (JupyterLab)": packages/jupyterlab.md
-      - "64 — Excel read/write (openpyxl)": packages/openpyxl.md
-      - "65 — Fast Excel writing (XlsxWriter)": packages/xlsxwriter.md
-      - "66 — Scientific computing (SciPy)": packages/scipy.md
-      - "67 — Symbolic math (SymPy)": packages/sympy.md
-      - "68 — Classic ML (scikit-learn)": packages/scikit-learn.md
-      - "69 — Deep learning (PyTorch)": packages/torch.md
-      - "70 — Columnar data (pyarrow)": packages/pyarrow.md
+      - "57 — Arrays (NumPy)": packages/059-numpy.md
+      - "58 — DataFrames (pandas)": packages/060-pandas.md
+      - "59 — Static plots (Matplotlib)": packages/061-matplotlib.md
+      - "60 — Interactive charts (Plotly)": packages/062-plotly.md
+      - "61 — Dashboards (Dash)": packages/063-dash.md
+      - "62 — Quick data apps (Streamlit)": packages/064-streamlit.md
+      - "63 — Notebooks (JupyterLab)": packages/065-jupyterlab.md
+      - "64 — Excel read/write (openpyxl)": packages/066-openpyxl.md
+      - "65 — Fast Excel writing (XlsxWriter)": packages/067-xlsxwriter.md
+      - "66 — Scientific computing (SciPy)": packages/068-scipy.md
+      - "67 — Symbolic math (SymPy)": packages/069-sympy.md
+      - "68 — Classic ML (scikit-learn)": packages/070-scikit-learn.md
+      - "69 — Deep learning (PyTorch)": packages/071-torch.md
+      - "70 — Columnar data (pyarrow)": packages/072-pyarrow.md
     - "CLI, Config & Automation":
-      - "Click": packages/click.md
-      - "Typer": packages/typer.md
-      - "Progress bars (tqdm)": packages/tqdm.md
-      - "Terminal output (Rich)": packages/rich.md
-      - "Structured logging (structlog)": packages/structlog.md
-      - "YAML configuration (PyYAML)": packages/pyyaml.md
-      - "Environment files (python-dotenv)": packages/python-dotenv.md
-      - "Validation (Pydantic)": packages/pydantic.md
-      - "In-process scheduling (schedule)": packages/schedule.md
-      - "Cron expressions (croniter)": packages/croniter.md
-      - "Date handling (dateutil)": packages/dateutil.md
-      - "Date handling (Pendulum)": packages/pendulum.md
-      - "Date handling (Arrow)": packages/arrow.md
+      - "Click": packages/073-click.md
+      - "Typer": packages/074-typer.md
+      - "Progress bars (tqdm)": packages/075-tqdm.md
+      - "Terminal output (Rich)": packages/076-rich.md
+      - "Structured logging (structlog)": packages/077-structlog.md
+      - "YAML configuration (PyYAML)": packages/078-pyyaml.md
+      - "Environment files (python-dotenv)": packages/079-python-dotenv.md
+      - "Validation (Pydantic)": packages/080-pydantic.md
+      - "In-process scheduling (schedule)": packages/081-schedule.md
+      - "Cron expressions (croniter)": packages/082-croniter.md
+      - "Date handling (dateutil)": packages/083-dateutil.md
+      - "Date handling (Pendulum)": packages/084-pendulum.md
+      - "Date handling (Arrow)": packages/085-arrow.md
     - "Web Frameworks & APIs":
-      - "FastAPI": packages/fastapi.md
-      - "ASGI server (Uvicorn)": packages/uvicorn.md
-      - "Flask": packages/flask.md
-      - "Django": packages/django.md
-      - "ASGI toolkit (Starlette)": packages/starlette.md
-      - "Templates (Jinja2)": packages/jinja2.md
-      - "ORM (SQLAlchemy)": packages/sqlalchemy.md
-      - "Migrations (Alembic)": packages/alembic.md
-      - "Telemetry (OpenTelemetry)": packages/opentelemetry-api.md
+      - "FastAPI": packages/086-fastapi.md
+      - "ASGI server (Uvicorn)": packages/087-uvicorn.md
+      - "Flask": packages/088-flask.md
+      - "Django": packages/089-django.md
+      - "ASGI toolkit (Starlette)": packages/090-starlette.md
+      - "Templates (Jinja2)": packages/091-jinja2.md
+      - "ORM (SQLAlchemy)": packages/092-sqlalchemy.md
+      - "Migrations (Alembic)": packages/093-alembic.md
+      - "Telemetry (OpenTelemetry)": packages/094-opentelemetry-api.md
     - "Testing & Developer Tools":
-      - "Testing (pytest)": packages/pytest.md
-      - "Coverage (pytest-cov)": packages/pytest-cov.md
-      - "Test data (Faker)": packages/faker.md
-      - "HTTP mocking (responses)": packages/responses.md
-      - "Linting and formatting (Ruff)": packages/ruff.md
-      - "Type checking (mypy)": packages/mypy.md
-      - "Formatting (Black)": packages/black.md
-      - "Import sorting (isort)": packages/isort.md
-      - "Git hooks (pre-commit)": packages/pre-commit.md
-      - "Package builds (build)": packages/build.md
-      - "Build backend (Hatchling)": packages/hatchling.md
+      - "Testing (pytest)": packages/095-pytest.md
+      - "Coverage (pytest-cov)": packages/096-pytest-cov.md
+      - "Test data (Faker)": packages/097-faker.md
+      - "HTTP mocking (responses)": packages/098-responses.md
+      - "Linting and formatting (Ruff)": packages/099-ruff.md
+      - "Type checking (mypy)": packages/100-mypy.md
+      - "Formatting (Black)": packages/101-black.md
+      - "Import sorting (isort)": packages/102-isort.md
+      - "Git hooks (pre-commit)": packages/103-pre-commit.md
+      - "Package builds (build)": packages/104-build.md
+      - "Build backend (Hatchling)": packages/105-hatchling.md

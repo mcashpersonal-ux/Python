@@ -39,6 +39,13 @@ class DocumentationValidationTests(unittest.TestCase):
                     found.append(f"{path}:{artifact}")
         self.assertEqual(found, [])
 
+    def test_documentation_filenames_are_globally_numbered(self):
+        files = list(validate_code.DOCS.rglob("*.md"))
+        invalid = [str(path) for path in files if not re.match(r"^\d{3}-[^/]+\.md$", path.name)]
+        numbers = sorted(int(path.name[:3]) for path in files)
+        self.assertEqual(invalid, [])
+        self.assertEqual(numbers, list(range(len(files))))
+
 
 if __name__ == "__main__":
     unittest.main()
