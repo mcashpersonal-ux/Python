@@ -146,8 +146,6 @@ nav:
       - "55 — WebSockets": packages/057-websockets.md
       - "56 — GraphQL (gql)": packages/058-gql.md
     - "Data Science & Charts":
-      - "57 — Arrays (NumPy)": packages/059-numpy.md
-      - "58 — DataFrames (pandas)": packages/060-pandas.md
       - "108 — Fast DataFrames (polars)": packages/110-polars.md
       - "59 — Static plots (Matplotlib)": packages/061-matplotlib.md
       - "60 — Interactive charts (Plotly)": packages/062-plotly.md
@@ -156,11 +154,14 @@ nav:
       - "63 — Notebooks (JupyterLab)": packages/065-jupyterlab.md
       - "64 — Excel read/write (openpyxl)": packages/066-openpyxl.md
       - "65 — Fast Excel writing (XlsxWriter)": packages/067-xlsxwriter.md
-      - "66 — Scientific computing (SciPy)": packages/068-scipy.md
       - "67 — Symbolic math (SymPy)": packages/069-sympy.md
+      - "70 — Columnar data (pyarrow)": packages/072-pyarrow.md
+    - "Machine Learning":
+      - "57 — Arrays (NumPy)": packages/059-numpy.md
+      - "58 — DataFrames (pandas)": packages/060-pandas.md
+      - "66 — Scientific computing (SciPy)": packages/068-scipy.md
       - "68 — Classic ML (scikit-learn)": packages/070-scikit-learn.md
       - "69 — Deep learning (PyTorch)": packages/071-torch.md
-      - "70 — Columnar data (pyarrow)": packages/072-pyarrow.md
     - "CLI, Config & Automation":
       - "71 — Click": packages/073-click.md
       - "72 — Typer": packages/074-typer.md
