@@ -2,7 +2,7 @@
 
 > Regex finds patterns in text - validation, extraction,
 > replacement, splitting. Python's re module is concise but
-> quirky: raw strings,re.compile, and capture groups cover
+> quirky: raw strings, re.compile, and capture groups cover
 > 90 percent of everyday use.
 
 ---
@@ -14,10 +14,10 @@ import re
 
 text = "order #12345 shipped"
 
-m = re.search(r"#\d+",text)
+m = re.search(r"#\d+", text)
 print(m.group(0)) # #12345
 
-anchor = re.match(r"order",text)
+anchor = re.match(r"order", text)
 print(bool(anchor)) # True
 ```
 
@@ -34,15 +34,15 @@ import re
 
 phone = "call 555-1234 now"
 
-m = re.search(r"\d{3}-\d{4}",phone)
+m = re.search(r"\d{3}-\d{4}", phone)
 print(m.group(0)) # 555-1234
 
-hexes = re.findall(r"0x[0-9a-fA-F]+","0x1F and 0xab")
+hexes = re.findall(r"0x[0-9a-fA-F]+", "0x1F and 0xab")
 print(hexes) # ['0x1F','0xab']
 ```
 
 \d{3} = exactly three digits; [0-9a-fA-F] = hex
-digit class. findall returnsevery match as a list.
+digit class. findall returns every match as a list.
 
 ---
 
@@ -53,12 +53,12 @@ import re
 
 log = "2026-09-07 10:30:00 INFO job done"
 
-m = re.search(r"(\d{4})-(\d{2})-(\d{2})",log)
+m = re.search(r"(\d{4})-(\d{2})-(\d{2})", log)
 print(m.group(1)) # 2026
 print(m.groups()) # ('2026','09','07')
 ```
 
-Parentheses capture, and m.group(n) pulls numberd group;
+Parentheses capture, and m.group(n) pulls that numbered group;
 m.groups() gives all. Name them and read them: (?P<year>\d{4}).
 
 ---
@@ -68,7 +68,7 @@ m.groups() gives all. Name them and read them: (?P<year>\d{4}).
 ```python
 import re
 
-m = re.search(r"(?P<year>\d{4})-(?P<month>\d{2})","2026-09")
+m = re.search(r"(?P<year>\d{4})-(?P<month>\d{2})", "2026-09")
 print(m.group("month")) # 09
 ```
 
@@ -84,10 +84,10 @@ and named back-references still line up.
 ```python
 import re
 
-prices = re.findall(r"\$\d+\.\d{2}","x $12.50 y $3.00")
+prices = re.findall(r"\$\d+\.\d{2}", "x $12.50 y $3.00")
 print(prices) # ['$12.50','$3.00']
 
-parts = re.findall(r"(\d+):(\d+)","10:30,12:45")
+parts = re.findall(r"(\d+):(\d+)", "10:30,12:45")
 print(parts) # [('10','30'),('12','45')]
 ```
 
@@ -102,7 +102,7 @@ each match becomes a tuple of groups- handy for table data.
 import re
 
 text = "cat,dog,cat,bird"
-for m in re.finditer(r"\bcat\b",text):
+for m in re.finditer(r"\bcat\b", text):
 # (0,3) - start and end offsets
     print(m.span())
 ```
@@ -119,10 +119,10 @@ but not the `cat` inside `concat`.
 ```python
 import re
 
-masked = re.sub(r"\d{4}","****","card 1234-5678")
+masked = re.sub(r"\d{4}", "****", "card 1234-5678")
 print(masked) # card ****-****
 
-redacted = re.sub(r"\b\d{2}:\d{2}\b","HH:MM","meet at 09:30")
+redacted = re.sub(r"\b\d{2}:\d{2}\b", "HH:MM", "meet at 09:30")
 print(redacted) # meet at HH:MM
 ```
 
@@ -136,10 +136,10 @@ as replacement for dynamic output: re.sub(pattern, lambda m:m.group(0).upper(), 
 ```python
 import re
 
-tokens = re.split(r"[\s,]+","a,b,c")
+tokens = re.split(r"[\s,]+", "a,b,c")
 print(tokens) # ['a','b','c']
 
-parts = re.split(r"\s*(?:and|or)\s*","x and y or z")
+parts = re.split(r"\s*(?:and|or)\s*", "x and y or z")
 print(parts) # ['x','y','z']
 ```
 
@@ -154,14 +154,14 @@ tolerant. It beats str.split when delimiters vary.
 import re
 
 pattern = re.compile(r"\b(cat|dog)\b")
-texts = ["a cat here","no fish","a dog"]
+texts = ["a cat here", "no fish", "a dog"]
 
 for text in texts:
     if pattern.search(text):
-        print("match:",text)
+        print("match:", text)
 ```
 
-Pre-compile patterns used many times: the engine caches,but
+Pre-compile patterns used many times: the engine caches, but
 compile makes intent clear and lets you attach flags once.
 
 `re.VERBOSE` lets you lay out patterns with comments - big

@@ -1,6 +1,6 @@
 # 02 — Variables & Types
 
-> Variables are named boxes that hold values. Python is dynamically typed — the same name can holddifferent types over time.
+> Variables are named boxes that hold values. Python is dynamically typed — the same name can hold different types over time.
 
 ---
 
@@ -15,10 +15,10 @@ is_student = False
 
 - A variable is created the moment you assign it; no declaration needed.
 - `=` is assignment — put the value on the right into the name on the left.
-- Naming rules: letters,digits,`_`;; can't start witha digit;; case-sensitive (`Age` ≠ `age`).
+- Naming rules: letters, digits,`_`;; can't start with a digit;; case-sensitive (`Age` ≠ `age`).
 
 !!! warning "Avoid these names"
-Python keywords are reserved: `if`,`for`,`while`,`def`,`class`,etc. Check with `keyword.kwlist`. Also avoid shadowing built-ins like `list`,`str`,`dict` — it breaks code that expects them.
+Python keywords are reserved: `if`,`for`,`while`,`def`,`class`, etc. Check with `keyword.kwlist`. Also avoid shadowing built-ins like `list`,`str`,`dict` — it breaks code that expects them.
 !!!
 
 ---
@@ -30,7 +30,7 @@ x = 42 # x is an int
 x = "hello" # now a str — no error!
 ```
 
-Because types go on values (not names),reassignment changes the type freely. This is convenient,but meangyou should keep names meaningful so bugs surface quickly.
+Because types go on values (not names), reassignment changes the type freely. This is convenient, but that means you should keep names meaningful so bugs surface quickly.
 
 Use `type()` to inspect:
 
@@ -38,7 +38,7 @@ Use `type()` to inspect:
 type(42) # <class 'int'>
 type(3.14) # <class 'float'>
 type("hi") # <class 'str'>
-type([1,2]) # <class 'list'>
+type([1, 2]) # <class 'list'>
 ```
 
 ---
@@ -53,7 +53,7 @@ type([1,2]) # <class 'list'>
 | `bool` | `True` / `False` | no | yes/no flags |
 | `NoneType` | `None` | — | "no value" marker |
 | `list` | `[1,2]` | yes | ordered collection |
-| `tuple` | `(1,2)` | no | fixed,read-only group |
+| `tuple` | `(1,2)` | no | fixed, read-only group |
 | `set` | `{1,2}` | yes | unique members |
 | `dict` | `{"a":[1}` | yes | key → value lookup |
 
@@ -94,8 +94,8 @@ message = "I'm " + str(age) # "I'm 36"
 ## Multiple assignment & swapping
 
 ```python
-a,b = 1,2 # parallel assignment
-a,b = b,a # swap — no temp needed!
+a, b = 1, 2 # parallel assignment
+a, b = b, a # swap — no temp needed!
 x = y = z = 0 # chain: all three are 0
 ```
 

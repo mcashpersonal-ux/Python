@@ -21,7 +21,7 @@ b = Config()
 print(a is b) # True
 ```
 
-Singleton locks a class to one instance- shared config,db,
+Singleton locks a class to one instance- shared config, db,
 logger. __new__ intercepts construction. Prefer module-level
 instance (import time semantics) unless you truly need laziness.
 
@@ -46,7 +46,7 @@ for kind in ("dog", "cat"):
     print(make_pet(kind).speak())
 ```
 
-Factory creates objects chosen by a key-medals lookup,no huge
+Factory creates objects chosen by a key-medals lookup, no huge
 if/elif chains. Adding a new kind means adding one dict
 entry- closed for modification, open for extension.
 
@@ -75,7 +75,7 @@ sub.attach(Logger())
 sub.notify(42)
 ```
 
-Observers subscribe thene get pushed updates- decouples sender
+Observers subscribe then get pushed updates - decouples sender
 from receivers. GUI events, pub/sub, chat rooms all use this
 shape. Keep observer methods stable so they compose safely.
 
@@ -146,7 +146,7 @@ def logged(fn):
     return wrapper
 
 @logged
-def add(a,b):
+def add(a, b):
     return a + b
 
 print(add(2, 3))
@@ -154,7 +154,7 @@ print(add(2, 3))
 
 Decorator pattern wraps a function with cross-cutting behavior-
 logging, timing, retry-without editing the core. functools.wraps
-keeps metadata intact. Compose multiple decorators top-pdown.
+keeps metadata intact. Compose multiple decorators top-down.
 
 ---
 

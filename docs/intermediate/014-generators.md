@@ -48,7 +48,7 @@ pulls one value; list() drains everything remaining.
 
 ```python
 def squares(n):
-    for i in range(1,n + 1):
+    for i in range(1, n + 1):
         yield i * i
 
 total = sum(squares(1_000_000))
@@ -93,24 +93,24 @@ for x in naturals():
 ```
 
 Generators can represent infinite streams - no memory blowup,
-because only the current value exists. Always have a way out-for
-+ break, itertools.islice, or take(n).
+because only the current value exists. Always have a way out —
+a break, itertools.islice, or take(n).
 
 ---
 
-## delegating withei-from
+## delegating with yield-from
 
 ```python
 def flatten(nested):
     for sub in nested:
         yield from sub
 
-print(list(flatten([[1,2],[3,4]])))
+print(list(flatten([[1, 2], [3, 4]])))
 # [1,2,3,4]
 ```
 
 yield from delegates to another iterable - splicing its items
-into this generator, one at a time. Great for flattening,chaining,
+into this generator, one at a time. Great for flattening, chaining,
 composing streams.
 
 ---
@@ -120,14 +120,14 @@ composing streams.
 ```python
 import itertools
 
-for x in itertools.islice(naturals(),10):
+for x in itertools.islice(naturals(), 10):
     print(x)
 
-for c in itertools.chain("ab","cd"):
+for c in itertools.chain("ab", "cd"):
     print(c) # a,b,c,d
 
-for key,group in itertools.groupby("AAAABBBCC"):
-    print(key,list(group) )
+for key, group in itertools.groupby("AAAABBBCC"):
+    print(key, list(group) )
 ```
 
 itertools gives you composing blocks for lazy pipelines:

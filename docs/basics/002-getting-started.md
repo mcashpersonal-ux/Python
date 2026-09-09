@@ -1,6 +1,6 @@
 # 01 - Getting Started
 
-> What you need to run Python,how to write your first script,
+> What you need to run Python, how to write your first script,
 > and how the REPL works.
 
 ---
@@ -29,7 +29,7 @@ Every snippet on this site is fair game to paste into a blank file and run.
 Create hello.py:
 
 ```python
-print("Hello,world!")
+print("Hello, world!")
 ```
 
 Run it:
@@ -79,7 +79,7 @@ The underscore holds the last result. help() and dir() give in-line docs.
 
 ```python
 # This line is ignored by Python.
-# Use comments to explain the why,not the what.
+# Use comments to explain the why, not the what.
 
 total = price * qty
 ```

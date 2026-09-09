@@ -1,6 +1,6 @@
 # 09 - Errors and Exceptions
 
-> Errors happen. Exceptions are Python way of handing them
+> Errors happen. Exceptions are Python's way of handling them
 > to you: signal, propagate, and catch. Handle what you
 > can, let the rest crash loudly.
 
@@ -9,17 +9,17 @@
 ## reading a traceback
 
 ```python
-def divide(a,b):
+def divide(a, b):
     return a / b
 
-print(divide(10,0))
+print(divide(10, 0))
 ```
 
 You would see:
 
 ```
 Traceback (most recent call last):
-  File "example.py",line 3,in <module>
+  File "example.py", line 3, in <module>
 ZeroDivisionError: division by zero
 ```
 
@@ -53,7 +53,7 @@ except ValueError as e:
     print(f"bad input: {e}")
 ```
 
-`as e` gives you the exception object,whose str(e) describes
+`as e` gives you the exception object, whose str(e) describes
 what went wrong. Log it, show it, or wrap it.
 
 ---
@@ -70,7 +70,7 @@ except ValueError:
     print("file did not contain a number")
 ```
 
-Python checks except clauses top to bottom,and runs the first
+Python checks except clauses top to bottom, and runs the first
 match. Order matters: specific first, generic last.
 
 ---
@@ -87,7 +87,7 @@ else:
 ```
 
 else runs only if try succeeded-without an exception. It keeps
-success-path code out of the try block,so you do not accidentally
+success-path code out of the try block, so you do not accidentally
 swallow unrelated errors.
 
 ---
@@ -95,7 +95,7 @@ swallow unrelated errors.
 ## finally - always run
 
 ```python
-f = open("log.txt","a")
+f = open("log.txt", "a")
 
 try:
     f.write("entry\n")

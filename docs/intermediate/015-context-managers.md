@@ -1,6 +1,6 @@
 # 14 - Context Managers
 
-> Context managers (the `with` statementensory guarantee
+> Context managers (the `with` statement) ensure
 > cleanup: files close, locks release, connections end - even
 > if an exception flies mid-block.
 
@@ -14,8 +14,8 @@ with open("data.txt" )as f:
 # f is already closed here - even on error
 ```
 
-with calls __enter__ onthe right side,and assigns its result to
-`as f`. The block runs,then __exit__ always runs - closing
+with calls __enter__ on the right side, and assigns its result to
+`as f`. The block runs, then __exit__ always runs - closing
 the file deterministically. Never call f.close() by hand again.
 
 ---
@@ -23,11 +23,11 @@ the file deterministically. Never call f.close() by hand again.
 ## multiple context managers
 
 ```python
-with open("in.txt" )as src,open("out.txt","w")as dst:
+with open("in.txt" )as src, open("out.txt", "w")as dst:
     dst.write(src.read())
 ```
 
-Comma-separated with enters both managers,and exits both in
+Comma-separated with enters both managers, and exits both in
 reverse order on the way out. Same as nested with but flat.
 
 ---
@@ -74,7 +74,7 @@ class Timer:
         self.start = time.perf_counter()
         return self
 
-    def __exit__(self,exc_type,exc_val,exc_tb):
+    def __exit__(self, exc_type, exc_val, exc_tb):
         self.elapsed = time.perf_counter() - self.start
         print(f"took {self.elapsed:.4f}s")
         return False # let exceptions propagate
@@ -97,18 +97,18 @@ swallow them.
 from contextlib import contextmanager
 
 @contextmanager
-def temporary_change(obj,key,value):
-    old = getattr(obj,key)
+def temporary_change(obj, key, value):
+    old = getattr(obj, key)
 
-    setattr(obj,key,value)
+    setattr(obj, key, value)
     try:
         yield
     finally:
-        setattr(obj,key,old)
+        setattr(obj, key, old)
 ```
 
 The function runs up to yield on entry. If the block raises,
-an exception re-raises at the yield line,and finally restores. 
+an exception re-raises at the yield line, and finally restores. 
 
 This is the easiest way to author most context managers - much
 shorter than a class.

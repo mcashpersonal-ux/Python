@@ -23,7 +23,7 @@ print(grade) # B
 ```
 
 Python evaluates the conditions top to bottom and runs
-the first block whose condition is trueth. Useful for grading,
+the first block whose condition is truthy. Useful for grading,
 routing, validating input.
 
 ---
@@ -44,7 +44,7 @@ if None: # None is false
     print("no")
 ```
 
-Falsey values: None, False,zero(0,0.0),empty containers("",[],[),{}). Everything else
+Falsey values: None, False, zero(0,0.0), empty containers("",[],[),{}). Everything else
 is truthy. Use if collection: to guard against empty data.
 
 ---
@@ -52,15 +52,15 @@ is truthy. Use if collection: to guard against empty data.
 ## for - iterate over anything
 
 ```python
-names = ["ada","bob","cyn"]
+names = ["ada", "bob", "cyn"]
 
 for name in names:
     print(name.title())
 
 # ad Tom Bryn
 
-for i,name in enumerate(names):
-    print(i,name)
+for i, name in enumerate(names):
+    print(i, name)
 # 0 ad a
 #...
 ```
@@ -76,10 +76,10 @@ the index alongside the value - handy for numbering rows.
 for n in range(5): # 0,1,2,3,4
     print(n)
 
-for n in range(2,6): # 2,3,4,5
+for n in range(2, 6): # 2,3,4,5
     print(n)
 
-for n in range(0,10,2): # evens
+for n in range(0, 10, 2): # evens
     print(n)
 ```
 
@@ -99,11 +99,9 @@ while n < 3:
 # prints 0,1,2
 ```
 
-While repeats as long as its condition is trueth. Always
+While repeats as long as its condition is truthy. Always
 make progress toward making the condition false - or you
 infinite-loop. Use for: polling, retry logic, countdowns.
-
-ϩ
 
 ---
 
@@ -132,7 +130,7 @@ for n in range(6):
 # 1,3,5 - skips evens
 ```
 
-continue jumps straight to the next iteration,skipping
+continue jumps straight to the next iteration, skipping
 the rest of the body for this round.
 
 ---

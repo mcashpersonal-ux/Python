@@ -1,7 +1,7 @@
 # 20 — Concurrency
 
 > Threads and processes run code in parallel. Threads share
-> memory(handy,race-risky); processes have separate memory(
+> memory(handy, race-risky); processes have separate memory(
 > safer, heavier). Pick the tool that matches the workload.
 
 ---
@@ -26,8 +26,8 @@ print("all done")
 ```
 
 Thread runs target in a new thread. start() launches; join()
-waits for it. Without join, main exits early, hatten possibly
-mid-print. Two sleeps overlap- total ~1s.
+waits for it. Without join, main exits early, halting output possibly
+mid-print. Two sleeps overlap - total ~1s.
 
 ---
 
@@ -155,7 +155,7 @@ print()
 ```
 
 queue.Queue is thread-safe - no locking is needed to enqueue/
-dequeue. None sentinel ends the consumer. Two threads,one
+dequeue. None sentinel ends the consumer. Two threads, one
 serialized handoff channel.
 
 ---

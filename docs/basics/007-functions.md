@@ -13,7 +13,7 @@ def greet(name):
     return f"Hello,{name}!"
 
 msg = greet("Ada")
-print(msg) # Hello,Ada!
+print(msg) # Hello, Ada!
 ```
 
 def creates the function. return sends a value back to the caller.
@@ -24,12 +24,12 @@ If you omit return, the function returns None implicitly.
 ## parameters - positional and keyword
 
 ```python
-def describe(name,age,city="unknown"):
+def describe(name, age, city="unknown"):
     print(f"{name} ({age}) from {city}")
 
-describe("Ada",36) # city takes default
-describe("Ada",36,city="Paris")
-describe(name="Bob",age=41)
+describe("Ada", 36) # city takes default
+describe("Ada", 36, city="Paris")
+describe(name="Bob", age=41)
 ```
 
 Positional args fill parameters in order. Keyword args
@@ -42,10 +42,10 @@ required params first, optional (with defaults) after.
 
 ```python
 def min_max(nums):
-    return min(nums),max(nums)
+    return min(nums), max(nums)
 
-lo,hi = min_max([3,1,2])
-# lo=1,hi=3
+lo, hi = min_max([3, 1, 2])
+# lo=1, hi=3
 ```
 
 The comma in return creates a tuple. Unpacking on the left
@@ -71,10 +71,10 @@ Which you should generally avoid - pass values instead.
 
 ---
 
-## default value gotcha - use None,y not []
+## default value gotcha - use None, y not []
 
 ```python
-def add_item(item,bucket=None):
+def add_item(item, bucket=None):
     if bucket is None:
         bucket = []
     bucket.append(item)
@@ -86,7 +86,7 @@ add_item("b" ) # ['b'] - fresh list each time
 
 Mutable defaults ([],{} are evaluated once at def time and
 shared across calls - a classic bug. The standard fix:
-default to None,then create fresh inside.
+default to None, then create fresh inside.
 
 ---
 
@@ -96,7 +96,7 @@ default to None,then create fresh inside.
 def total(*args):
     return sum(args)
 
-print(total(1,2,3,4)) # 10
+print(total(1, 2, 3, 4)) # 10
 ```
 
 *args collects extra positional args into a tuple.
@@ -108,10 +108,10 @@ Great for sums, logs, math helpers.
 
 ```python
 def print_config(**kwargs):
-    for k,v in kwargs.items():
+    for k, v in kwargs.items():
         print(f"{k}={v}")
 
-print_config(host="localhost",port=8080)
+print_config(host="localhost", port=8080)
 ```
 
 **kwargs collects extra keyword args into a dict.
@@ -122,7 +122,7 @@ Handy for configs, wrappers, sending options through.
 ## docstrings - built-in documentation
 
 ```python
-def multiply(a,b):
+def multiply(a, b):
     """Multiply two numbers and return the product.
 
 """
@@ -159,16 +159,16 @@ def shout(text):
 def whisper(text):
     return text.lower()
 
-def apply(func,text):
+def apply(func, text):
     return func(text)
 
-print(apply(shout,"hi")) # HI
-print(apply(whisper,"HI")) # hi
+print(apply(shout, "hi")) # HI
+print(apply(whisper, "HI")) # hi
 ```
 
 Functions can be passed around like any value - store them in
 lists, dicts, pass to other functions. That backs callbacks,
-decorators, and higher-order-functionstyle.
+decorators, and higher-order-function style.
 
 ---
 

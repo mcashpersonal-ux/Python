@@ -37,9 +37,9 @@ entry: .venv/.
 ```
 
 pip freeze lists exact installed versions-and > writes them
-to requirements.txt,keeping deployments reproducible. Pin
-top-level deps,not transitive ones:use pip freeze > reqs.lock"
-for locked builds,u prefer ranges for libraries.
+to requirements.txt, keeping deployments reproducible. Pin
+top-level deps, not transitive ones:use pip freeze > reqs.lock"
+for locked builds, u prefer ranges for libraries.
 
 ---
 
@@ -53,7 +53,7 @@ for locked builds,u prefer ranges for libraries.
 
 -r installs every pinned dependency at once into the active venv.
 
-Do this after cloning a repo: create venv,activate,install,run.
+Do this after cloning a repo: create venv, activate, install, run.
 Never pip install into system Python for a project.
 
 ---

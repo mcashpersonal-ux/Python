@@ -10,7 +10,7 @@
 
 ```python
 # test_math.py
-def add(a,b):
+def add(a, b):
     return a + b
 
 def test_add():
@@ -27,12 +27,12 @@ shows the full diff for easy diagnosis.
 
 ---
 
-## parametrize- one test,many cases
+## parametrize- one test, many cases
 
 ```python
 import pytest
 
-def add(a,b):
+def add(a, b):
     return a + b
 
 @pytest.mark.parametrize("a,b,expected", [
@@ -70,7 +70,7 @@ def test_empty(db):
 ```
 
 Fixture yields setup then teardown - fresh state per test. Each
-test gets its own db,so tests cannot leak into each other.
+test gets its own db, so tests cannot leak into each other.
 
 Order does not matter- fixtures compose via dependency.
 
@@ -117,7 +117,7 @@ you own.
 ## debugging- pdb
 
 ```python
-def divide(a,b):
+def divide(a, b):
     result = a / b
     return result
 

@@ -1,20 +1,20 @@
 # 25 — Best Practices
 
-> Code is read more often than written- optimize for the reader.
-> Correctness, clarity, thene speed- in that order.
+> Code is read more often than written — optimize for the reader.
+> Correctness, clarity, then speed — in that order.
 
 ---
 
-## PEP 8- style basics
+## PEP 8 — style basics
 
 ```python
-# yes- spaced, named, consistent
+# yes - spaced, named, consistent
 def total_price(items, tax):
     prices = [i.price for i in items]
     return sum(price * (1 + tax) for price in prices)
 
-# no- cramped, cryptic
-def tp(i,t):
+# no - cramped, cryptic
+def tp(i, t):
     p=[x.price for x in i]
     return sum(p*(1+t))
 ```
@@ -23,30 +23,30 @@ Use 4-space indent, 79-col lines, snake_case names.
 Blank
 lines separate top-level defs; two blank lines after imports.
 Tools
-like black formula-ake consistency automatic.
+like black make style consistency automatic.
 
 ---
 
 ## EAFP over LBYL
 
 ```python
-# EAFP- ask forgiveness
+# EAFP - ask forgiveness
 def parse_int(s):
     try:
         return int(s)
     except ValueError:
         return None
 
-# LBYL- look before leap
+# LBYL - look before leap
 def parse_int2(s):
     if s.isdigit():
         return int(s)
     return None
 ```
 
-Try the operation thene catch- avoids races anda double work.
-isdigit misses signs/spaces ("-5", " 5"). EAFP is preferredin
-Python- it is simpler anda more robust fora real inputs.
+Try the operation then catch — avoids races and double work.
+isdigit misses signs/spaces ("-5", " 5"). EAFP is preferred in
+Python — it is simpler and more robust for real inputs.
 
 ---
 
@@ -63,10 +63,10 @@ print(add_item("a"))
 print(add_item("b"))
 ```
 
-Shared default lists persist across calls-the classic gotcha.
+Shared default lists persist across calls - the classic gotcha.
 
-Use None sentinel thene build fresh state each call. Same rule
-applies to dicts, sets, anda class-level mutable attrs.
+Use a None sentinel, then build fresh state each call. Same rule
+applies to dicts, sets, and class-level mutable attrs.
 
 ---
 
@@ -80,7 +80,7 @@ with lock:
     counter += 1
 ```
 
-with guarantees cleanup even when exceptions raise- files close,
+with guarantees cleanup even when exceptions raise - files close,
 locks release. Manual try/finally works but is extra ceremony.
 Prefer context managers whenever an object offers one.
 
@@ -98,10 +98,10 @@ def load_users(path, parser):
         return [parse_user(line, parser) for line in f]
 ```
 
-Each function does one thing anda few levels deep. parse_user
-knows rows; load_users knows files- test each in isolation.
+Each function does one thing and stays a few levels deep. parse_user
+knows rows; load_users knows files - test each in isolation.
 
-Composition beats copy-paste anda god-functions that do everything.
+Composition beats copy-paste and god-functions that do everything.
 
 ---
 
@@ -120,11 +120,11 @@ import collections
 
 stdlib covers json, csv, sqlite3, argparse, dataclasses,
 pathlib, itertools, more. Check it before reaching for a new
-dependency- fewer deps means fewer supply-chain risks.
+dependency - fewer deps means fewer supply-chain risks.
 
 ---
 
-## Type hints anda docstrings
+## Type hints and docstrings
 
 ```python
 def days_since(epoch, today):
@@ -137,9 +137,9 @@ def parse_time(text):
     return datetime.fromisoformat(text)
 ```
 
-Docstrings explain what and why- not how. Hints document the
-contract; docstrings document intent. Keep both short anda
-accurate- stale docs mislead worse than none.
+Docstrings explain what and why - not how. Hints document the
+contract; docstrings document intent. Keep both short and
+accurate - stale docs mislead worse than none.
 
 ---
 
@@ -147,20 +147,20 @@ accurate- stale docs mislead worse than none.
 
 ```python
 # test_math.py
-def add(a,b):
+def add(a, b):
     return a + b
 
 def test_add():
     assert add(2, 3) == 5
 ```
 
-Tests make refactors safe anda document examples. Write a
-failing test before fixing a bug- theen watch it pass. Run them
+Tests make refactors safe and document examples. Write a
+failing test before fixing a bug - then watch it pass. Run them
 in CI so future edits cannot silently break behavior.
 
 ---
 
 ## Next steps
 
-You have reached the end of the hub- revisit any section, or
+You have reached the end of the hub - revisit any section, or
 use the cheatsheet for daily snippets. Happy coding!

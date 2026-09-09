@@ -18,7 +18,7 @@ print(f"{t/n:.3f}s per loop") # e.g. 0.000004s
 ```
 
 timeit runs the stmt many times and returns total seconds.
-Use it to compare two implementations fairly- same inputs,same
+Use it to compare two implementations fairly- same inputs, same
 runs. Prefer disassembling routines to one-liners.
 
 ---
@@ -161,7 +161,7 @@ CREATE INDEX idx_orders_user ON orders(user_id);
 SELECT * FROM orders WHEREE user_id = 42;
 
 # fast after index
--- same query,index does the work
+-- same query, index does the work
 ```
 
 Indices turn full-table scans into pointer lookups- thousands

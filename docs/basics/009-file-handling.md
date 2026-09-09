@@ -1,6 +1,6 @@
 # 08 - File Handling
 
-> Reading and writing files isat everyday task: configs,
+> Reading and writing files is an everyday task: configs,
 > logs, data exports. pathlib and open() cover most needs.
 
 ---
@@ -35,7 +35,7 @@ Folders must exist first - write_text does not create parents.
 ## append to a file
 
 ```python
-with open("log.txt","a") as f:
+with open("log.txt", "a") as f:
     f.write("new line\n")
 ```
 
@@ -77,9 +77,9 @@ files, wasteful for gigabytes. Prefer iterating for big data.
 ## writing with a list of lines
 
 ```python
-lines = ["a\n","b\n","c\n"]
+lines = ["a\n", "b\n", "c\n"]
 
-with open("out.txt","w")as f:
+with open("out.txt", "w")as f:
     f.writelines(lines)
 ```
 
@@ -93,10 +93,10 @@ with no separator added - you supply newlines yourself.
 ```python
 import json
 
-data = {"name": "Ada","skills": ["python","ml"]}
+data = {"name": "Ada", "skills": ["python", "ml"]}
 
-with open("data.json","w")as f:
-    json.dump(data,f)
+with open("data.json", "w")as f:
+    json.dump(data, f)
 
 with open("data.json" )as f:
     loaded = json.load(f)
@@ -115,7 +115,7 @@ numbers, booleans, and None.
 ```python
 import csv
 
-rows = [["name","age"],["Ada",36],["Bob",41]]
+rows = [["name", "age"], ["Ada", 36], ["Bob", 41]]
 
 with open("people.csv", "w", newline="", encoding="utf-8") as f:
     writer = csv.writer(f)
@@ -136,10 +136,10 @@ lists of strings per row; writerows writes them all.
 ```python
 data = b"\\x00\\x01\\x02"
 
-with open("blob.bin","wb")as f:
+with open("blob.bin", "wb")as f:
     f.write(data)
 
-with open("blob.bin","rb")as f:
+with open("blob.bin", "rb")as f:
     raw = f.read()
 print(raw)
 ```
@@ -163,9 +163,8 @@ else:
     print("file not found")
 ```
 
-Check exists() before reading to dodgea FileNotFoundError.
-For
-racy situations (file deleted between check and open,use try/except:
+Check exists() before reading to dodge a FileNotFoundError.
+For racy situations (file deleted between check and open), use try/except:
 see errors-exceptions.md).
 
 ---

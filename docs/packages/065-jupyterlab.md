@@ -92,6 +92,7 @@ Kernel and Run All" before trusting a notebook's final output.
 ```python
 # convert a notebook to a script for productionizing
 ```
+
 ```bash
 jupyter nbconvert --to script analysis.ipynb
 ```

@@ -23,10 +23,10 @@ greet = shout(greet)
 print(greet())
 ```
 
-shout receives greet,and returns wrapper. Later calls to greet
-actually run wrapper,which calls the original then post-processes.
+shout receives greet, and returns wrapper. Later calls to greet
+actually run wrapper, which calls the original then post-processes.
  The
-name greet is rebound to wrapper - that is decoration,by hand.
+name greet is rebound to wrapper - that is decoration, by hand.
 
 ---
 
@@ -34,8 +34,8 @@ name greet is rebound to wrapper - that is decoration,by hand.
 
 ```python
 def shout(func):
-    def wrapper(*args,**kwargs):
-        result = func(*args,**kwargs)
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
         return result.upper()
     return wrapper
 
@@ -60,8 +60,8 @@ from functools import wraps
 
 def shout(func):
     @wraps(func)
-    def wrapper(*args,**kwargs):
-        result = func(*args,**kwargs)
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
         return result.upper()
     return wrapper
 
@@ -88,9 +88,9 @@ from functools import wraps
 def repeat(times):
     def decorator(func):
         @wraps(func)
-        def wrapper(*args,**kwargs):
+        def wrapper(*args, **kwargs):
             for _ in range(times):
-                func(*args,**kwargs)
+                func(*args, **kwargs)
         return wrapper
     return decorator
 
@@ -112,10 +112,10 @@ from functools import wraps
 
 def timed(func):
     @wraps(func)
-    def wrapper(*args,**kwargs):
+    def wrapper(*args, **kwargs):
         start = time.perf_counter()
         try:
-            return func(*args,**kwargs)
+            return func(*args, **kwargs)
         finally:
             elapsed = time.perf_counter() - start
             print(f"{func.__name__} took {elapsed:.4f}s")
@@ -150,7 +150,7 @@ def fib(n):
 print(fib(40)) # 102334155 - instant,not minutes
 ```
 
-lru_cache stores results by arguments,and reuses them. The
+lru_cache stores results by arguments, and reuses them. The
 recursive fib explodes without it; with it, each n computed once.
 
 ---
@@ -162,14 +162,14 @@ from functools import wraps
 
 def bold(func):
     @wraps(func)
-    def wrapper(*args,**kwargs):
-        return "<b>" + func(*args,**kwargs) + "</b>"
+    def wrapper(*args, **kwargs):
+        return "<b>" + func(*args, **kwargs) + "</b>"
     return wrapper
 
 def italic(func):
     @wraps(func)
-    def wrapper(*args,**kwargs):
-        return "<i>" + func(*args,**kwargs) + "</i>"
+    def wrapper(*args, **kwargs):
+        return "<i>" + func(*args, **kwargs) + "</i>"
     return wrapper
 
 @bold
@@ -192,13 +192,13 @@ wraps that. Read @ lines top-to-bottom as outermost last.
 from functools import wraps
 
 class CountCalls:
-    def __init__(self,func):
+    def __init__(self, func):
         self.func = func
         self.calls = 0
 
-    def __call__(self,*args,**kwargs):
+    def __call__(self, *args, **kwargs):
         self.calls += 1
-        return self.func(*args,**kwargs)
+        return self.func(*args, **kwargs)
 
 @CountCalls
 def hello():
@@ -210,7 +210,7 @@ print(CountCalls.__dict__)
 ```
 
 A class with __call__ can be a decorator too: creating the
-instance runs __init__(binding the func,and then every call runs
+instance runs __init__(binding the func, and then every call runs
 __call__. Keep state on the instance.
 
 ---

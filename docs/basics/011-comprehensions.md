@@ -10,7 +10,7 @@
 ## list comprehension - basics
 
 ```python
-nums = [1,2,3,4,5]
+nums = [1, 2, 3, 4, 5]
 
 squares = [n * n for n in nums]
 print(squares)
@@ -26,7 +26,7 @@ and usually faster.
 ## with filter
 
 ```python
-nums = [1,2,3,4,5,6]
+nums = [1, 2, 3, 4, 5, 6]
 
 evens = [n for n in nums if n % 2 == 0]
 print(evens)
@@ -56,7 +56,7 @@ Build exactly the output you want in one pass.
 ## dict comprehension
 
 ```python
-names = ["ada","bob"]
+names = ["ada", "bob"]
 
 lookup = {name: len(name) for name in names}
 print(lookup)
@@ -71,7 +71,7 @@ items by id, invert a mapping, build lookup tables.
 ## set comprehension
 
 ```python
-nums = [1,1,2,2,3,3]
+nums = [1, 1, 2, 2, 3, 3]
 
 unique = {n for n in nums}
 print(unique)
@@ -86,7 +86,7 @@ automatically. Ordering is not guaranteed though.
 ## nested comprehension - flatten
 
 ```python
-matrix = [[1,2],[3,4]]
+matrix = [[1, 2], [3, 4]]
 
 flat = [n for row in matrix for n in row]
 print(flat)
@@ -109,7 +109,7 @@ for row in matrix:
 ## conditional expression in the output slot
 
 ```python
-nums = [1,2,3,4,5]
+nums = [1, 2, 3, 4, 5]
 
 labels = ["even" if n % 2 == 0 else "odd" for n in nums]
 print(labels)
@@ -118,7 +118,7 @@ print(labels)
 
 The if here is the ternary expression - it runs for every item.
 
-Compare with the filter if at the end,and: filter drops items,
+Compare with the filter if at the end, and: filter drops items,
 ternary keeps all but changes values.
 
 ---
@@ -126,7 +126,7 @@ ternary keeps all but changes values.
 ## generator expression - lazy
 
 ```python
-nums = range(1,000,000)
+nums = range(1, 000, 000)
 
 total = sum(n * n for n in nums)
 ```

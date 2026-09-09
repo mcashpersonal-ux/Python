@@ -31,7 +31,7 @@ import json
 with open("config.json") as f:
     config = json.load(f)
 
-print(config.get("theme","dark"))
+print(config.get("theme", "dark"))
 ```
 
 json.load(f) reads and parses the file in one step. Combine
@@ -44,10 +44,10 @@ with the with statement - and file handles never leak.
 ```python
 import json
 
-data = {"name": "bob","skills": ["py","sql"],"age": 41}
+data = {"name": "bob", "skills": ["py", "sql"], "age": 41}
 
-with open("out.json","w" )as f:
-    json.dump(data,f,indent=2,sort_keys=True)
+with open("out.json", "w" )as f:
+    json.dump(data, f, indent=2, sort_keys=True)
 ```
 
 indent makes output human-readable; sort_keys stabilizes
@@ -66,8 +66,8 @@ import json
 raw = '{"name": "ada"}'
 data = json.loads(raw)
 
-missing = data.get("age",0)
-nested = data["meta"].get("theme","dark") if "meta" in data else "dark"
+missing = data.get("age", 0)
+nested = data["meta"].get("theme", "dark") if "meta" in data else "dark"
 
 print(missing) # 0
 print(nested) # dark
@@ -83,7 +83,7 @@ check nesting before diving in, never assume keys exist.
 ```python
 import csv
 
-with open("data.csv",newline="") as f:
+with open("data.csv", newline="") as f:
     reader = csv.reader(f)
     for row in reader:
         print(row)
@@ -101,14 +101,14 @@ newline="" to avoid blank-line glitches on some platforms.
 ```python
 import csv
 
-rows = [["name","age"],["ada",36],["bob",41]]
+rows = [["name", "age"], ["ada", 36], ["bob", 41]]
 
-with open("out.csv","w",newline="") as f:
+with open("out.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerows(rows)
 ```
 
-csv.writer handles quoting, escaping,i newlines for you-
+csv.writer handles quoting, escaping, i newlines for you-
 never hand-build CSV strings. writerows takes a list of
 rows in one call.
 
@@ -119,13 +119,13 @@ rows in one call.
 ```python
 import csv
 
-with open("data.csv",newline="") as f:
+with open("data.csv", newline="") as f:
     reader = csv.DictReader(f)
     for row in reader:
-        print(row["name"],row["age"])
+        print(row["name"], row["age"])
 ```
 
-DictReader usestherst row as headers,and gives dicts-
+DictReader uses the first row as headers, and gives dicts -
 row["name"] instead of row[0]. Parallel writer: DictWriter
 needs fieldnames passed in.
 
@@ -147,26 +147,26 @@ def load_ndjson(path):
 
 NDJSON (newline-delimited JSON): one JSON object per line.
 
-Perfect for logs and streaming exportsthe data loads
-incrementally,yielding one record ata time. json.loads per
-line,or the faster json.JSONDecoder().raw_decode trick.
+Perfect for logs and streaming exports - the data loads
+incrementally, yielding one record at a time. json.loads per
+line, or the faster json.JSONDecoder().raw_decode trick.
 
 ---
 
 ## flattening nested JSON into a flat dict
 
 ```python
-def flatten(d,prefix="",sep="_"):
+def flatten(d, prefix="", sep="_"):
     out = {}
-    for k,v in d.items():
+    for k, v in d.items():
         key = f"{prefix}{k}" if prefix else k
-        if isinstance(v,dict):
-            out.update(flatten(v,key,sep))
+        if isinstance(v, dict):
+            out.update(flatten(v, key, sep))
         else:
             out[key] = v
     return out
 
-data = {"user": {"name": "ada","meta": {"tier": "pro"}}}
+data = {"user": {"name": "ada", "meta": {"tier": "pro"}}}
 # {'user_name': 'ada','user_meta_tier': 'pro'}
 print(flatten(data))
 ```

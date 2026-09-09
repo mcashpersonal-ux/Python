@@ -23,7 +23,7 @@ math.name to reach anything inside.
 ## from - selective import
 
 ```python
-from math import sqrt,pi
+from math import sqrt, pi
 
 print(sqrt(16)) # 4.0
 print(pi)
@@ -42,7 +42,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-data = np.array([1,2,3])
+data = np.array([1, 2, 3])
 ```
 
 import module as alias gives the module a shorter handle.
@@ -130,8 +130,8 @@ print(os.getcwd())
 print(sys.version)
 # True/False
 print(pathlib.Path("data.txt").exists())
-print(random.choice(["a","b","c"]))
-print(statistics.mean([1,2,3,4]))
+print(random.choice(["a", "b", "c"]))
+print(statistics.mean([1, 2, 3, 4]))
 ```
 
 You rarely need third-party libs for basics - the stdlib covers

@@ -1,6 +1,6 @@
 # Quick Reference
 
-> The most useful snippets,gathered in one place for fast lookup.
+> The most useful snippets, gathered in one place for fast lookup.
 > Head to any section full page for the deeper explanation.
 
 ---
@@ -21,10 +21,10 @@ x = "now a string"
 ## Collections at a glance
 
 ```python
-fruits = ["apple","banana"] # list ordered mutable
-point = (3,5) # tuple ordered immutable
-tags = {"py","learn"} # set unique unordered
-user = {"name":"Ada","age":36} # dict key value
+fruits = ["apple", "banana"] # list ordered mutable
+point = (3, 5) # tuple ordered immutable
+tags = {"py", "learn"} # set unique unordered
+user = {"name":"Ada", "age":36} # dict key value
 ```
 
 ## Slicing strings and lists
@@ -36,7 +36,7 @@ s[-1] # n
 s[0:2] # py
 s[::-1] # reverse nohtyp
 
-nums = [0,1,2,3,4]
+nums = [0, 1, 2, 3, 4]
 evens = nums[::2] # 0,2,4
 ```
 
@@ -67,16 +67,16 @@ for n in range(10):
 ## Functions mini-ref
 
 ```python
-def greet(name,greeting="Hi"):
+def greet(name, greeting="Hi"):
     return f"{greeting},{name}!"
 
 greet("Ada") # Hi,Ada!
-greet("Bob",greeting="Hello") # Hello,Bob!
+greet("Bob", greeting="Hello") # Hello,Bob!
 
-def log(*args,**kwargs):
-    print(args,kwargs)
+def log(*args, **kwargs):
+    print(args, kwargs)
 
-def add(a,b):
+def add(a, b):
     return a + b
 ```
 
@@ -95,7 +95,7 @@ unique = {n % 3 for n in range(10)} # set
 with open("data.txt" ) as f:
     content = f.read()
 
-with open("out.txt","w") as f:
+with open("out.txt", "w") as f:
     f.write("hello\n")
 
 with open("data.txt") as f:
@@ -117,14 +117,14 @@ finally:
     print("always runs")
 ```
 
-## Shortcuts: math,json,datetime
+## Shortcuts: math, json, datetime
 
 ```python
-import math,json,datetime as dt
+import math, json, datetime as dt
 
 math.sqrt(16) # 4.0
 abs(-5) # 5
-round(3.14159,2) # 3.14
+round(3.14159, 2) # 3.14
 
 data = json.loads("{\"a\": 1}" ) # dict
 json.dumps(data) # string

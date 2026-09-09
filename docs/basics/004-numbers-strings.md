@@ -1,6 +1,6 @@
 # 03 — Numbers & Strings
 
-> Arithmetic for numbersarid text-processing tools for strings — with f-strings to format either.
+> Arithmetic for numbers and text-processing tools for strings — with f-strings to format either.
 
 ---
 
@@ -20,18 +20,18 @@ a ** b # 49 exponentiation
 ```
 
 !!! warning "Division surprises"
-`/` always returns a float: `4 / 2` → `2.0`. Use `//` when you need an integer. And remember floats have precision limits: `0.1 + 0.2` is `0.30000000000000004` — not a bug,just binary math.
+`/` always returns a float: `4 / 2` → `2.0`. Use `//` when you need an integer. And remember floats have precision limits: `0.1 + 0.2` is `0.30000000000000004` — not a bug, just binary math.
 !!!
 
 ## Common number tools
 
 ```python
 abs(-5) # 5
-round(3.14159,2) # 3.14
-max(3,8,5) # 8
-min(4,2) # 2
-sum([1,2,3]) # 6
-pow(2,10) # 1024
+round(3.14159, 2) # 3.14
+max(3, 8, 5) # 8
+min(4, 2) # 2
+sum([1, 2, 3]) # 6
+pow(2, 10) # 1024
 
 import math
 math.sqrt(16) # 4.0
@@ -93,7 +93,7 @@ s[::-1] # 'nohtyp' reversed
 ```
 
 !!! tip "Slicing mental model"
-`s[start:stop:step]` — think of indices as gaps between characters. `stop` is exclusive,which makes `s[:2] + s[2:] == s` always true.
+`s[start:stop:step]` — think of indices as gaps between characters. `stop` is exclusive, which makes `s[:2] + s[2:] == s` always true.
 !!!
 
 ## String methods worth knowing
@@ -104,9 +104,9 @@ text = " Hello,Python! "
 text.strip() # 'Hello,Python!' remove outer whitespace
 text.lower() # ' hello,python! '
 text.upper() # ' HELLO,PYTHON! '
-text.replace("Python","World") # ' Hello,World! '
+text.replace("Python", "World") # ' Hello,World! '
 text.split(",") # [' Hello',' Python! ']
-",".join(["a","b"]) # 'a,b' inverse of split
+",".join(["a", "b"]) # 'a,b' inverse of split
 text.startswith(" He") # True
 text.endswith("! ") # True
 "42".isdecimal() # True
@@ -126,7 +126,7 @@ lines = [line for line in raw.strip().splitlines() if line.strip()]
 
 ```python
 s = " Ada Lovelace "
-clean = s.strip().title().replace("Lovelace","Byron")
+clean = s.strip().title().replace("Lovelace", "Byron")
 # 'Ada Byron'
 ```
 

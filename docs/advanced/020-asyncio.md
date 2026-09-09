@@ -1,7 +1,7 @@
 # 19 — Asyncio
 
 > asyncio runs async I/O on a single thread- thousands of
-> sockets, files,and http calls without threads. The mental
+> sockets, files, and http calls without threads. The mental
 > model: await yields control back to the event loop while
 > an operation completes in the background.
 
@@ -21,8 +21,8 @@ asyncio.run(main())
 ```
 
 async def defines a coroutine; await suspends it until
-the awaited thing finishes. asyncio.run() bootsthera event
-loop, runs your coroutine, cleans up. - never manage
+the awaited thing finishes. asyncio.run() boots the event
+loop, runs your coroutine, cleans up - never manage
 the loop by hand.
 
 ---
@@ -32,14 +32,14 @@ the loop by hand.
 ```python
 import asyncio
 
-async def fetch(name,delay):
+async def fetch(name, delay):
     await asyncio.sleep(delay)
     return f"{name} done"
 
 async def main():
-    t1 = asyncio.create_task(fetch("a",1))
-    t2 = asyncio.create_task(fetch("b",2))
-    print(await asyncio.gather(t1,t2))
+    t1 = asyncio.create_task(fetch("a", 1))
+    t2 = asyncio.create_task(fetch("b", 2))
+    print(await asyncio.gather(t1, t2))
     # ['a done','b done']
 
 asyncio.run(main())
@@ -47,7 +47,7 @@ asyncio.run(main())
 
 create_task schedules coroutines to run in the background;
 gather awaits them all and collects results in order. Total
-time ~2s,not 3: the sleeps overlap.
+time ~2s, not 3: the sleeps overlap.
 
 ---
 
@@ -61,7 +61,7 @@ async def slow():
 
 async def main():
     try:
-        result = await asyncio.wait_for(slow(),timeout=1)
+        result = await asyncio.wait_for(slow(), timeout=1)
         print(result)
     except asyncio.TimeoutError:
         print("timed out")
@@ -136,7 +136,7 @@ async def consumer(q):
         item = await q.get()
         if item is None:
             break
-        print("got",item)
+        print("got", item)
 
 async def main():
     q = asyncio.Queue()

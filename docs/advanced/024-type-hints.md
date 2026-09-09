@@ -134,7 +134,7 @@ mypy my_program.py
 ```
 
 mypy reads hints and reports mismatches without running
-code. Start lenient (--ignore-missing-imports) thene tighten.
+code. Start lenient (--ignore-missing-imports) then tighten.
 CI can run mypy so regressions surface at merge time, not
 runtime.
 
