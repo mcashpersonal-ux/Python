@@ -102,6 +102,31 @@ nav:
       - "38 — Beckhoff TwinCAT (pyads)": packages/040-pyads.md
       - "39 — CAN bus (python-can)": packages/041-python-can.md
       - "40 — Serial ports (pyserial)": packages/042-pyserial.md
+      - "95 — EtherNet/IP (pycomm3)": packages/113-pycomm3.md
+      - "96 — BACnet (bacpypes3)": packages/114-bacpypes3.md
+      - "97 — DNP3 (pydnp3)": packages/115-pydnp3.md
+      - "98 — IEC 60870-5-104 (c104)": packages/116-c104.md
+      - "99 — IEC 61850 (pyiec61850)": packages/117-pyiec61850.md
+      - "100 — Sparkplug B (tahu)": packages/118-tahu.md
+    - "Machine Vision & Quality":
+      - "101 — Computer vision (opencv-python)": packages/119-opencv-python.md
+      - "102 — Barcode/QR reading (pyzbar)": packages/120-pyzbar.md
+      - "103 — Barcode generation (python-barcode)": packages/121-python-barcode.md
+    - "Predictive Maintenance & Reliability":
+      - "104 — Wavelets (PyWavelets)": packages/122-pywavelets.md
+      - "105 — Time-series features (tsfresh)": packages/123-tsfresh.md
+      - "106 — Anomaly detection (PyOD)": packages/124-pyod.md
+      - "107 — Survival analysis (lifelines)": packages/125-lifelines.md
+    - "Simulation & Modeling":
+      - "108 — Discrete-event simulation (SimPy)": packages/126-simpy.md
+      - "109 — Power-system analysis (pandapower)": packages/127-pandapower.md
+    - "HMI & Desktop":
+      - "110 — Desktop HMI (PySide6)": packages/128-pyside6.md
+      - "111 — Touchscreen HMI (Kivy)": packages/129-kivy.md
+    - "OT Networking & State Logic":
+      - "112 — Packet analysis (Scapy)": packages/130-scapy.md
+      - "113 — Network automation (NAPALM)": packages/131-napalm.md
+      - "114 — State machines (transitions)": packages/132-transitions.md
     - "Databases":
       - "41 — SQLite built-in (sqlite3)": packages/043-sqlite3-stdlib.md
       - "42 — PostgreSQL (psycopg2-binary)": packages/044-psycopg2-binary.md

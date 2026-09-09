@@ -36,6 +36,63 @@
 
 > Tip: For a SCADA system (any vendor), first identify the wire protocol — Modbus TCP/serial, OPC UA, SNMP, MQTT, CAN, S7, or ADS — and pick the matching row. Most SCADA gateways expose Modbus TCP or OPC UA as convenience interfaces.
 
+| EtherNet/IP | `pycomm3` | Allen-Bradley/Rockwell ControlLogix and CompactLogix PLC tag access |
+| BACnet | `bacpypes3` | Building automation objects and services for HVAC, lighting, and access control |
+| DNP3 | `pydnp3` | Utility SCADA communications for electric, water, and wastewater systems |
+| IEC 60870-5-104 | `c104` | Power-grid telecontrol over TCP |
+| IEC 61850 | `pyiec61850` | Substation automation, protection relays, reports, and GOOSE workflows |
+| Sparkplug B | `tahu` | MQTT payload and topic conventions for IIoT and SCADA telemetry |
+
+---
+
+## Machine Vision & Quality
+
+| Package | PyPI name | What it does |
+|---|---|---|
+| Computer vision | `opencv-python` | Image processing, camera inspection, object counting, and OCR pipelines |
+| Barcode/QR reading | `pyzbar` | Decode barcodes and QR symbols through the ZBar library |
+| Barcode generation | `python-barcode` | Create traceability labels and serial-number barcodes |
+
+---
+
+## Predictive Maintenance & Reliability
+
+| Package | PyPI name | What it does |
+|---|---|---|
+| Wavelets | `PyWavelets` | Wavelet transforms and denoising for vibration and acoustic signals |
+| Sensor features | `tsfresh` | Automated feature extraction from time-series measurements |
+| Anomaly detection | `pyod` | Outlier and novelty detection for condition monitoring |
+| Survival analysis | `lifelines` | Failure-time, reliability, and MTBF modeling |
+
+---
+
+## Simulation & Modeling
+
+| Package | PyPI name | What it does |
+|---|---|---|
+| Discrete-event simulation | `simpy` | Production-line, queue, and throughput simulation |
+| Power systems | `pandapower` | Load flow and short-circuit analysis for electrical networks |
+
+---
+
+## HMI & Desktop Operator Interfaces
+
+| Package | PyPI name | What it does |
+|---|---|---|
+| Qt desktop HMI | `PySide6` | Cross-platform Qt interfaces for operator stations |
+| Touchscreen HMI | `kivy` | Touch-first Python interfaces for panels and portable devices |
+
+---
+
+## OT Networking & State Logic
+
+| Package | PyPI name | What it does |
+|---|---|---|
+| Packet analysis | `scapy` | Authorized packet crafting, inspection, and OT diagnostics |
+| Network automation | `napalm` | Consistent multi-vendor device facts and configuration workflows |
+| State machines | `transitions` | Equipment sequencing, interlocks, and lifecycle state logic |
+
+
 ---
 
 ## Databases
